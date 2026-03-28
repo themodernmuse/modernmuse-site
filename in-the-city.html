@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>What's On This Week | The Modern Muse</title>
+  <meta name="description" content="Weekly Las Vegas events calendar art, wellness, food, nightlife, and more. Curated picks for every day of the week, wherever you are." />
+  <meta property="og:title" content="Local Events | The Modern Muse" />
+  <meta property="og:description" content="Weekly curated events in Las Vegas art, wellness, food, and nightlife picks for every day." />
+  <meta property="og:image" content="https://themdrnmuse.com/og-preview.jpg" />
+  <meta property="og:url" content="https://themdrnmuse.com/in-the-city.html" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Jost:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #221714; --slate: #221714; --linen: #C4A882;
+      --ember: #B85C38; --walnut: #8C3D22; --off-white: #F9F4EE;
+      --light-bg: #F2EAE0; --cream: #E8DDD0; --sky: #C4A882;}
+    *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+    html { scroll-behavior:smooth; }
+    body { font-family:'Jost',sans-serif; background:var(--off-white); color:var(--ink); overflow-x:hidden; }
+
+    /* NAV */
+    nav { position:fixed; top:0; left:0; right:0; z-index:200; display:flex; align-items:center; justify-content:space-between; padding:1.3rem 4rem; background:rgba(34,34,59,0.97); backdrop-filter:blur(12px); }
+    .nav-logo { font-family:'Cormorant Garamond',serif; font-size:1.45rem; font-weight:300; letter-spacing:0.18em; color:var(--linen); text-transform:uppercase; text-decoration:none; }
+    .nav-logo span { color:var(--ember); font-style:italic; }
+    .nav-links { display:flex; gap:2.5rem; list-style:none; align-items:center; }
+    .nav-links > li { position:relative; }
+    .nav-links a { text-decoration:none; color:var(--linen); font-size:0.72rem; letter-spacing:0.2em; text-transform:uppercase; font-weight:500; transition:color 0.3s; opacity:0.75; white-space:nowrap; }
+    .nav-links a:hover, .nav-links a.active { color:var(--ember); opacity:1; }
+    .nav-cta { background:var(--ember) !important; color:#fff !important; padding:0.55rem 1.5rem; opacity:1 !important; }
+    .nav-cta:hover { opacity:0.88 !important; }
+
+    /* DROPDOWN */
+    .nav-dropdown { position:relative; }
+    .nav-dropdown-toggle { display:flex; align-items:center; gap:0.4rem; cursor:pointer; }
+    .nav-dropdown-toggle::after { content:''; display:block; width:5px; height:5px; border-right:1.5px solid currentColor; border-bottom:1.5px solid currentColor; transform:rotate(45deg) translateY(-2px); transition:transform 0.2s; }
+    .nav-dropdown:hover .nav-dropdown-toggle::after { transform:rotate(225deg) translateY(-2px); }
+    .nav-dropdown-menu {
+      display:none; position:absolute; top:calc(100% + 12px); left:50%; transform:translateX(-50%);
+      background:rgba(34,34,59,0.98); backdrop-filter:blur(12px);
+      min-width:200px; padding:0.5rem 0;
+      border-top:2px solid var(--ember);
+      box-shadow:0 12px 40px rgba(0,0,0,0.3);
+      z-index:300;
+    }
+    .nav-dropdown:hover .nav-dropdown-menu { display:block; }
+    .nav-dropdown-menu a {
+      display:block; padding:0.65rem 1.4rem;
+      font-size:0.68rem; letter-spacing:0.16em; text-transform:uppercase;
+      color:var(--linen); text-decoration:none; font-weight:500;
+      opacity:0.7; transition:all 0.2s;
+      border-left:2px solid transparent;
+    }
+    .nav-dropdown-menu a:hover { color:var(--ember); opacity:1; background:rgba(217,93,57,0.06); border-left-color:var(--ember); }
+    .nav-dropdown-menu a.active { color:var(--ember); opacity:1; border-left-color:var(--ember); }
+
+    /* HAMBURGER */
+    .hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; padding:4px; background:none; border:none; }
+    .hamburger span { display:block; width:24px; height:2px; background:var(--linen); transition:all 0.3s; }
+    .mobile-menu { display:none; position:fixed; inset:0; background:var(--ink); z-index:300; flex-direction:column; align-items:center; justify-content:center; gap:0; overflow-y:auto; padding:4rem 2rem; }
+    .mobile-menu.open { display:flex; }
+    .mobile-menu .mob-main { font-family:'Cormorant Garamond',serif; font-size:2.4rem; font-style:italic; color:var(--linen); text-decoration:none; letter-spacing:0.06em; padding:0.5rem 0; }
+    .mobile-menu .mob-main.active, .mobile-menu .mob-main:hover { color:var(--ember); }
+    .mobile-menu .mob-sub-group { width:100%; text-align:center; margin:0.2rem 0 0.8rem; }
+    .mobile-menu .mob-sub-label { font-size:0.6rem; letter-spacing:0.22em; text-transform:uppercase; color:var(--ember); font-weight:600; margin-bottom:0.5rem; opacity:0.8; }
+    .mobile-menu .mob-sub { font-size:0.85rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--linen); text-decoration:none; display:block; padding:0.3rem 0; opacity:0.6; }
+    .mobile-menu .mob-sub:hover { opacity:1; color:var(--ember); }
+    .mobile-close { position:absolute; top:2rem; right:2rem; background:none; border:none; color:var(--linen); font-size:1.8rem; cursor:pointer; }
+    @media(max-width:900px) { nav { padding:1.2rem 1.8rem; } .nav-links { display:none; } .hamburger { display:flex; } }
+
+    
+    /* PAGE HEADER */
+    .page-header {
+      background:var(--ink); padding:9rem 5rem 4rem;
+      position:relative; overflow:hidden;
+    }
+    .page-header::before {
+      content:''; position:absolute; inset:0;
+      background:radial-gradient(ellipse at 15% 80%, rgba(217,93,57,0.1) 0%, transparent 55%);
+      pointer-events:none;
+    }
+    .header-bg-word {
+      position:absolute; right:-1rem; top:50%; transform:translateY(-50%);
+      font-family:'DM Serif Display',serif; font-size:clamp(6rem,18vw,18rem);
+      color:rgba(195,186,170,0.04); font-style:italic; pointer-events:none;
+    }
+    .page-eyebrow { font-size:0.62rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--ember); font-weight:600; margin-bottom:0.8rem; }
+    .page-title { font-family:'DM Serif Display',serif; font-size:clamp(2.5rem,6vw,5rem); color:var(--off-white); line-height:1.05; margin-bottom:1rem; }
+    .page-sub { font-size:0.92rem; color:var(--linen); opacity:0.65; max-width:520px; line-height:1.7; }
+
+    /* CITY GUIDE INTRO STRIP */
+    .guide-strip {
+      display:grid; grid-template-columns:repeat(3,1fr);
+      border-bottom:1px solid rgba(195,186,170,0.12);
+      background:var(--ink);
+    }
+    .guide-strip-item {
+      padding:1.8rem 3rem; border-right:1px solid rgba(195,186,170,0.08);
+      text-decoration:none; transition:background 0.2s;
+    }
+    .guide-strip-item:last-child { border-right:none; }
+    .guide-strip-item:hover { background:rgba(217,93,57,0.06); }
+    .guide-label { font-size:0.58rem; letter-spacing:0.22em; text-transform:uppercase; color:var(--ember); font-weight:600; margin-bottom:0.4rem; }
+    .guide-title { font-family:'Cormorant Garamond',serif; font-size:1.1rem; color:var(--linen); font-style:italic; }
+    .guide-sub { font-size:0.72rem; color:var(--linen); opacity:0.4; margin-top:0.2rem; }
+
+    /* MAIN LAYOUT */
+    .calendar-wrap { display:grid; grid-template-columns:320px 1fr; min-height:80vh; }
+
+    /* SIDEBAR: mini calendar + filters */
+    .cal-sidebar { background:var(--cream); border-right:1px solid rgba(195,186,170,0.2); padding:2rem; position:sticky; top:78px; height:calc(100vh - 78px); overflow-y:auto; }
+    .cal-sidebar::-webkit-scrollbar { width:3px; }
+    .cal-sidebar::-webkit-scrollbar-thumb { background:var(--linen); border-radius:2px; }
+
+    /* Mini calendar */
+    .mini-cal { margin-bottom:2rem; }
+    .mini-cal-header { display:flex; align-items:center; justify-content:space-between; margin-bottom:1rem; }
+    .mini-cal-month { font-family:'Cormorant Garamond',serif; font-size:1.1rem; color:var(--ink); font-weight:600; }
+    .cal-nav-btn { background:none; border:1px solid rgba(195,186,170,0.4); color:var(--slate); font-size:0.8rem; width:28px; height:28px; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:all 0.2s; }
+    .cal-nav-btn:hover { border-color:var(--ember); color:var(--ember); }
+    .mini-cal-grid { display:grid; grid-template-columns:repeat(7,1fr); gap:2px; }
+    .cal-day-label { font-size:0.58rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--slate); text-align:center; padding:4px 0; opacity:0.5; }
+    .cal-day { font-size:0.75rem; text-align:center; padding:5px 2px; cursor:pointer; color:var(--slate); border-radius:2px; transition:all 0.15s; position:relative; }
+    .cal-day:hover { background:rgba(217,93,57,0.1); color:var(--ember); }
+    .cal-day.today { font-weight:600; color:var(--ink); }
+    .cal-day.has-event::after { content:''; display:block; width:4px; height:4px; background:var(--ember); border-radius:50%; margin:1px auto 0; }
+    .cal-day.selected { background:var(--ember); color:#fff; }
+    .cal-day.selected::after { background:#fff; }
+    .cal-day.other-month { opacity:0.25; }
+
+    /* Category filters */
+    .filter-section { margin-bottom:1.5rem; }
+    .filter-heading { font-size:0.6rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--slate); font-weight:600; margin-bottom:0.8rem; opacity:0.6; }
+    .cat-filters { display:flex; flex-direction:column; gap:0.4rem; }
+    .cat-filter-btn {
+      display:flex; align-items:center; gap:0.6rem;
+      padding:0.5rem 0.8rem; background:transparent;
+      border:1px solid rgba(195,186,170,0.2); cursor:pointer;
+      font-family:'Jost',sans-serif; font-size:0.72rem; color:var(--slate);
+      transition:all 0.2s; text-align:left;
+    }
+    .cat-filter-btn:hover { border-color:var(--ember); color:var(--ember); }
+    .cat-filter-btn.active { background:var(--ink); color:var(--off-white); border-color:var(--ink); }
+    .cat-dot { width:8px; height:8px; border-radius:50%; flex-shrink:0; }
+    .clear-filter-btn { margin-top:0.5rem; font-size:0.65rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--ember); background:none; border:none; cursor:pointer; padding:0.3rem 0; opacity:0.7; }
+    .clear-filter-btn:hover { opacity:1; }
+
+    /* Submit event */
+    .sidebar-cta { background:var(--ink); padding:1.2rem; text-align:center; margin-top:1rem; }
+    .sidebar-cta-text { font-size:0.72rem; color:var(--linen); opacity:0.6; margin-bottom:0.6rem; line-height:1.5; }
+    .sidebar-cta-btn { display:block; font-size:0.62rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--ember); text-decoration:none; font-weight:600; }
+
+    /* EVENT LIST */
+    .event-list-col { padding:2.5rem 3rem; }
+    .month-group { margin-bottom:3rem; }
+    .month-label { font-family:'DM Serif Display',serif; font-size:1.6rem; color:var(--ink); margin-bottom:1.2rem; padding-bottom:0.6rem; border-bottom:1px solid rgba(195,186,170,0.2); font-weight:400; }
+    .event-card {
+      display:grid; grid-template-columns:64px 1fr auto;
+      gap:1.2rem; align-items:start;
+      padding:1.2rem 0; border-bottom:1px solid rgba(195,186,170,0.12);
+      transition:background 0.18s;
+    }
+    .event-card:hover { background:rgba(217,93,57,0.03); }
+    .event-date-block { text-align:center; flex-shrink:0; }
+    .event-day-num { font-family:'DM Serif Display',serif; font-size:2rem; color:var(--ink); line-height:1; }
+    .event-day-name { font-size:0.6rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--slate); opacity:0.6; }
+    .event-body { flex:1; }
+    .event-cat-tag { display:inline-block; font-size:0.58rem; letter-spacing:0.14em; text-transform:uppercase; font-weight:700; margin-bottom:0.3rem; padding:2px 6px; border-radius:2px; }
+    .event-title { font-family:'Cormorant Garamond',serif; font-size:1.25rem; color:var(--ink); font-weight:600; line-height:1.2; margin-bottom:0.3rem; }
+    .event-meta { font-size:0.75rem; color:var(--slate); display:flex; gap:1rem; flex-wrap:wrap; margin-bottom:0.4rem; }
+    .event-desc { font-size:0.8rem; color:var(--slate); line-height:1.6; max-width:520px; }
+    .event-right { display:flex; flex-direction:column; align-items:flex-end; gap:0.5rem; flex-shrink:0; }
+    .event-price { font-family:'Cormorant Garamond',serif; font-size:1.1rem; color:var(--ink); font-weight:600; white-space:nowrap; }
+    .event-price.free { color:#2E7D5E; }
+    .event-book-btn {
+      display:inline-block; padding:0.45rem 1.1rem;
+      font-size:0.62rem; letter-spacing:0.15em; text-transform:uppercase;
+      font-weight:600; text-decoration:none; transition:all 0.2s;
+      background:var(--ember); color:#fff; white-space:nowrap;
+    }
+    .event-book-btn:hover { opacity:0.85; }
+    .no-events-msg { padding:4rem; text-align:center; color:var(--slate); opacity:0.5; font-style:italic; font-family:'Cormorant Garamond',serif; font-size:1.2rem; }
+
+    /* RECURRING SECTION */
+    .recurring-section { background:var(--light-bg); padding:5rem 3rem; border-top:1px solid rgba(195,186,170,0.15); }
+    .rec-header { margin-bottom:2.5rem; }
+    .rec-eyebrow { font-size:0.62rem; letter-spacing:0.22em; text-transform:uppercase; color:var(--ember); font-weight:600; margin-bottom:0.6rem; }
+    .rec-title { font-family:'DM Serif Display',serif; font-size:clamp(1.6rem,4vw,2.4rem); color:var(--ink); font-weight:400; }
+    .rec-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:1.2rem; }
+    .rec-card { background:var(--off-white); display:flex; overflow:hidden; transition:transform 0.2s,box-shadow 0.2s; }
+    .rec-card:hover { transform:translateY(-3px); box-shadow:0 8px 24px rgba(34,34,59,0.08); }
+    .rec-accent { width:4px; flex-shrink:0; }
+    .rec-inner { padding:1.4rem 1.5rem; flex:1; display:flex; flex-direction:column; gap:0.4rem; }
+    .rec-cat { font-size:0.58rem; letter-spacing:0.16em; text-transform:uppercase; font-weight:700; }
+    .rec-title-card { font-family:'Cormorant Garamond',serif; font-size:1.15rem; color:var(--ink); font-weight:600; line-height:1.2; }
+    .rec-meta { display:flex; gap:0.8rem; font-size:0.72rem; color:var(--slate); flex-wrap:wrap; margin-top:0.2rem; }
+    .rec-days { font-weight:600; color:var(--ink); }
+    .rec-loc { font-size:0.75rem; color:var(--slate); }
+    .rec-notes { font-size:0.72rem; color:var(--slate); opacity:0.7; font-style:italic; }
+    .rec-footer { display:flex; align-items:center; justify-content:space-between; margin-top:auto; padding-top:0.8rem; border-top:1px solid rgba(195,186,170,0.2); }
+    .rec-price { font-family:'Cormorant Garamond',serif; font-size:1.1rem; color:var(--ink); font-weight:600; }
+    .rec-link { font-size:0.62rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--ember); text-decoration:none; font-weight:600; border-bottom:1px solid rgba(217,93,57,0.3); }
+
+    /* FOOTER */
+    footer { background:var(--ink); padding:3rem 4rem; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem; }
+    .footer-logo { font-family:'Cormorant Garamond',serif; font-size:1.3rem; letter-spacing:0.2em; color:var(--linen); text-transform:uppercase; }
+    .footer-logo span { color:var(--ember); font-style:italic; }
+    .footer-links { display:flex; gap:1.5rem; flex-wrap:wrap; }
+    .footer-links a { color:var(--linen); text-decoration:none; font-size:0.7rem; letter-spacing:0.18em; text-transform:uppercase; opacity:0.5; transition:opacity 0.2s; }
+    .footer-links a:hover { opacity:1; }
+    .footer-copy { font-size:0.7rem; color:var(--linen); opacity:0.3; }
+    @media(max-width:900px) {
+      .calendar-wrap { grid-template-columns:1fr; }
+      .cal-sidebar { position:static; height:auto; }
+      .event-list-col { padding:2rem 1.5rem; }
+      .guide-strip { grid-template-columns:1fr; }
+      .event-card { grid-template-columns:48px 1fr; }
+      .event-right { grid-column:2; flex-direction:row; align-items:center; justify-content:flex-start; }
+      footer { padding:2rem 1.5rem; flex-direction:column; text-align:center; }
+    }
+  
+    
+    
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.3rem 4rem;
+      background: rgba(34,34,59,0.97);
+      backdrop-filter: blur(12px);
+    }
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.45rem; font-weight: 300;
+      letter-spacing: 0.18em; color: var(--linen);
+      text-transform: uppercase; text-decoration: none;
+    }
+    .nav-logo span { color: var(--ember); font-style: italic; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
+    .nav-links > li { position: relative; }
+    .nav-links a {
+      text-decoration: none; color: var(--linen);
+      font-size: 0.72rem; letter-spacing: 0.18em;
+      text-transform: uppercase; font-weight: 500;
+      transition: color 0.25s; opacity: 0.75;
+      white-space: nowrap; cursor: pointer; display: block;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--ember); opacity: 1; }
+    .nav-cta {
+      background: var(--ember) !important; color: #fff !important;
+      padding: 0.5rem 1.3rem !important; opacity: 1 !important;
+      display: block;
+    }
+    .nav-cta:hover { opacity: 0.88 !important; }
+    /* Dropdown */
+    .nav-dropdown-toggle {
+      display: flex; align-items: center; gap: 0.35rem;
+    }
+    .nav-dropdown-toggle::after {
+      content: '';
+      display: inline-block; width: 5px; height: 5px;
+      border-right: 1.5px solid currentColor;
+      border-bottom: 1.5px solid currentColor;
+      transform: rotate(45deg) translateY(-2px);
+      transition: transform 0.2s;
+      flex-shrink: 0;
+    }
+    .nav-dropdown:hover .nav-dropdown-toggle::after {
+      transform: rotate(225deg) translateY(1px);
+    }
+    .nav-dropdown-menu {
+      display: none; position: absolute;
+      top: 100%; left: 50%;
+      transform: translateX(-50%);
+      padding-top: 12px; /* pushes menu down visually without creating a gap */
+      background: transparent;
+      z-index: 400;
+      min-width: 210px;
+    }
+    /* The actual visible menu box sits inside an inner div */
+    .nav-dropdown-menu-inner {
+      background: rgba(34,34,59,0.99);
+      backdrop-filter: blur(12px);
+      padding: 0.5rem 0;
+      border-top: 2px solid var(--ember);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.35);
+    }
+    /* Invisible bridge covers the 12px gap so mouse stays "inside" the element */
+    .nav-dropdown-menu::before {
+      content: '';
+      display: block;
+      height: 12px;
+      width: 100%;
+    }
+    .nav-dropdown:hover .nav-dropdown-menu,
+    .nav-dropdown.open .nav-dropdown-menu { display: block; }
+    .nav-dropdown-menu a {
+      display: block; padding: 0.65rem 1.4rem;
+      font-size: 0.68rem; letter-spacing: 0.16em;
+      text-transform: uppercase; color: var(--linen);
+      text-decoration: none; font-weight: 500;
+      opacity: 0.65; transition: all 0.18s;
+      border-left: 2px solid transparent;
+    }
+    .nav-dropdown-menu a:hover,
+    .nav-dropdown-menu a.active {
+      color: var(--ember); opacity: 1;
+      background: rgba(217,93,57,0.06);
+      border-left-color: var(--ember);
+    }
+    .nav-dropdown-menu a {
+      display: block; padding: 0.65rem 1.4rem;
+      font-size: 0.68rem; letter-spacing: 0.16em;
+      text-transform: uppercase; color: var(--linen);
+      text-decoration: none; font-weight: 500;
+      opacity: 0.65; transition: all 0.18s;
+      border-left: 2px solid transparent;
+    }
+    .nav-dropdown-menu a:hover,
+    .nav-dropdown-menu a.active {
+      color: var(--ember); opacity: 1;
+      background: rgba(217,93,57,0.06);
+      border-left-color: var(--ember);
+    }
+    /* Hamburger */
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      cursor: pointer; padding: 4px; background: none; border: none;
+    }
+    .hamburger span {
+      display: block; width: 24px; height: 2px;
+      background: var(--linen); transition: all 0.3s;
+    }
+    /* Mobile overlay menu */
+    .mobile-menu {
+      display: none; position: fixed; inset: 0;
+      background: var(--ink); z-index: 500;
+      flex-direction: column; align-items: center;
+      justify-content: center; gap: 0;
+      overflow-y: auto; padding: 5rem 2rem 3rem;
+    }
+    .mobile-menu.open { display: flex; }
+    .mob-main {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem; font-style: italic;
+      color: var(--linen); text-decoration: none;
+      letter-spacing: 0.06em; padding: 0.45rem 0;
+      display: block;
+    }
+    .mob-main:hover, .mob-main.active { color: var(--ember); }
+    .mob-sub-group {
+      width: 100%; text-align: center;
+      margin: 0.4rem 0 0.9rem;
+      border-top: 1px solid rgba(195,186,170,0.1);
+      border-bottom: 1px solid rgba(195,186,170,0.1);
+      padding: 0.8rem 0;
+    }
+    .mob-sub-label {
+      font-size: 0.58rem; letter-spacing: 0.24em;
+      text-transform: uppercase; color: var(--ember);
+      font-weight: 600; margin-bottom: 0.6rem;
+    }
+    .mob-sub {
+      display: block; font-size: 0.78rem;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--linen); text-decoration: none;
+      padding: 0.3rem 0; opacity: 0.6;
+    }
+    .mob-sub:hover, .mob-sub.active { opacity: 1; color: var(--ember); }
+    .mobile-close {
+      position: absolute; top: 2rem; right: 2rem;
+      background: none; border: none;
+      color: var(--linen); font-size: 1.8rem; cursor: pointer;
+    }
+    @media (max-width: 900px) {
+      nav { padding: 1.1rem 1.5rem; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--ink);
+      padding: 3rem 4rem;
+      display: flex; align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap; gap: 1.2rem;
+      border-top: 1px solid rgba(195,186,170,0.08);
+    }
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem; letter-spacing: 0.2em;
+      color: var(--linen); text-transform: uppercase; text-decoration: none;
+    }
+    .footer-logo span { color: var(--ember); font-style: italic; }
+    .footer-links { display: flex; gap: 1.2rem; flex-wrap: wrap; justify-content: center; }
+    .footer-links a {
+      color: var(--linen); text-decoration: none;
+      font-size: 0.66rem; letter-spacing: 0.16em;
+      text-transform: uppercase; opacity: 0.45; transition: opacity 0.2s;
+    }
+    .footer-links a:hover { opacity: 1; }
+    .footer-ig {
+      font-size: 0.66rem; letter-spacing: 0.16em;
+      text-transform: uppercase; color: var(--linen);
+      text-decoration: none; opacity: 0.45; transition: opacity 0.2s;
+    }
+    .footer-ig:hover { opacity: 1; }
+    .footer-copy {
+      width: 100%; text-align: center;
+      font-size: 0.63rem; color: var(--linen); opacity: 0.2;
+    }
+    @media (max-width: 768px) {
+      footer { padding: 2rem 1.5rem; flex-direction: column; text-align: center; }
+      .footer-links { justify-content: center; }
+    }
+
+    /* Mobile nav In the City button matches main items exactly */
+    .mob-city-btn {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem;
+      font-style: italic;
+      color: var(--linen);
+      background: none;
+      border: none;
+      cursor: pointer;
+      letter-spacing: 0.06em;
+      padding: 0.45rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      width: auto;
+      text-align: center;
+    }
+    .mob-city-btn:hover,
+    .mob-city-btn.active { color: var(--ember); }
+    .mob-city-arrow {
+      font-style: normal;
+      font-size: 1.4rem;
+      line-height: 1;
+      transition: transform 0.2s;
+      display: inline-block;
+    }
+    .mob-city-sub {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.2rem;
+      padding: 0.6rem 0 0.8rem;
+      width: 100%;
+    }
+    .mob-city-sub.open { display: flex; }
+    /* Sub-links slightly smaller than main items */
+    .mob-sub {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--linen);
+      text-decoration: none;
+      padding: 0.35rem 0;
+      opacity: 0.6;
+      display: block;
+    }
+    .mob-sub:hover,
+    .mob-sub.active { opacity: 1; color: var(--ember); }
+    /* Hide old mob-sub-group if present */
+    .mob-sub-group { display: none !important; }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/index.html" class="nav-logo">The Modern <span>Muse</span></a>
+            <ul class="nav-links">
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/muse-events.html">Muse Events</a></li>
+      <li class="nav-dropdown">
+        <a class="nav-dropdown-toggle active">In the City</a>
+        <div class="nav-dropdown-menu">
+          <div class="nav-dropdown-menu-inner">
+            <a href="/in-the-city.html">Local Events</a>
+            <a href="/social-clubs.html">Social Club Directory</a>
+            <a href="/social-hours.html">Social Hours</a>
+          </div>
+        </div>
+      </li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+        <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-close" id="mobileClose">✕</button>
+    <a href="/index.html" class="mob-main">Home</a>
+    <a href="/about.html" class="mob-main">About</a>
+    <a href="/muse-events.html" class="mob-main">Muse Events</a>
+    <button id="mobCityBtn" class="mob-city-btn">
+      In the City <span id="mobCityArrow" class="mob-city-arrow">›</span>
+    </button>
+    <div id="mobCitySub" class="mob-city-sub">
+      <a href="/in-the-city.html" class="mob-sub active">Local Events</a>
+      <a href="/social-clubs.html" class="mob-sub">Social Club Directory</a>
+      <a href="/social-hours.html" class="mob-sub">Social Hours</a>
+    </div>
+    <a href="/contact.html" class="mob-main">Contact</a>
+  </div>
+
+<!-- HEADER -->
+  <div class="page-header">
+    <div class="header-bg-word">City</div>
+    <div class="page-eyebrow">The City Guide</div>
+    <h1 class="page-title">In the City</h1>
+    <p class="page-sub">Local events worth showing up for. New this week, and coming up this month. Prices shown so you can plan ahead.</p>
+  </div>
+
+  <!-- CITY GUIDE STRIP -->
+  <div class="guide-strip">
+    <a href="/in-the-city.html" class="guide-strip-item">
+      <div class="guide-label">Events Calendar</div>
+      <div class="guide-title">What's Happening</div>
+      <div class="guide-sub">Local events, workshops, experiences</div>
+    </a>
+    <a href="/social-hours.html" class="guide-strip-item">
+      <div class="guide-label">Social Hours</div>
+      <div class="guide-title">Drink Deals</div>
+      <div class="guide-sub">150+ venues with daily specials</div>
+    </a>
+    <a href="/social-clubs.html" class="guide-strip-item">
+      <div class="guide-label">Social Clubs</div>
+      <div class="guide-title">Find Your People</div>
+      <div class="guide-sub">Women-led groups and communities</div>
+    </a>
+  </div>
+
+  <!-- MAIN CALENDAR LAYOUT -->
+  <div class="calendar-wrap">
+
+    <!-- SIDEBAR -->
+    <aside class="cal-sidebar">
+      <div class="mini-cal">
+        <div class="mini-cal-header">
+          <button class="cal-nav-btn" id="prevMonth">&#8249;</button>
+          <div class="mini-cal-month" id="calMonth">March 2026</div>
+          <button class="cal-nav-btn" id="nextMonth">&#8250;</button>
+        </div>
+        <div class="mini-cal-grid" id="miniCal"></div>
+      </div>
+
+      <div class="filter-section">
+        <div class="filter-heading">Filter by Category</div>
+        <div class="cat-filters">
+          <button class="cat-filter-btn active" data-cat="all">
+            <span class="cat-dot" style="background:var(--linen);"></span>All Events
+          </button>
+          <button class="cat-filter-btn" data-cat="Fitness & Wellness">
+            <span class="cat-dot" style="background:#2E7D5E;"></span>Fitness &amp; Wellness
+          </button>
+          <button class="cat-filter-btn" data-cat="Social">
+            <span class="cat-dot" style="background:#D95D39;"></span>Social
+          </button>
+          <button class="cat-filter-btn" data-cat="Arts & Culture">
+            <span class="cat-dot" style="background:#4A4E69;"></span>Arts &amp; Culture
+          </button>
+          <button class="cat-filter-btn" data-cat="Food & Drink">
+            <span class="cat-dot" style="background:#7B3E19;"></span>Food &amp; Drink
+          </button>
+          <button class="cat-filter-btn" data-cat="Networking">
+            <span class="cat-dot" style="background:#22223B;"></span>Networking
+          </button>
+          <button class="cat-filter-btn" data-cat="Family Friendly">
+            <span class="cat-dot" style="background:#E8A838;"></span>Family Friendly
+          </button>
+        </div>
+        <button class="clear-filter-btn" id="clearFilter">Clear filter</button>
+      </div>
+
+      <div class="sidebar-cta">
+        <div class="sidebar-cta-text">Know about an event we should feature?</div>
+        <a href="/contact.html" class="sidebar-cta-btn">Submit an Event</a>
+      </div>
+    </aside>
+
+    <!-- EVENT LIST -->
+    <div class="event-list-col" id="eventList">
+      <div id="noEvents" class="no-events-msg" style="display:none;">No events match your filter.</div>
+    </div>
+  </div>
+
+  <!-- RECURRING EVENTS -->
+  <section class="recurring-section">
+    <div class="rec-header">
+      <div class="rec-eyebrow">Every Week, Without Fail</div>
+      <h2 class="rec-title">Recurring Events</h2>
+    </div>
+    <div class="rec-grid">
+      
+      <div class="rec-card">
+        <div class="rec-accent" style="background:#2E7D5E;"></div>
+        <div class="rec-inner">
+          <div class="rec-cat" style="color:#2E7D5E;">Fitness & Wellness</div>
+          <div class="rec-title">Mat Mondays: Pilates with Music Box Movement</div>
+          <div class="rec-meta">
+            <span class="rec-days">Mondays</span>
+            <span class="rec-time">6-7pm</span>
+          </div>
+          <div class="rec-loc">📍 Sheree Michelle Fitness Studio</div>
+          
+          <div class="rec-footer">
+            <span class="rec-price">$24</span>
+            
+          </div>
+        </div>
+      </div>
+      <div class="rec-card">
+        <div class="rec-accent" style="background:#2E7D5E;"></div>
+        <div class="rec-inner">
+          <div class="rec-cat" style="color:#2E7D5E;">Fitness & Wellness</div>
+          <div class="rec-title">Archery</div>
+          <div class="rec-meta">
+            <span class="rec-days">Thursdays & Saturdays</span>
+            <span class="rec-time">6:30-8:30pm(Thursdays) 9:30am-12:30pm(Saturdays)</span>
+          </div>
+          <div class="rec-loc">📍 Clark County Shooting Complex</div>
+          <div class="rec-notes">Walk In only. No prior experience needed.</div>
+          <div class="rec-footer">
+            <span class="rec-price">$15</span>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+
+  <script>
+  const EVENTS = [{"date": "2026-03-14", "time": "04:30:00", "title": "Ranch Reset Wellness Social", "location": "Private Las Vegas Ranch", "description": "A sunset wellness experience featuring Pilates, yoga, a sound bath, and interaction with horses.", "category": "Fitness & wellness", "color": "#2E7D5E", "url": "https://thestillproject.org", "price": ""}, {"date": "2026-03-18", "time": "06:15:00", "title": "Spring Yoga with Ranunculus", "location": "Gilcrease Orchard", "description": "Start your morning with a refreshing yoga flow surrounded by blooming ranunculus fields.", "category": "Fitness & wellness", "color": "#2E7D5E", "url": "https://thegilcreaseorchard.org", "price": ""}, {"date": "2026-03-20", "time": "05:15:00", "title": "Sunset Spring Yoga", "location": "Gilcrease Orchard", "description": "An evening yoga session at the orchard designed to help you unwind during the golden hour.", "category": "Fitness & wellness", "color": "#2E7D5E", "url": "https://thegilcreaseorchard.org", "price": ""}, {"date": "2026-03-21", "time": "01:00:00", "title": "Tiki Terracotta Workshop", "location": "UnCommons", "description": "Hand-build a custom tiki planter with ISO Ceramics; includes materials and a complimentary cocktail.", "category": "Arts & culture", "color": "#4A4E69", "url": "https://isoceramics.com", "price": ""}, {"date": "2026-03-21", "time": "06:00:00", "title": "Bookish Bestie Night", "location": "XOXO, Book Boutique", "description": "A platonic speed-friendship event for readers featuring bracelet making, charms, and refreshments.", "category": "Social", "color": "#D95D39", "url": "https://xoxobookboutique.com", "price": ""}, {"date": "2026-03-23", "time": "06:00:00", "title": "Solara White Party", "location": "Bel-Aire Backyard", "description": "A \"Sunset Ritual\" at Durango Resort featuring music, movement, a sound bath, and a night swim.", "category": "Social", "color": "#D95D39", "url": "https://ritualcollective.com", "price": ""}, {"date": "2026-03-24", "time": "05:00:00", "title": "Rooftop Candlelit Pilates", "location": "Keller Cactus Hills", "description": "A serene evening session of candlelit Pilates and meditation followed by wellness shots and juices.", "category": "Fitness & wellness", "color": "#2E7D5E", "url": "https://pi-lattes.com", "price": ""}, {"date": "2026-03-25", "time": "06:15:00", "title": "Sunrise Spring Yoga", "location": "Gilcrease Orchard", "description": "A sunrise yoga practice located in the heart of the historic orchard's flower fields.", "category": "Fitness & wellness", "color": "#2E7D5E", "url": "https://thegilcreaseorchard.org", "price": ""}, {"date": "2026-03-27", "time": "06:15:00", "title": "Sunrise Spring Yoga", "location": "Gilcrease Orchard", "description": "An early morning yoga flow surrounded by blooming ranunculus flowers in the historic orchard.", "category": "Fitness & wellness", "color": "#2E7D5E", "url": "https://thegilcreaseorchard.org", "price": ""}, {"date": "2026-03-27", "time": "05:15:00", "title": "Sunset Spring Yoga", "location": "Gilcrease Orchard", "description": "Unwind with a sunset yoga practice set against the beautiful backdrop of the spring orchard.", "category": "Fitness & wellness", "color": "#2E7D5E", "url": "https://thegilcreaseorchard.org", "price": ""}, {"date": "2026-03-28", "time": "05:15:00", "title": "Sunset Spring Yoga", "location": "Gilcrease Orchard", "description": "A golden hour yoga session at the orchard perfect for unwinding among the spring flower fields.", "category": "Fitness & wellness", "color": "#2E7D5E", "url": "https://thegilcreaseorchard.org", "price": ""}, {"date": "2026-03-29", "time": "12:00:00", "title": "Pilates Pool Party", "location": "Ariva", "description": "Get Fit event with cardio splash, pool deck Pilates, and food.", "category": "Fitness & Social", "color": "#2E7D5E", "url": "https://sweatpals.com", "price": ""}, {"date": "2026-04-04", "time": "09:00:00", "title": "Yoga with the Lions", "location": "Lion Habitat Ranch", "description": "60-minute all-levels yoga flow followed by general admission.", "category": "Fitness & Wellness", "color": "#2E7D5E", "url": "https://lionhabitatranch.org", "price": ""}, {"date": "2026-04-04", "time": "01:00:00", "title": "Girls Paint at the Park", "location": "NW Las Vegas", "description": "Elevated outdoor paint experience with mocktails and a floral bar.", "category": "Arts & Culture", "color": "#4A4E69", "url": "https://girlsnightinpaintandsip.com", "price": ""}, {"date": "2026-04-18", "time": "TBD", "title": "Restore & Replenish Retreat", "location": "Self Elevate Studios", "description": "A full women's wellness retreat focused on reconnecting with self.", "category": "Fitness & Wellness", "color": "#2E7D5E", "url": "https://girlspaintinsipandpaint.com", "price": ""}, {"date": "2026-05-02", "time": "09:00:00", "title": "Yoga with the Lions", "location": "Lion Habitat Ranch", "description": "Morning yoga session with the lions including ranch admission.", "category": "Fitness & Wellness", "color": "#2E7D5E", "url": "https://lionhabitatranch.org", "price": ""}, {"date": "2026-05-02", "time": "09:00:00", "title": "Horses X Pilates", "location": "1937 Calico Dr", "description": "Elevated morning combining horses and Pilates movement.", "category": "Fitness & Wellness", "color": "#2E7D5E", "url": "https://lwactive.com", "price": ""}, {"date": "2026-10-09", "time": "TBD", "title": "Las Vegas Black Rodeo", "location": "Horseman’s Park", "description": "The Hottest Shows on Dirt featuring the 2026 Black Rodeo USA season.", "category": "Social & Culture", "color": "#D95D39", "url": "https://blackrodeousa.com", "price": ""}];
+
+  const CAT_COLORS = {
+    'Fitness & wellness':'#2E7D5E','Fitness & Wellness':'#2E7D5E',
+    'Fitness & Social':'#2E7D5E','Social':'#D95D39','Social & Culture':'#D95D39',
+    'Arts & culture':'#4A4E69','Arts & Culture':'#4A4E69',
+    'Food & Drink':'#7B3E19','Networking':'#22223B','Family Friendly':'#E8A838'
+  };
+
+  function getCatColor(cat) {
+    return CAT_COLORS[cat] || '#D95D39';
+  }
+
+  function normCat(cat) {
+    const c = cat.toLowerCase();
+    if (c.includes('fitness') || c.includes('wellness')) return 'Fitness & Wellness';
+    if (c.includes('arts')) return 'Arts & Culture';
+    if (c.includes('food')) return 'Food & Drink';
+    if (c.includes('network')) return 'Networking';
+    if (c.includes('family')) return 'Family Friendly';
+    return 'Social';
+  }
+
+  // Mini calendar
+  let currentMonth = new Date(2026, 2, 1); // March 2026
+  let selectedCat = 'all';
+
+  const eventDates = new Set(EVENTS.map(e => e.date));
+
+  function renderMiniCal() {
+    const year = currentMonth.getFullYear();
+    const month = currentMonth.getMonth();
+    const monthNames = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+    document.getElementById('calMonth').textContent = monthNames[month] + ' ' + year;
+    const grid = document.getElementById('miniCal');
+    grid.innerHTML = '';
+    ['Su','Mo','Tu','We','Th','Fr','Sa'].forEach(d => {
+      const el = document.createElement('div');
+      el.className = 'cal-day-label'; el.textContent = d;
+      grid.appendChild(el);
+    });
+    const first = new Date(year, month, 1).getDay();
+    const days = new Date(year, month+1, 0).getDate();
+    const today = new Date();
+    for (let i = 0; i < first; i++) {
+      const el = document.createElement('div');
+      el.className = 'cal-day other-month'; grid.appendChild(el);
+    }
+    for (let d = 1; d <= days; d++) {
+      const el = document.createElement('div');
+      el.className = 'cal-day';
+      const ds = `${year}-${String(month+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+      if (eventDates.has(ds)) el.classList.add('has-event');
+      if (d === today.getDate() && month === today.getMonth() && year === today.getFullYear()) el.classList.add('today');
+      el.textContent = d;
+      el.addEventListener('click', () => scrollToDate(ds));
+      grid.appendChild(el);
+    }
+  }
+
+  document.getElementById('prevMonth').addEventListener('click', () => {
+    currentMonth.setMonth(currentMonth.getMonth()-1); renderMiniCal();
+  });
+  document.getElementById('nextMonth').addEventListener('click', () => {
+    currentMonth.setMonth(currentMonth.getMonth()+1); renderMiniCal();
+  });
+
+  function scrollToDate(ds) {
+    const el = document.querySelector(`[data-event-date="${ds}"]`);
+    if (el) el.scrollIntoView({ behavior:'smooth', block:'center' });
+  }
+
+  // Build event list
+  function renderEvents(cat) {
+    const col = document.getElementById('eventList');
+    const noMsg = document.getElementById('noEvents');
+    const filtered = cat === 'all' ? EVENTS : EVENTS.filter(e => normCat(e.category) === cat);
+    if (filtered.length === 0) { noMsg.style.display = 'block'; return; }
+    noMsg.style.display = 'none';
+
+    // Group by month
+    const months = {};
+    filtered.forEach(e => {
+      const d = new Date(e.date + 'T12:00:00');
+      const key = d.toLocaleDateString('en-US', { month:'long', year:'numeric' });
+      if (!months[key]) months[key] = [];
+      months[key].push(e);
+    });
+
+    // Clear old content (keep noEvents)
+    Array.from(col.children).forEach(c => { if (c.id !== 'noEvents') c.remove(); });
+
+    Object.entries(months).forEach(([month, evts]) => {
+      const group = document.createElement('div');
+      group.className = 'month-group';
+      group.innerHTML = `<div class="month-label">${month}</div>`;
+      evts.forEach(e => {
+        const d = new Date(e.date + 'T12:00:00');
+        const dayNum = d.getDate();
+        const dayName = d.toLocaleDateString('en-US',{weekday:'short'});
+        const color = getCatColor(e.category);
+        const catDisplay = normCat(e.category);
+        const priceHtml = e.price
+          ? `<div class="event-price${e.price.toLowerCase()==='free'?' free':''}">  ${e.price}</div>`
+          : `<div class="event-price" style="color:var(--slate);font-size:0.75rem;opacity:0.6;">See site</div>`;
+        const bookBtn = e.url
+          ? `<a href="${e.url}" target="_blank" class="event-book-btn">Book Now</a>`
+          : '';
+        const card = document.createElement('div');
+        card.className = 'event-card';
+        card.dataset.eventDate = e.date;
+        card.dataset.cat = catDisplay;
+        card.innerHTML = `
+          <div class="event-date-block">
+            <div class="event-day-num">${dayNum}</div>
+            <div class="event-day-name">${dayName}</div>
+          </div>
+          <div class="event-body">
+            <div class="event-cat-tag" style="background:${color}18;color:${color};">${catDisplay}</div>
+            <div class="event-title">${e.title}</div>
+            <div class="event-meta">
+              <span>🕐 ${e.time}</span>
+              <span>📍 ${e.location}</span>
+            </div>
+            <div class="event-desc">${e.description}</div>
+          </div>
+          <div class="event-right">
+            ${priceHtml}
+            ${bookBtn}
+          </div>`;
+        group.appendChild(card);
+      });
+      col.appendChild(group);
+    });
+  }
+
+  // Category filter
+  document.querySelectorAll('.cat-filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.cat-filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      selectedCat = btn.dataset.cat;
+      renderEvents(selectedCat);
+    });
+  });
+  document.getElementById('clearFilter').addEventListener('click', () => {
+    document.querySelectorAll('.cat-filter-btn').forEach(b => b.classList.remove('active'));
+    document.querySelector('[data-cat="all"]').classList.add('active');
+    selectedCat = 'all';
+    renderEvents('all');
+  });
+
+  // Mobile menu
+  document.getElementById('hamburger').addEventListener('click', () => document.getElementById('mobileMenu').classList.add('open'));
+  document.getElementById('mobileClose').addEventListener('click', () => document.getElementById('mobileMenu').classList.remove('open'));
+  document.querySelectorAll('.mobile-menu a').forEach(a => a.addEventListener('click', () => document.getElementById('mobileMenu').classList.remove('open')));
+
+  // Init
+  renderMiniCal();
+  renderEvents('all');
+  </script>
+
+  <footer>
+    <a href="/index.html" class="footer-logo">The Modern <span>Muse</span></a>
+        <div class="footer-links">
+      <a href="/index.html">Home</a>
+      <a href="/about.html">About</a>
+      <a href="/muse-events.html">Muse Events</a>
+      <a href="/social-hours.html">Social Hours</a>
+      <a href="/in-the-city.html">Local Events</a>
+      <a href="/social-clubs.html">Social Club Directory</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+    <a href="https://instagram.com/themodernmuse.lv" target="_blank" class="footer-ig">@themodernmuse.lv</a>
+        <div style="width:100%;border-top:1px solid rgba(195,186,170,0.08);padding-top:1.8rem;margin-top:0.5rem;display:flex;flex-direction:column;align-items:center;gap:0.4rem;">
+      <p style="font-size:0.78rem;color:var(--linen);opacity:0.55;font-weight:300;text-align:center;max-width:480px;line-height:1.7;">
+        Curated by <strong style="font-weight:500;opacity:0.85;">The Modern Muse</strong> a guide to events, social hours, and experiences worth your time. Curated with care.
+      </p>
+    </div>
+    <p class="footer-copy">© 2026 The Modern Muse. All rights reserved.</p>
+  </footer>
+
+      <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Mobile hamburger open/close
+      var ham  = document.getElementById('hamburger');
+      var menu = document.getElementById('mobileMenu');
+      var cls  = document.getElementById('mobileClose');
+
+      function openMenu()  {
+        if (menu) { menu.classList.add('open'); document.body.style.overflow = 'hidden'; }
+      }
+      function closeMenu() {
+        if (menu) { menu.classList.remove('open'); document.body.style.overflow = ''; }
+      }
+
+      if (ham) ham.addEventListener('click', openMenu);
+      if (cls) cls.addEventListener('click', closeMenu);
+
+      // Close when any nav link is tapped
+      if (menu) {
+        menu.querySelectorAll('a').forEach(function(a) {
+          a.addEventListener('click', closeMenu);
+        });
+      }
+
+      // "In the City" expander in mobile menu
+      var cityBtn   = document.getElementById('mobCityBtn');
+      var citySub   = document.getElementById('mobCitySub');
+      var cityArrow = document.getElementById('mobCityArrow');
+      if (cityBtn && citySub) {
+        cityBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          var isOpen = citySub.classList.contains('open');
+          citySub.classList.toggle('open', !isOpen);
+          if (cityArrow) cityArrow.style.transform = isOpen ? '' : 'rotate(90deg)';
+        });
+      }
+
+      // Desktop dropdown click toggles, click outside closes
+      var ddWrap   = document.querySelector('.nav-dropdown');
+      var ddToggle = document.querySelector('.nav-dropdown-toggle');
+      if (ddWrap && ddToggle) {
+        ddToggle.addEventListener('click', function(e) {
+          e.preventDefault();
+          ddWrap.classList.toggle('open');
+        });
+        document.addEventListener('click', function(e) {
+          if (ddWrap && !ddWrap.contains(e.target)) {
+            ddWrap.classList.remove('open');
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>

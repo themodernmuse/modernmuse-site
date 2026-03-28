@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Jost:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #221714; --slate: #221714; --linen: #C4A882;
+      --ember: #B85C38; --walnut: #8C3D22; --off-white: #F9F4EE;
+      --light-bg: #F2EAE0; --cream: #E8DDD0; --sky: #C4A882;}
+    *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+    html { scroll-behavior:smooth; }
+    body { font-family:'Jost',sans-serif; background:var(--off-white); color:var(--ink); overflow-x:hidden; }
+    
+    /* NAV */
+    nav { position:fixed; top:0; left:0; right:0; z-index:200; display:flex; align-items:center; justify-content:space-between; padding:1.3rem 4rem; background:rgba(34,34,59,0.97); backdrop-filter:blur(12px); }
+    .nav-logo { font-family:'Cormorant Garamond',serif; font-size:1.45rem; font-weight:300; letter-spacing:0.18em; color:var(--linen); text-transform:uppercase; text-decoration:none; }
+    .nav-logo span { color:var(--ember); font-style:italic; }
+    .nav-links { display:flex; gap:2.5rem; list-style:none; align-items:center; }
+    .nav-links > li { position:relative; }
+    .nav-links a { text-decoration:none; color:var(--linen); font-size:0.72rem; letter-spacing:0.2em; text-transform:uppercase; font-weight:500; transition:color 0.3s; opacity:0.75; white-space:nowrap; }
+    .nav-links a:hover, .nav-links a.active { color:var(--ember); opacity:1; }
+    .nav-cta { background:var(--ember) !important; color:#fff !important; padding:0.55rem 1.5rem; opacity:1 !important; }
+    .nav-cta:hover { opacity:0.88 !important; }
+
+    /* DROPDOWN */
+    .nav-dropdown { position:relative; }
+    .nav-dropdown-toggle { display:flex; align-items:center; gap:0.4rem; cursor:pointer; }
+    .nav-dropdown-toggle::after { content:''; display:block; width:5px; height:5px; border-right:1.5px solid currentColor; border-bottom:1.5px solid currentColor; transform:rotate(45deg) translateY(-2px); transition:transform 0.2s; }
+    .nav-dropdown:hover .nav-dropdown-toggle::after { transform:rotate(225deg) translateY(-2px); }
+    .nav-dropdown-menu {
+      display:none; position:absolute; top:calc(100% + 12px); left:50%; transform:translateX(-50%);
+      background:rgba(34,34,59,0.98); backdrop-filter:blur(12px);
+      min-width:200px; padding:0.5rem 0;
+      border-top:2px solid var(--ember);
+      box-shadow:0 12px 40px rgba(0,0,0,0.3);
+      z-index:300;
+    }
+    .nav-dropdown:hover .nav-dropdown-menu { display:block; }
+    .nav-dropdown-menu a {
+      display:block; padding:0.65rem 1.4rem;
+      font-size:0.68rem; letter-spacing:0.16em; text-transform:uppercase;
+      color:var(--linen); text-decoration:none; font-weight:500;
+      opacity:0.7; transition:all 0.2s;
+      border-left:2px solid transparent;
+    }
+    .nav-dropdown-menu a:hover { color:var(--ember); opacity:1; background:rgba(217,93,57,0.06); border-left-color:var(--ember); }
+    .nav-dropdown-menu a.active { color:var(--ember); opacity:1; border-left-color:var(--ember); }
+
+    /* HAMBURGER */
+    .hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; padding:4px; background:none; border:none; }
+    .hamburger span { display:block; width:24px; height:2px; background:var(--linen); transition:all 0.3s; }
+    .mobile-menu { display:none; position:fixed; inset:0; background:var(--ink); z-index:300; flex-direction:column; align-items:center; justify-content:center; gap:0; overflow-y:auto; padding:4rem 2rem; }
+    .mobile-menu.open { display:flex; }
+    .mobile-menu .mob-main { font-family:'Cormorant Garamond',serif; font-size:2.4rem; font-style:italic; color:var(--linen); text-decoration:none; letter-spacing:0.06em; padding:0.5rem 0; }
+    .mobile-menu .mob-main.active, .mobile-menu .mob-main:hover { color:var(--ember); }
+    .mobile-menu .mob-sub-group { width:100%; text-align:center; margin:0.2rem 0 0.8rem; }
+    .mobile-menu .mob-sub-label { font-size:0.6rem; letter-spacing:0.22em; text-transform:uppercase; color:var(--ember); font-weight:600; margin-bottom:0.5rem; opacity:0.8; }
+    .mobile-menu .mob-sub { font-size:0.85rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--linen); text-decoration:none; display:block; padding:0.3rem 0; opacity:0.6; }
+    .mobile-menu .mob-sub:hover { opacity:1; color:var(--ember); }
+    .mobile-close { position:absolute; top:2rem; right:2rem; background:none; border:none; color:var(--linen); font-size:1.8rem; cursor:pointer; }
+    @media(max-width:900px) { nav { padding:1.2rem 1.8rem; } .nav-links { display:none; } .hamburger { display:flex; } }
+
+    /* HERO */
+    .hero { min-height:48vh; background:var(--ink); display:flex; flex-direction:column; justify-content:flex-end; padding:10rem 5rem 4.5rem; position:relative; overflow:hidden; }
+    .hero::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 20% 80%, rgba(217,93,57,0.1) 0%, transparent 60%); pointer-events:none; }
+    .hero-word { position:absolute; right:-1rem; top:50%; transform:translateY(-50%); font-family:'DM Serif Display',serif; font-size:clamp(7rem,18vw,18rem); color:rgba(195,186,170,0.04); font-style:italic; pointer-events:none; user-select:none; white-space:nowrap; }
+    .hero-eyebrow { font-size:0.62rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--ember); font-weight:600; margin-bottom:0.8rem; }
+    .hero-title { font-family:'DM Serif Display',serif; font-size:clamp(2.5rem,6vw,4.5rem); color:var(--off-white); line-height:1.05; margin-bottom:1rem; font-weight:400; }
+    .hero-sub { font-size:0.9rem; color:var(--linen); opacity:0.65; max-width:500px; line-height:1.7; }
+
+    /* STATS STRIP */
+    .stats-strip { display:grid; grid-template-columns:repeat(3,1fr); background:var(--ink); border-top:1px solid rgba(195,186,170,0.08); }
+    .stat-cell { padding:1.8rem 3rem; border-right:1px solid rgba(195,186,170,0.08); }
+    .stat-cell:last-child { border-right:none; }
+    .stat-num { font-family:'DM Serif Display',serif; font-size:2rem; color:var(--off-white); font-weight:400; line-height:1; margin-bottom:0.3rem; }
+    .stat-label { font-size:0.62rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--linen); opacity:0.45; font-weight:500; }
+
+    /* DIRECTORY SECTION */
+    .dir-section { max-width:1160px; margin:0 auto; padding:4rem 3rem 6rem; }
+
+    /* FILTER BAR */
+    .filter-bar { display:flex; flex-wrap:wrap; gap:0.5rem; margin-bottom:2.5rem; align-items:center; }
+    .filter-bar-label { font-size:0.6rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--slate); font-weight:600; margin-right:0.4rem; opacity:0.6; }
+    .club-filter {
+      padding:0.42rem 1.1rem;
+      font-family:'Jost',sans-serif; font-size:0.68rem; letter-spacing:0.14em; text-transform:uppercase;
+      font-weight:500; cursor:pointer; transition:all 0.22s;
+      background:transparent; color:var(--slate);
+      border:1px solid rgba(74,78,105,0.22);
+    }
+    .club-filter:hover { color:var(--ember); border-color:var(--ember); }
+    .club-filter.active { background:var(--ink); color:var(--off-white); border-color:var(--ink); }
+
+    /* CLUB GRID */
+    .club-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(480px,1fr)); gap:1px; background:rgba(195,186,170,0.15); }
+
+    /* CLUB CARD */
+    .club-card {
+      background:var(--off-white); display:flex; flex-direction:row;
+      transition:box-shadow 0.22s;
+      min-height:148px; /* fixed min-height for consistency */
+    }
+    .club-card:hover { box-shadow:0 4px 24px rgba(34,34,59,0.1); z-index:1; position:relative; }
+    .club-left {
+      width:88px; flex-shrink:0;
+      background:color-mix(in srgb, var(--cc) 8%, white);
+      border-right:1px solid rgba(195,186,170,0.18);
+      display:flex; flex-direction:column; align-items:center;
+      justify-content:center; gap:0.5rem; padding:1.2rem 0.6rem;
+    }
+    .club-avatar {
+      width:44px; height:44px; border-radius:50%;
+      background:var(--cc); color:#fff;
+      display:flex; align-items:center; justify-content:center;
+      font-family:'DM Serif Display',serif; font-size:1rem; font-weight:400;
+      flex-shrink:0;
+    }
+    .club-cat {
+      font-size:0.48rem; letter-spacing:0.14em; text-transform:uppercase;
+      font-weight:700; color:var(--cc); text-align:center; line-height:1.3;
+    }
+    .club-right {
+      flex:1; padding:1.3rem 1.5rem;
+      display:flex; flex-direction:column; gap:0.45rem;
+      justify-content:center;
+    }
+    .club-name {
+      font-family:'Cormorant Garamond',serif; font-size:1.15rem;
+      color:var(--ink); font-weight:600; line-height:1.15;
+    }
+    .club-mission {
+      font-size:0.78rem; color:var(--slate); line-height:1.55;
+    }
+    .club-vibes { display:flex; flex-wrap:wrap; gap:0.3rem; }
+    .vibe-tag {
+      font-size:0.57rem; letter-spacing:0.1em; text-transform:uppercase;
+      padding:0.18rem 0.55rem; background:rgba(74,78,105,0.06);
+      color:var(--slate); font-weight:500;
+    }
+    .club-btns { display:flex; gap:0.6rem; flex-wrap:wrap; margin-top:0.2rem; }
+    .club-btn {
+      font-size:0.62rem; letter-spacing:0.12em; text-transform:uppercase;
+      font-weight:600; text-decoration:none; padding:0.35rem 0.9rem;
+      transition:opacity 0.2s; display:inline-block;
+    }
+    .club-btn:hover { opacity:0.75; }
+    .club-btn-ig { color:#fff; }
+    .club-btn-web { color:var(--slate); border:1px solid rgba(74,78,105,0.22); background:transparent; }
+    .club-btn-web:hover { border-color:var(--ember); color:var(--ember); opacity:1; }
+
+    /* SUBMIT BANNER */
+    .submit-banner { background:var(--ink); text-align:center; padding:5rem 2rem; border-top:1px solid rgba(195,186,170,0.08); }
+    .submit-eyebrow { font-size:0.62rem; letter-spacing:0.22em; text-transform:uppercase; color:var(--ember); font-weight:600; margin-bottom:0.8rem; }
+    .submit-title { font-family:'DM Serif Display',serif; font-size:clamp(1.8rem,4vw,2.8rem); color:var(--off-white); margin-bottom:0.9rem; line-height:1.1; font-weight:400; }
+    .submit-title em { font-style:italic; color:var(--linen); }
+    .submit-sub { font-size:0.88rem; color:var(--linen); opacity:0.6; max-width:440px; margin:0 auto 2rem; line-height:1.65; }
+    .submit-btn { display:inline-block; padding:0.9rem 2.5rem; background:var(--ember); color:#fff; text-decoration:none; font-size:0.7rem; letter-spacing:0.2em; text-transform:uppercase; font-weight:600; transition:opacity 0.2s; }
+    .submit-btn:hover { opacity:0.85; }
+
+    /* FOOTER */
+    footer { background:var(--ink); padding:3rem 4rem; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem; }
+    .footer-logo { font-family:'Cormorant Garamond',serif; font-size:1.3rem; letter-spacing:0.2em; color:var(--linen); text-transform:uppercase; text-decoration:none; }
+    .footer-logo span { color:var(--ember); font-style:italic; }
+    .footer-links { display:flex; gap:1.5rem; flex-wrap:wrap; }
+    .footer-links a { color:var(--linen); text-decoration:none; font-size:0.68rem; letter-spacing:0.18em; text-transform:uppercase; opacity:0.45; transition:opacity 0.2s; }
+    .footer-links a:hover { opacity:1; }
+    .footer-copy { font-size:0.68rem; color:var(--linen); opacity:0.3; }
+
+    @media(max-width:768px) {
+      .hero { padding:8rem 1.8rem 3.5rem; }
+      .stats-strip { grid-template-columns:1fr 1fr; }
+      .stat-cell:nth-child(3) { grid-column:span 2; border-right:none; border-top:1px solid rgba(195,186,170,0.08); }
+      .dir-section { padding:3rem 1.5rem 5rem; }
+      .club-grid { grid-template-columns:1fr; }
+      .club-card { min-height:auto; }
+      footer { padding:2rem 1.5rem; flex-direction:column; text-align:center; }
+    }
+  
+    
+    
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.3rem 4rem;
+      background: rgba(34,34,59,0.97);
+      backdrop-filter: blur(12px);
+    }
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.45rem; font-weight: 300;
+      letter-spacing: 0.18em; color: var(--linen);
+      text-transform: uppercase; text-decoration: none;
+    }
+    .nav-logo span { color: var(--ember); font-style: italic; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
+    .nav-links > li { position: relative; }
+    .nav-links a {
+      text-decoration: none; color: var(--linen);
+      font-size: 0.72rem; letter-spacing: 0.18em;
+      text-transform: uppercase; font-weight: 500;
+      transition: color 0.25s; opacity: 0.75;
+      white-space: nowrap; cursor: pointer; display: block;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--ember); opacity: 1; }
+    .nav-cta {
+      background: var(--ember) !important; color: #fff !important;
+      padding: 0.5rem 1.3rem !important; opacity: 1 !important;
+      display: block;
+    }
+    .nav-cta:hover { opacity: 0.88 !important; }
+    /* Dropdown */
+    .nav-dropdown-toggle {
+      display: flex; align-items: center; gap: 0.35rem;
+    }
+    .nav-dropdown-toggle::after {
+      content: '';
+      display: inline-block; width: 5px; height: 5px;
+      border-right: 1.5px solid currentColor;
+      border-bottom: 1.5px solid currentColor;
+      transform: rotate(45deg) translateY(-2px);
+      transition: transform 0.2s;
+      flex-shrink: 0;
+    }
+    .nav-dropdown:hover .nav-dropdown-toggle::after {
+      transform: rotate(225deg) translateY(1px);
+    }
+    .nav-dropdown-menu {
+      display: none; position: absolute;
+      top: 100%; left: 50%;
+      transform: translateX(-50%);
+      padding-top: 12px; /* pushes menu down visually without creating a gap */
+      background: transparent;
+      z-index: 400;
+      min-width: 210px;
+    }
+    /* The actual visible menu box sits inside an inner div */
+    .nav-dropdown-menu-inner {
+      background: rgba(34,34,59,0.99);
+      backdrop-filter: blur(12px);
+      padding: 0.5rem 0;
+      border-top: 2px solid var(--ember);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.35);
+    }
+    /* Invisible bridge covers the 12px gap so mouse stays "inside" the element */
+    .nav-dropdown-menu::before {
+      content: '';
+      display: block;
+      height: 12px;
+      width: 100%;
+    }
+    .nav-dropdown:hover .nav-dropdown-menu,
+    .nav-dropdown.open .nav-dropdown-menu { display: block; }
+    .nav-dropdown-menu a {
+      display: block; padding: 0.65rem 1.4rem;
+      font-size: 0.68rem; letter-spacing: 0.16em;
+      text-transform: uppercase; color: var(--linen);
+      text-decoration: none; font-weight: 500;
+      opacity: 0.65; transition: all 0.18s;
+      border-left: 2px solid transparent;
+    }
+    .nav-dropdown-menu a:hover,
+    .nav-dropdown-menu a.active {
+      color: var(--ember); opacity: 1;
+      background: rgba(217,93,57,0.06);
+      border-left-color: var(--ember);
+    }
+    .nav-dropdown-menu a {
+      display: block; padding: 0.65rem 1.4rem;
+      font-size: 0.68rem; letter-spacing: 0.16em;
+      text-transform: uppercase; color: var(--linen);
+      text-decoration: none; font-weight: 500;
+      opacity: 0.65; transition: all 0.18s;
+      border-left: 2px solid transparent;
+    }
+    .nav-dropdown-menu a:hover,
+    .nav-dropdown-menu a.active {
+      color: var(--ember); opacity: 1;
+      background: rgba(217,93,57,0.06);
+      border-left-color: var(--ember);
+    }
+    /* Hamburger */
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      cursor: pointer; padding: 4px; background: none; border: none;
+    }
+    .hamburger span {
+      display: block; width: 24px; height: 2px;
+      background: var(--linen); transition: all 0.3s;
+    }
+    /* Mobile overlay menu */
+    .mobile-menu {
+      display: none; position: fixed; inset: 0;
+      background: var(--ink); z-index: 500;
+      flex-direction: column; align-items: center;
+      justify-content: center; gap: 0;
+      overflow-y: auto; padding: 5rem 2rem 3rem;
+    }
+    .mobile-menu.open { display: flex; }
+    .mob-main {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem; font-style: italic;
+      color: var(--linen); text-decoration: none;
+      letter-spacing: 0.06em; padding: 0.45rem 0;
+      display: block;
+    }
+    .mob-main:hover, .mob-main.active { color: var(--ember); }
+    .mob-sub-group {
+      width: 100%; text-align: center;
+      margin: 0.4rem 0 0.9rem;
+      border-top: 1px solid rgba(195,186,170,0.1);
+      border-bottom: 1px solid rgba(195,186,170,0.1);
+      padding: 0.8rem 0;
+    }
+    .mob-sub-label {
+      font-size: 0.58rem; letter-spacing: 0.24em;
+      text-transform: uppercase; color: var(--ember);
+      font-weight: 600; margin-bottom: 0.6rem;
+    }
+    .mob-sub {
+      display: block; font-size: 0.78rem;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--linen); text-decoration: none;
+      padding: 0.3rem 0; opacity: 0.6;
+    }
+    .mob-sub:hover, .mob-sub.active { opacity: 1; color: var(--ember); }
+    .mobile-close {
+      position: absolute; top: 2rem; right: 2rem;
+      background: none; border: none;
+      color: var(--linen); font-size: 1.8rem; cursor: pointer;
+    }
+    @media (max-width: 900px) {
+      nav { padding: 1.1rem 1.5rem; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--ink);
+      padding: 3rem 4rem;
+      display: flex; align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap; gap: 1.2rem;
+      border-top: 1px solid rgba(195,186,170,0.08);
+    }
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem; letter-spacing: 0.2em;
+      color: var(--linen); text-transform: uppercase; text-decoration: none;
+    }
+    .footer-logo span { color: var(--ember); font-style: italic; }
+    .footer-links { display: flex; gap: 1.2rem; flex-wrap: wrap; justify-content: center; }
+    .footer-links a {
+      color: var(--linen); text-decoration: none;
+      font-size: 0.66rem; letter-spacing: 0.16em;
+      text-transform: uppercase; opacity: 0.45; transition: opacity 0.2s;
+    }
+    .footer-links a:hover { opacity: 1; }
+    .footer-ig {
+      font-size: 0.66rem; letter-spacing: 0.16em;
+      text-transform: uppercase; color: var(--linen);
+      text-decoration: none; opacity: 0.45; transition: opacity 0.2s;
+    }
+    .footer-ig:hover { opacity: 1; }
+    .footer-copy {
+      width: 100%; text-align: center;
+      font-size: 0.63rem; color: var(--linen); opacity: 0.2;
+    }
+    @media (max-width: 768px) {
+      footer { padding: 2rem 1.5rem; flex-direction: column; text-align: center; }
+      .footer-links { justify-content: center; }
+    }
+
+    /* Mobile nav In the City button matches main items exactly */
+    .mob-city-btn {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem;
+      font-style: italic;
+      color: var(--linen);
+      background: none;
+      border: none;
+      cursor: pointer;
+      letter-spacing: 0.06em;
+      padding: 0.45rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      width: auto;
+      text-align: center;
+    }
+    .mob-city-btn:hover,
+    .mob-city-btn.active { color: var(--ember); }
+    .mob-city-arrow {
+      font-style: normal;
+      font-size: 1.4rem;
+      line-height: 1;
+      transition: transform 0.2s;
+      display: inline-block;
+    }
+    .mob-city-sub {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.2rem;
+      padding: 0.6rem 0 0.8rem;
+      width: 100%;
+    }
+    .mob-city-sub.open { display: flex; }
+    /* Sub-links slightly smaller than main items */
+    .mob-sub {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--linen);
+      text-decoration: none;
+      padding: 0.35rem 0;
+      opacity: 0.6;
+      display: block;
+    }
+    .mob-sub:hover,
+    .mob-sub.active { opacity: 1; color: var(--ember); }
+    /* Hide old mob-sub-group if present */
+    .mob-sub-group { display: none !important; }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/index.html" class="nav-logo">The Modern <span>Muse</span></a>
+            <ul class="nav-links">
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/muse-events.html">Muse Events</a></li>
+      <li class="nav-dropdown">
+        <a class="nav-dropdown-toggle active">In the City</a>
+        <div class="nav-dropdown-menu">
+          <div class="nav-dropdown-menu-inner">
+            <a href="/in-the-city.html">Local Events</a>
+            <a href="/social-clubs.html">Social Club Directory</a>
+            <a href="/social-hours.html">Social Hours</a>
+          </div>
+        </div>
+      </li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+        <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-close" id="mobileClose">✕</button>
+    <a href="/index.html" class="mob-main">Home</a>
+    <a href="/about.html" class="mob-main">About</a>
+    <a href="/muse-events.html" class="mob-main">Muse Events</a>
+    <button id="mobCityBtn" class="mob-city-btn">
+      In the City <span id="mobCityArrow" class="mob-city-arrow">›</span>
+    </button>
+    <div id="mobCitySub" class="mob-city-sub">
+      <a href="/in-the-city.html" class="mob-sub">Local Events</a>
+      <a href="/social-clubs.html" class="mob-sub active">Social Club Directory</a>
+      <a href="/social-hours.html" class="mob-sub">Social Hours</a>
+    </div>
+    <a href="/contact.html" class="mob-main">Contact</a>
+  </div>
+
+<section class="hero">
+    <div class="hero-word">Community</div>
+    <div class="hero-eyebrow">Your City, Your People</div>
+    <h1 class="hero-title">Social Club Directory</h1>
+    <p class="hero-sub">Women-led groups, wellness collectives, and cultural crews across Las Vegas. Find your fit or submit your own.</p>
+  </section>
+
+  <div class="stats-strip">
+    <div class="stat-cell">
+      <div class="stat-num">24</div>
+      <div class="stat-label">Active Clubs</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-num">6</div>
+      <div class="stat-label">Categories</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-num">LV</div>
+      <div class="stat-label">Las Vegas</div>
+    </div>
+  </div>
+
+  <section class="dir-section">
+    <div class="filter-bar">
+      <span class="filter-bar-label">Filter</span>
+      <button class="club-filter active" data-cat="all">All</button>
+      <button class="club-filter" data-cat="Community" data-color="#D95D39">Community</button>
+      <button class="club-filter" data-cat="Fitness" data-color="#2E7D5E">Fitness</button>
+      <button class="club-filter" data-cat="Lifestyle" data-color="#9E6B45">Lifestyle</button>
+      <button class="club-filter" data-cat="Professional" data-color="#22223B">Professional</button>
+      <button class="club-filter" data-cat="Social" data-color="#7B3E19">Social</button>
+      <button class="club-filter" data-cat="Wellness" data-color="#4A4E69">Wellness</button>
+    </div>
+    <div class="club-grid" id="clubGrid">
+
+      <div class="club-card" data-cat="Community">
+        <div class="club-left" style="--cc:#D95D39;">
+          <div class="club-avatar">BG</div>
+          <div class="club-cat">Community</div>
+        </div>
+        <div class="club-right">
+          <div class="club-name">Black Girl Mixer</div>
+          <div class="club-mission">A social club built by and for Black women</div>
+          <div class="club-vibes"><span class="vibe-tag">Empowering</span><span class="vibe-tag">Connected</span><span class="vibe-tag">Community-First</span></div>
+          <div class="club-btns">
+            <a href="https://instagram.com/blackgirlmixer" target="_blank" class="club-btn club-btn-ig" style="background:#D95D39;">@blackgirlmixer</a>
+            <a href="https://blackgirlmixer.com" target="_blank" class="club-btn club-btn-web">Website</a>
+          </div>
+        </div>
+      </div>
+      <div class="club-card" data-cat="Fitness">
+        <div class="club-left" style="--cc:#2E7D5E;">
+          <div class="club-avatar">GW</div>
+          <div class="club-cat">Fitness</div>
+        </div>
+        <div class="club-right">
+          <div class="club-name">Girls Walk Vegas</div>
+          <div class="club-mission">Outdoor walks and social fitness for women</div>
+          <div class="club-vibes"><span class="vibe-tag">Active</span><span class="vibe-tag">Outdoorsy</span><span class="vibe-tag">Social</span></div>
+          <div class="club-btns">
+            <a href="https://instagram.com/girlswalkvegas" target="_blank" class="club-btn club-btn-ig" style="background:#2E7D5E;">@girlswalkvegas</a>
+            
+          </div>
+        </div>
+      </div>
+      <div class="club-card" data-cat="Professional">
+        <div class="club-left" style="--cc:#22223B;">
+          <div class="club-avatar">BB</div>
+          <div class="club-cat">Professional</div>
+        </div>
+        <div class="club-right">
+          <div class="club-name">Built by Her Club</div>
+          <div class="club-mission">Empowering women entrepreneurs and creatives</div>
+          <div class="club-vibes"><span class="vibe-tag">Entrepreneurial</span><span class="vibe-tag">Creative</span><span class="vibe-tag">Driven</span></div>
+          <div class="club-btns">
+            <a href="https://instagram.com/builtbyher.club" target="_blank" class="club-btn club-btn-ig" style="background:#22223B;">@builtbyher.club</a>
+            
+          </div>
+        </div>
+      </div>
+      <div class="club-card" data-cat="Fitness">
+        <div class="club-left" style="--cc:#2E7D5E;">
+          <div class="club-avatar">GC</div>
+          <div class="club-cat">Fitness</div>
+        </div>
+        <div class="club-right">
+          <div class="club-name">Glute Camp Vegas</div>
+          <div class="club-mission">Group fitness focused on strength training</div>
+          <div class="club-vibes"><span class="vibe-tag">High Energy</span><span class="vibe-tag">Motivating</span><span class="vibe-tag">Results-Driven</span></div>
+          <div class="club-btns">
+            <a href="https://instagram.com/glutecampvegas" target="_blank" class="club-btn club-btn-ig" style="background:#2E7D5E;">@glutecampvegas</a>
+            
+          </div>
+        </div>
+      </div>
+      <div class="club-card" data-cat="Wellness">
+        <div class="club-left" style="--cc:#4A4E69;">
+          <div class="club-avatar">YB</div>
+          <div class="club-cat">Wellness</div>
+        </div>
+        <div class="club-right">
+          <div class="club-name">Yinstant Bliss Yoga</div>
+          <div class="club-mission">Accessible yoga and mindfulness for all levels</div>
+          <div class="club-vibes"><span class="vibe-tag">Calm</span><span class="vibe-tag">Mindful</span><span class="vibe-tag">Welcoming</span></div>
+          <div class="club-btns">
+            <a href="https://instagram.com/yinstantblissyoga" target="_blank" class="club-btn club-btn-ig" style="background:#4A4E69;">@yinstantblissyoga</a>
+            
+          </div>
+        </div>
+      </div>
+      <div class="club-card" data-cat="Lifestyle">
+        <div class="club-left" style="--cc:#9E6B45;">
+          <div class="club-avatar">FG</div>
+          <div class="club-cat">Lifestyle</div>
+        </div>
+        <div class="club-right">
+          <div class="club-name">Fleeky Girl Club</div>
+          <div class="club-mission">Beauty, fashion and lifestyle community for women</div>
+          <div class="club-vibes"><span class="vibe-tag">Trendy</span><span class="vibe-tag">Fun</span><span class="vibe-tag">Confident</span></div>
+          <div class="club-btns">
+            <a href="https://instagram.com/fleekygirlclub" target="_blank" class="club-btn club-btn-ig" style="background:#9E6B45;">@fleekygirlclub</a>
+            
+          </div>
+        </div>
+      </div>
+      <div class="club-card" data-cat="Social">
+        <div class="club-left" style="--cc:#7B3E19;">
+          <div class="club-avatar">BL</div>
+          <div class="club-cat">Social</div>
+        </div>
+        <div class="club-right">
+          <div class="club-name">Baddies Love Coffee</div>
+          <div class="club-mission">Coffee culture meets women's community</div>
+          <div class="club-vibes"><span class="vibe-tag">Chill</span><span class="vibe-tag">Social</span><span class="vibe-tag">Caffeinated</span></div>
+          <div class="club-btns">
+            <a href="https://instagram.com/baddieslovecoffeelv" target="_blank" class="club-btn club-btn-ig" style="background:#7B3E19;">@baddieslovecoffeelv</a>
+            
+          </div>
+        </div>
+      </div>
+      <div class="club-card" data-cat="Fitness">
+        <div class="club-left" style="--cc:#2E7D5E;">
+          <div class="club-avatar">P</div>
+          <div class="club-cat">Fitness</div>
+        </div>
+        <div class="club-right">
+          <div class="club-name">PiLattes</div>
+          <div class="club-mission">Pilates workouts with a social coffee twist</div>
+          <div class="club-vibes"><span class="vibe-tag">Active</span><span class="vibe-tag">Chic</span><span class="vibe-tag">Community-First</span></div>
+          <div class="club-btns">
+            <a href="https://instagram.com/pilatteslv" target="_blank" class="club-btn club-btn-ig" style="background:#2E7D5E;">@pilatteslv</a>
+            <a href="https://pi-lattes.com" target="_blank" class="club-btn club-btn-web">Website</a>
+          </div>
+        </div>
+      </div>
+      <div class="club-card" data-cat="Wellness">
+        <div class="club-left" style="--cc:#4A4E69;">
+          <div class="club-avatar">HR</div>
+          <div class="club-cat">Wellness</div>
+        </div>
+        <div class="club-right">
+          <div class="club-name">Healthcare Reset Pilates</div>
+          <div class="club-mission">Pilates and wellness for healthcare workers</div>
+          <div class="club-vibes"><span class="vibe-tag">Restorative</span><span class="vibe-tag">Supportive</span><span class="vibe-tag">Professional</span></div>
+          <div class="club-btns">
+            <a href="https://instagram.com/healthcareresetpilates" target="_blank" class="club-btn club-btn-ig" style="background:#4A4E69;">@healthcareresetpilates</a>
+            
+          </div>
+        </div>
+      </div>
+      <div class="club-card" data-cat="Social">
+        <div class="club-left" style="--cc:#7B3E19;">
+          <div class="club-avatar">VG</div>
+          <div class="club-cat">Social</div>
+        </div>
+        <div class="club-right">
+          <div class="club-name">Vegas Girl Events</div>
+          <div class="club-mission">Curated events and experiences for women</div>
+          <div class="club-vibes"><span class="vibe-tag">Fun</span><span class="vibe-tag">Upscale</span><span class="vibe-tag">Social</span></div>
+          <div class="club-btns">
+            <a href="https://instagram.com/vegasgirlevents" target="_blank" class="club-btn club-btn-ig" style="background:#7B3E19;">@vegasgirlevents</a>
+            
+          </div>
+        </div>
+      </div>
+      <div class="club-card" data-cat="Community">
+        <div class="club-left" style="--cc:#D95D39;">
+          <div class="club-avatar">VL</div>
+          <div class="club-cat">Community</div>
+        </div>
+        <div class="club-right">
+          <div class="club-name">Vegas Latinas</div>
+          <div class="club-mission">Community and culture for Latina women</div>
+          <div class="club-vibes"><span class="vibe-tag">Vibrant</span><span class="vibe-tag">Cultural</span><span class="vibe-tag">Empowering</span></div>
+          <div class="club-btns">
+            <a href="https://instagram.com/vegaslatinas" target="_blank" class="club-btn club-btn-ig" style="background:#D95D39;">@vegaslatinas</a>
+            
+          </div>
+        </div>
+      </div>
+      <div class="club-card" data-cat="Community">
+        <div class="club-left" style="--cc:#D95D39;">
+          <div class="club-avatar">AM</div>
+          <div class="club-cat">Community</div>
+        </div>
+        <div class="club-right">
+          <div class="club-name">Amiga Movement</div>
+          <div class="club-mission">Latina empowerment through sisterhood</div>
+          <div class="club-vibes"><span class="vibe-tag">Inspiring</span><span class="vibe-tag">Joyful</span><span class="vibe-tag">Connected</span></div>
+          <div class="club-btns">
+            <a href="https://instagram.com/amigamovement" target="_blank" class="club-btn club-btn-ig" style="background:#D95D39;">@amigamovement</a>
+            
+          </div>
+        </div>
+      </div>
+      <div class="club-card" data-cat="Social">
+        <div class="club-left" style="--cc:#7B3E19;">
+          <div class="club-avatar">C&</div>
+          <div class="club-cat">Social</div>
+        </div>
+        <div class="club-right">
+          <div class="club-name">Culture & Corks</div>
+          <div class="club-mission">Wine socials celebrating diversity and culture</div>
+          <div class="club-vibes"><span class="vibe-tag">Sophisticated</span><span class="vibe-tag">Wine-Forward</span><span class="vibe-tag">Social</span></div>
+          <div class="club-btns">
+            <a href="https://instagram.com/cultureandcorks" target="_blank" class="club-btn club-btn-ig" style="background:#7B3E19;">@cultureandcorks</a>
+            
+          </div>
+        </div>
+      </div>
+      <div class="club-card" data-cat="Fitness">
+        <div class="club-left" style="--cc:#2E7D5E;">
+          <div class="club-avatar">VG</div>
+          <div class="club-cat">Fitness</div>
+        </div>
+        <div class="club-right">
+          <div class="club-name">Vibe Girls Hike</div>
+          <div class="club-mission">Hiking community for women of all levels</div>
+          <div class="club-vibes"><span class="vibe-tag">Adventurous</span><span class="vibe-tag">Nature-Loving</span><span class="vibe-tag">Active</span></div>
+          <div class="club-btns">
+            <a href="https://instagram.com/vibegirlshike" target="_blank" class="club-btn club-btn-ig" style="background:#2E7D5E;">@vibegirlshike</a>
+            
+          </div>
+        </div>
+      </div>
+      <div class="club-card" data-cat="Fitness">
+        <div class="club-left" style="--cc:#2E7D5E;">
+          <div class="club-avatar">BP</div>
+          <div class="club-cat">Fitness</div>
+        </div>
+        <div class="club-right">
+          <div class="club-name">Black People Hike LV</div>
+          <div class="club-mission">Outdoor hiking adventures for the Black community</div>
+          <div class="club-vibes"><span class="vibe-tag">Adventurous</span><span class="vibe-tag">Bold</span><span class="vibe-tag">Nature-Forward</span></div>
+          <div class="club-btns">
+            <a href="https://instagram.com/blackpeoplehikelv" target="_blank" class="club-btn club-btn-ig" style="background:#2E7D5E;">@blackpeoplehikelv</a>
+            
+          </div>
+        </div>
+      </div>
+      <div class="club-card" data-cat="Wellness">
+        <div class="club-left" style="--cc:#4A4E69;">
+          <div class="club-avatar">S</div>
+          <div class="club-cat">Wellness</div>
+        </div>
+        <div class="club-right">
+          <div class="club-name">SOEL</div>
+          <div class="club-mission">Soul-centered wellness and lifestyle community</div>
+          <div class="club-vibes"><span class="vibe-tag">Spiritual</span><span class="vibe-tag">Intentional</span><span class="vibe-tag">Uplifting</span></div>
+          <div class="club-btns">
+            <a href="https://instagram.com/s.o.e.l_community" target="_blank" class="club-btn club-btn-ig" style="background:#4A4E69;">@s.o.e.l_community</a>
+            
+          </div>
+        </div>
+      </div>
+      <div class="club-card" data-cat="Fitness">
+        <div class="club-left" style="--cc:#2E7D5E;">
+          <div class="club-avatar">MP</div>
+          <div class="club-cat">Fitness</div>
+        </div>
+        <div class="club-right">
+          <div class="club-name">Mami Pilates Club</div>
+          <div class="club-mission">Latina Pilates social and fitness community</div>
+          <div class="club-vibes"><span class="vibe-tag">Empowering</span><span class="vibe-tag">Fun</span><span class="vibe-tag">Culturally Rich</span></div>
+          <div class="club-btns">
+            <a href="https://instagram.com/mamipilattesclub" target="_blank" class="club-btn club-btn-ig" style="background:#2E7D5E;">@mamipilattesclub</a>
+            
+          </div>
+        </div>
+      </div>
+      <div class="club-card" data-cat="Wellness">
+        <div class="club-left" style="--cc:#4A4E69;">
+          <div class="club-avatar">EW</div>
+          <div class="club-cat">Wellness</div>
+        </div>
+        <div class="club-right">
+          <div class="club-name">EmpowerHER Wellness</div>
+          <div class="club-mission">Holistic wellness education for women</div>
+          <div class="club-vibes"><span class="vibe-tag">Healing</span><span class="vibe-tag">Growth-Oriented</span><span class="vibe-tag">Empowering</span></div>
+          <div class="club-btns">
+            <a href="https://instagram.com/empowerherwellness" target="_blank" class="club-btn club-btn-ig" style="background:#4A4E69;">@empowerherwellness</a>
+            
+          </div>
+        </div>
+      </div>
+      <div class="club-card" data-cat="Social">
+        <div class="club-left" style="--cc:#7B3E19;">
+          <div class="club-avatar">CM</div>
+          <div class="club-cat">Social</div>
+        </div>
+        <div class="club-right">
+          <div class="club-name">Cozmic Mocktail Club</div>
+          <div class="club-mission">Sober-curious social events and mocktail culture</div>
+          <div class="club-vibes"><span class="vibe-tag">Mindful</span><span class="vibe-tag">Elevated</span><span class="vibe-tag">Social</span></div>
+          <div class="club-btns">
+            <a href="https://instagram.com/cozmicmocktailclub" target="_blank" class="club-btn club-btn-ig" style="background:#7B3E19;">@cozmicmocktailclub</a>
+            
+          </div>
+        </div>
+      </div>
+      <div class="club-card" data-cat="Community">
+        <div class="club-left" style="--cc:#D95D39;">
+          <div class="club-avatar">OW</div>
+          <div class="club-cat">Community</div>
+        </div>
+        <div class="club-right">
+          <div class="club-name">Overcoming Warriors Club</div>
+          <div class="club-mission">Resilience and personal growth community</div>
+          <div class="club-vibes"><span class="vibe-tag">Inspiring</span><span class="vibe-tag">Courageous</span><span class="vibe-tag">Supportive</span></div>
+          <div class="club-btns">
+            <a href="https://instagram.com/overcomingwarriorsclub" target="_blank" class="club-btn club-btn-ig" style="background:#D95D39;">@overcomingwarriorsclub</a>
+            
+          </div>
+        </div>
+      </div>
+      <div class="club-card" data-cat="Wellness">
+        <div class="club-left" style="--cc:#4A4E69;">
+          <div class="club-avatar">EW</div>
+          <div class="club-cat">Wellness</div>
+        </div>
+        <div class="club-right">
+          <div class="club-name">Etho Wellness Club</div>
+          <div class="club-mission">Holistic wellness and mindful living</div>
+          <div class="club-vibes"><span class="vibe-tag">Mindful</span><span class="vibe-tag">Balanced</span><span class="vibe-tag">Intentional</span></div>
+          <div class="club-btns">
+            <a href="https://instagram.com/ethoclub" target="_blank" class="club-btn club-btn-ig" style="background:#4A4E69;">@ethoclub</a>
+            
+          </div>
+        </div>
+      </div>
+      <div class="club-card" data-cat="Social">
+        <div class="club-left" style="--cc:#7B3E19;">
+          <div class="club-avatar">CC</div>
+          <div class="club-cat">Social</div>
+        </div>
+        <div class="club-right">
+          <div class="club-name">Cozy Collective LV</div>
+          <div class="club-mission">Cozy social gatherings and community building</div>
+          <div class="club-vibes"><span class="vibe-tag">Warm</span><span class="vibe-tag">Inviting</span><span class="vibe-tag">Community-First</span></div>
+          <div class="club-btns">
+            <a href="https://instagram.com/cozycollectivelv" target="_blank" class="club-btn club-btn-ig" style="background:#7B3E19;">@cozycollectivelv</a>
+            
+          </div>
+        </div>
+      </div>
+      <div class="club-card" data-cat="Community">
+        <div class="club-left" style="--cc:#D95D39;">
+          <div class="club-avatar">SG</div>
+          <div class="club-cat">Community</div>
+        </div>
+        <div class="club-right">
+          <div class="club-name">She Girls Club</div>
+          <div class="club-mission">Women's social club built on connection</div>
+          <div class="club-vibes"><span class="vibe-tag">Fun</span><span class="vibe-tag">Social</span><span class="vibe-tag">Bold</span></div>
+          <div class="club-btns">
+            <a href="https://instagram.com/she.clublv" target="_blank" class="club-btn club-btn-ig" style="background:#D95D39;">@she.clublv</a>
+            
+          </div>
+        </div>
+      </div>
+      <div class="club-card" data-cat="Community">
+        <div class="club-left" style="--cc:#D95D39;">
+          <div class="club-avatar">DB</div>
+          <div class="club-cat">Community</div>
+        </div>
+        <div class="club-right">
+          <div class="club-name">Dear Brwn Mama</div>
+          <div class="club-mission">Community and support for Brown mamas</div>
+          <div class="club-vibes"><span class="vibe-tag">Nurturing</span><span class="vibe-tag">Empowering</span><span class="vibe-tag">Connected</span></div>
+          <div class="club-btns">
+            <a href="https://instagram.com/dearbrwnmama" target="_blank" class="club-btn club-btn-ig" style="background:#D95D39;">@dearbrwnmama</a>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="submit-banner">
+    <div class="submit-eyebrow">Know a Great Club?</div>
+    <h2 class="submit-title">Get <em>Listed.</em></h2>
+    <p class="submit-sub">Run a social club, fitness group, or women's collective in Las Vegas? Send us a note and we'll get you added.</p>
+    <a href="/contact.html" class="submit-btn">Submit Your Club</a>
+  </div>
+
+  <script>
+    // Filter
+    document.querySelectorAll('.club-filter').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.club-filter').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const cat = btn.dataset.cat;
+        document.querySelectorAll('.club-card').forEach(card => {
+          card.style.display = (cat === 'all' || card.dataset.cat === cat) ? '' : 'none';
+        });
+      });
+    });
+  </script>
+
+  <footer>
+    <a href="/index.html" class="footer-logo">The Modern <span>Muse</span></a>
+        <div class="footer-links">
+      <a href="/index.html">Home</a>
+      <a href="/about.html">About</a>
+      <a href="/muse-events.html">Muse Events</a>
+      <a href="/social-hours.html">Social Hours</a>
+      <a href="/in-the-city.html">Local Events</a>
+      <a href="/social-clubs.html">Social Club Directory</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+    <a href="https://instagram.com/themodernmuse.lv" target="_blank" class="footer-ig">@themodernmuse.lv</a>
+        <div style="width:100%;border-top:1px solid rgba(195,186,170,0.08);padding-top:1.8rem;margin-top:0.5rem;display:flex;flex-direction:column;align-items:center;gap:0.4rem;">
+      <p style="font-size:0.78rem;color:var(--linen);opacity:0.55;font-weight:300;text-align:center;max-width:480px;line-height:1.7;">
+        Curated by <strong style="font-weight:500;opacity:0.85;">The Modern Muse</strong> a guide to events, social hours, and experiences worth your time. Curated with care.
+      </p>
+    </div>
+    <p class="footer-copy">© 2026 The Modern Muse. All rights reserved.</p>
+  </footer>
+
+      <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Mobile hamburger open/close
+      var ham  = document.getElementById('hamburger');
+      var menu = document.getElementById('mobileMenu');
+      var cls  = document.getElementById('mobileClose');
+
+      function openMenu()  {
+        if (menu) { menu.classList.add('open'); document.body.style.overflow = 'hidden'; }
+      }
+      function closeMenu() {
+        if (menu) { menu.classList.remove('open'); document.body.style.overflow = ''; }
+      }
+
+      if (ham) ham.addEventListener('click', openMenu);
+      if (cls) cls.addEventListener('click', closeMenu);
+
+      // Close when any nav link is tapped
+      if (menu) {
+        menu.querySelectorAll('a').forEach(function(a) {
+          a.addEventListener('click', closeMenu);
+        });
+      }
+
+      // "In the City" expander in mobile menu
+      var cityBtn   = document.getElementById('mobCityBtn');
+      var citySub   = document.getElementById('mobCitySub');
+      var cityArrow = document.getElementById('mobCityArrow');
+      if (cityBtn && citySub) {
+        cityBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          var isOpen = citySub.classList.contains('open');
+          citySub.classList.toggle('open', !isOpen);
+          if (cityArrow) cityArrow.style.transform = isOpen ? '' : 'rotate(90deg)';
+        });
+      }
+
+      // Desktop dropdown click toggles, click outside closes
+      var ddWrap   = document.querySelector('.nav-dropdown');
+      var ddToggle = document.querySelector('.nav-dropdown-toggle');
+      if (ddWrap && ddToggle) {
+        ddToggle.addEventListener('click', function(e) {
+          e.preventDefault();
+          ddWrap.classList.toggle('open');
+        });
+        document.addEventListener('click', function(e) {
+          if (ddWrap && !ddWrap.contains(e.target)) {
+            ddWrap.classList.remove('open');
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>
