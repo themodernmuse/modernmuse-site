@@ -1,0 +1,1245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="fo-verify" content="552ccedd-9565-4834-bf5b-c24d5b12e592" />
+  <meta charset="UTF-8" />
+  <title>The Modern Muse | Curated Events, Social Hours & Things To Do</title>
+  <meta name="description" content="Your curated city guide weekly events, 150+ happy hours on a live map, social clubs, and Muse-hosted experiences. Never miss what's worth doing." />
+  <meta property="og:title" content="The Modern Muse | Curated Events & Social Hours" />
+  <meta property="og:description" content="Las Vegas curated events, 150+ social hours on a live map, and Muse-hosted experiences. Curated with care." />
+  <meta property="og:image" content="https://themdrnmuse.com/og-preview.jpg" />
+  <meta property="og:url" content="https://themdrnmuse.com/" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Jost:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #221714; --slate: #221714; --linen: #C4A882;
+      --ember: #B85C38; --walnut: #8C3D22; --off-white: #F9F4EE;
+      --light-bg: #F2EAE0; --cream: #E8DDD0; --sky: #C4A882;}
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Jost', sans-serif;
+      background: var(--off-white);
+      color: var(--ink);
+      overflow-x: hidden;
+    }
+
+    
+    /* ─── HERO ─── */
+    .hero {
+      min-height: 100vh;
+      background: var(--ink);
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    /* Textured grain overlay */
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0; z-index: 1;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.06'/%3E%3C/svg%3E");
+      opacity: 0.4;
+      pointer-events: none;
+    }
+
+    /* Diagonal ember accent */
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: -20%; right: -10%;
+      width: 55%; height: 140%;
+      background: linear-gradient(155deg, rgba(217,93,57,0.09) 0%, transparent 60%);
+      transform: rotate(-8deg);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .hero-bg-word {
+      position: absolute;
+      bottom: -3rem; left: -1rem;
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(8rem, 18vw, 20rem);
+      color: rgba(255,255,255,0.025);
+      line-height: 1;
+      pointer-events: none;
+      white-space: nowrap;
+      z-index: 1;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-inner {
+      position: relative; z-index: 2;
+      padding: 10rem 4rem 5rem 7rem;
+      max-width: 900px;
+    }
+
+    .hero-overline {
+      font-size: 0.68rem; letter-spacing: 0.4em;
+      text-transform: uppercase; color: var(--ember);
+      font-weight: 600; margin-bottom: 2rem;
+      display: flex; align-items: center; gap: 1rem;
+      opacity: 0; animation: fadeUp 0.7s ease 0.1s forwards;
+    }
+    .hero-overline::before {
+      content: ''; display: block;
+      width: 40px; height: 1px; background: var(--ember);
+    }
+
+    .hero-headline {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(3rem, 6.5vw, 6.5rem);
+      font-weight: 400; line-height: 1.0;
+      color: var(--off-white);
+      margin-bottom: 2.2rem;
+      opacity: 0; animation: fadeUp 0.8s ease 0.25s forwards;
+    }
+    .hero-headline em {
+      font-style: italic; color: var(--ember);
+    }
+
+    .hero-manifesto {
+      font-size: 1.05rem; line-height: 1.85;
+      color: var(--linen); font-weight: 300;
+      max-width: 540px; margin-bottom: 3rem;
+      opacity: 0; animation: fadeUp 0.8s ease 0.45s forwards;
+      border-left: 2px solid rgba(217,93,57,0.4);
+      padding-left: 1.5rem;
+    }
+
+    .hero-ctas {
+      display: flex; gap: 1.2rem; align-items: center;
+      opacity: 0; animation: fadeUp 0.8s ease 0.6s forwards;
+    }
+
+    .btn-primary {
+      background: var(--ember); color: #fff;
+      padding: 1rem 2.5rem;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.75rem; font-weight: 600;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      text-decoration: none; border: none; cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+      display: inline-block;
+    }
+    .btn-primary:hover { background: var(--walnut); transform: translateY(-2px); }
+
+    .btn-ghost {
+      color: var(--linen); font-size: 0.75rem; font-weight: 400;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(195,186,170,0.35);
+      padding-bottom: 2px;
+      transition: color 0.3s, border-color 0.3s;
+    }
+    .btn-ghost:hover { color: var(--ember); border-color: var(--ember); }
+
+    /* Scroll indicator */
+    .hero-scroll {
+      position: absolute; bottom: 2.5rem; left: 7rem;
+      z-index: 2; display: flex; align-items: center; gap: 1rem;
+      opacity: 0; animation: fadeIn 1s ease 1.2s forwards;
+    }
+    .scroll-line {
+      width: 50px; height: 1px;
+      background: linear-gradient(to right, var(--ember), transparent);
+    }
+    .scroll-label {
+      font-size: 0.62rem; letter-spacing: 0.3em;
+      text-transform: uppercase; color: var(--linen); opacity: 0.45;
+    }
+
+    /* ─── SECTION SHARED ─── */
+    .section-label {
+      font-size: 0.68rem; letter-spacing: 0.35em;
+      text-transform: uppercase; color: var(--ember);
+      font-weight: 600; margin-bottom: 0.8rem;
+      display: flex; align-items: center; gap: 0.8rem;
+    }
+    .section-label::after {
+      content: ''; display: block; flex: 1;
+      height: 1px; background: rgba(217,93,57,0.2);
+      max-width: 60px;
+    }
+
+    .section-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2.2rem, 4vw, 3.5rem);
+      font-weight: 400; line-height: 1.1;
+      color: var(--ink);
+    }
+    .section-title em { font-style: italic; color: var(--slate); }
+
+    /* ─── 7-DAY PULSE ─── */
+    .pulse-section {
+      padding: 6rem 0 5rem;
+      background: var(--light-bg);
+      overflow: hidden;
+    }
+
+    .pulse-header {
+      padding: 0 7rem;
+      display: flex; align-items: flex-end; justify-content: space-between;
+      margin-bottom: 3rem;
+    }
+
+    .pulse-scroll-wrap {
+      overflow-x: auto; padding: 0.5rem 7rem 2rem;
+      cursor: grab;
+      -webkit-overflow-scrolling: touch;
+    }
+    .pulse-scroll-wrap::-webkit-scrollbar { height: 3px; }
+    .pulse-scroll-wrap::-webkit-scrollbar-track { background: transparent; }
+    .pulse-scroll-wrap::-webkit-scrollbar-thumb { background: var(--linen); }
+    .pulse-scroll-wrap:active { cursor: grabbing; }
+
+    .pulse-track {
+      display: flex; gap: 1.2rem;
+      width: max-content;
+    }
+
+    .pulse-card {
+      width: 260px; flex-shrink: 0;
+      background: #fff;
+      border: 1px solid rgba(74,78,105,0.1);
+      overflow: hidden;
+      transition: box-shadow 0.3s, transform 0.25s;
+      position: relative;
+    }
+    .pulse-card:hover {
+      box-shadow: 0 12px 40px rgba(34,34,59,0.12);
+      transform: translateY(-4px);
+    }
+    .pulse-card.today-card { border-color: var(--ember); border-width: 2px; }
+
+    .pulse-card-img {
+      width: 100%; height: 160px; object-fit: cover;
+      display: block; transition: transform 0.5s ease;
+    }
+    .pulse-card:hover .pulse-card-img { transform: scale(1.04); }
+
+    .today-badge {
+      position: absolute; top: 12px; left: 12px;
+      background: var(--ember); color: #fff;
+      font-size: 0.6rem; letter-spacing: 0.2em;
+      text-transform: uppercase; font-weight: 600;
+      padding: 0.25rem 0.7rem;
+    }
+
+    .pulse-card-body { padding: 1.3rem; }
+
+    .pulse-day {
+      font-size: 0.62rem; letter-spacing: 0.25em;
+      text-transform: uppercase; color: var(--ember);
+      font-weight: 700; margin-bottom: 0.4rem;
+    }
+    .pulse-card.today-card .pulse-day { color: var(--ember); }
+
+    .pulse-event-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.15rem; color: var(--ink);
+      line-height: 1.25; margin-bottom: 0.5rem;
+    }
+
+    .pulse-meta {
+      font-size: 0.75rem; color: var(--slate);
+      display: flex; flex-direction: column; gap: 0.2rem;
+      font-weight: 300; margin-bottom: 1rem;
+    }
+
+    .pulse-cta {
+      font-size: 0.65rem; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--ember);
+      text-decoration: none; font-weight: 600;
+      border-bottom: 1px solid rgba(217,93,57,0.3);
+      padding-bottom: 1px;
+      transition: border-color 0.2s;
+    }
+    .pulse-cta:hover { border-color: var(--ember); }
+
+    /* ─── PILLARS ─── */
+    .pillars-section {
+      padding: 6rem 7rem;
+      background: var(--ink);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pillars-section::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 80% 50%, rgba(217,93,57,0.07) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .pillars-header {
+      display: flex; align-items: flex-end; justify-content: space-between;
+      margin-bottom: 3.5rem;
+    }
+    .pillars-header .section-title { color: var(--off-white); }
+    .pillars-header .section-title em { color: var(--linen); }
+    .pillars-header .section-label { color: var(--ember); }
+
+    .pillars-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1.5px;
+      background: rgba(195,186,170,0.08);
+    }
+
+    .pillar-card {
+      background: var(--ink);
+      padding: 3.5rem 2.8rem;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.4s;
+      cursor: default;
+    }
+    .pillar-card:hover { background: #2a2b42; }
+
+    .pillar-num {
+      font-family: 'DM Serif Display', serif;
+      font-size: 7rem; font-weight: 400;
+      color: rgba(195,186,170,0.06);
+      position: absolute; top: -1rem; right: 1.5rem;
+      line-height: 1; pointer-events: none;
+    }
+
+    .pillar-icon {
+      font-size: 2.2rem; margin-bottom: 1.5rem; display: block;
+    }
+
+    .pillar-type {
+      font-size: 0.62rem; letter-spacing: 0.3em;
+      text-transform: uppercase; color: var(--ember);
+      font-weight: 600; margin-bottom: 0.6rem;
+    }
+
+    .pillar-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2rem; color: var(--off-white);
+      margin-bottom: 1rem; line-height: 1.1;
+    }
+
+    .pillar-desc {
+      font-size: 0.85rem; line-height: 1.8;
+      color: var(--linen); font-weight: 300;
+      margin-bottom: 1.5rem; opacity: 0.8;
+    }
+
+    .pillar-tags {
+      display: flex; flex-wrap: wrap; gap: 0.4rem;
+    }
+    .pillar-tag {
+      font-size: 0.62rem; letter-spacing: 0.1em;
+      text-transform: uppercase; padding: 0.3rem 0.8rem;
+      border: 1px solid rgba(195,186,170,0.15);
+      color: var(--linen); opacity: 0.7;
+    }
+
+    .pillar-accent {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      height: 3px;
+      transform: scaleX(0); transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+    .pillar-card:hover .pillar-accent { transform: scaleX(1); }
+
+    /* ─── COMMUNITY FEED ─── */
+    .feed-section {
+      padding: 6rem 7rem;
+      background: var(--off-white);
+    }
+
+    .feed-header {
+      display: flex; align-items: flex-end; justify-content: space-between;
+      margin-bottom: 3rem;
+    }
+
+    .feed-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: auto auto;
+      gap: 1rem;
+    }
+
+    .feed-item {
+      position: relative; overflow: hidden;
+      background: var(--cream);
+      cursor: pointer;
+    }
+    .feed-item:first-child {
+      grid-column: 1 / 3;
+      grid-row: 1 / 3;
+    }
+
+    .feed-img {
+      width: 100%; height: 100%;
+      object-fit: cover; display: block;
+      min-height: 200px;
+      transition: transform 0.5s ease;
+    }
+    .feed-item:first-child .feed-img { min-height: 420px; }
+
+    .feed-item:hover .feed-img { transform: scale(1.05); }
+
+    .feed-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(34,34,59,0.75) 0%, transparent 55%);
+      opacity: 0; transition: opacity 0.3s;
+      display: flex; align-items: flex-end;
+      padding: 1.2rem;
+    }
+    .feed-item:hover .feed-overlay { opacity: 1; }
+
+    .feed-caption {
+      font-size: 0.8rem; color: #fff;
+      font-weight: 300; line-height: 1.4;
+    }
+    .feed-caption strong {
+      display: block; font-weight: 600;
+      font-size: 0.85rem; margin-bottom: 0.2rem;
+    }
+
+    .feed-tag {
+      position: absolute; top: 0.8rem; left: 0.8rem;
+      background: var(--ember); color: #fff;
+      font-size: 0.58rem; letter-spacing: 0.18em;
+      text-transform: uppercase; font-weight: 600;
+      padding: 0.2rem 0.6rem;
+    }
+
+    .feed-cta-row {
+      margin-top: 2rem; text-align: center;
+    }
+
+    .btn-outline {
+      display: inline-block;
+      border: 1.5px solid var(--ink); color: var(--ink);
+      padding: 0.85rem 2.5rem;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.72rem; font-weight: 600;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.3s, color 0.3s;
+    }
+    .btn-outline:hover { background: var(--ink); color: var(--off-white); }
+
+    /* ─── NEWSLETTER ─── */
+    .nl-section {
+      background: var(--ember);
+      padding: 5rem 7rem;
+      display: flex; align-items: center;
+      justify-content: space-between; gap: 4rem;
+    }
+    .nl-left {}
+    .nl-eyebrow {
+      font-size: 0.65rem; letter-spacing: 0.3em;
+      text-transform: uppercase; color: rgba(255,255,255,0.65);
+      font-weight: 600; margin-bottom: 0.8rem;
+    }
+    .nl-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2.5rem; color: #fff; line-height: 1.15;
+    }
+    .nl-sub {
+      font-size: 0.88rem; color: rgba(255,255,255,0.7);
+      font-weight: 300; margin-top: 0.6rem;
+    }
+    .nl-form { display: flex; flex: 1; max-width: 480px; }
+    .nl-input {
+      flex: 1; background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-right: none; padding: 1rem 1.4rem;
+      color: #fff; font-family: 'Jost', sans-serif;
+      font-size: 0.88rem; outline: none;
+    }
+    .nl-input::placeholder { color: rgba(255,255,255,0.45); }
+    .nl-btn {
+      background: var(--ink); border: none; color: var(--linen);
+      padding: 1rem 1.8rem; font-family: 'Jost', sans-serif;
+      font-size: 0.7rem; font-weight: 600;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      cursor: pointer; white-space: nowrap;
+      transition: background 0.3s;
+    }
+    .nl-btn:hover { background: var(--walnut); }
+
+    
+    /* ─── ANIMATIONS ─── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; } to { opacity: 1; }
+    }
+
+    /* ─── SCROLL REVEAL ─── */
+    .reveal {
+      opacity: 0; transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 1100px) {
+      nav { padding: 1.2rem 2rem; }
+      .hero-inner { padding: 9rem 2rem 4rem; }
+      .pulse-header, .pillars-section, .feed-section, .nl-section { padding-left: 2.5rem; padding-right: 2.5rem; }
+      .pulse-scroll-wrap { padding-left: 2.5rem; padding-right: 2.5rem; }
+      .pillars-grid { grid-template-columns: 1fr 1fr; }
+      .feed-grid { grid-template-columns: 1fr 1fr; }
+      .feed-item:first-child { grid-column: 1 / -1; grid-row: auto; }
+      .nl-section { flex-direction: column; gap: 2rem; }
+      .nl-form { max-width: 100%; width: 100%; }
+      footer { padding: 2.5rem; flex-direction: column; gap: 1.5rem; text-align: center; }
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hero-headline { font-size: 2.6rem; }
+      .pillars-grid { grid-template-columns: 1fr; }
+      .feed-grid { grid-template-columns: 1fr; }
+      .pillars-section, .feed-section { padding: 4rem 1.5rem; }
+    }
+
+    /* ─── HAMBURGER MENU ─── */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      cursor: pointer;
+      padding: 0.4rem;
+      z-index: 300;
+      background: none;
+      border: none;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--linen);
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      transform-origin: center;
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(34,34,59,0.98);
+      z-index: 250;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      backdrop-filter: blur(16px);
+    }
+    .mobile-nav.open { display: flex; }
+
+    .mobile-nav a {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2rem, 8vw, 3rem);
+      color: var(--linen);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      padding: 0.7rem 2rem;
+      transition: color 0.2s;
+      font-style: italic;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: none;
+    }
+    .mobile-nav.open a {
+      animation: mobileNavIn 0.4s ease forwards;
+    }
+    .mobile-nav.open a:nth-child(1) { animation-delay: 0.05s; }
+    .mobile-nav.open a:nth-child(2) { animation-delay: 0.12s; }
+    .mobile-nav.open a:nth-child(3) { animation-delay: 0.19s; }
+    .mobile-nav.open a:nth-child(4) { animation-delay: 0.26s; }
+    .mobile-nav.open a:nth-child(5) { animation-delay: 0.33s; }
+
+    .mobile-nav a:hover,
+    .mobile-nav a.active { color: var(--ember); }
+
+    .mobile-nav-cta {
+      margin-top: 1.5rem;
+      background: var(--ember) !important;
+      color: #fff !important;
+      font-family: 'Jost', sans-serif !important;
+      font-size: 0.8rem !important;
+      font-style: normal !important;
+      letter-spacing: 0.2em !important;
+      text-transform: uppercase;
+      padding: 0.9rem 2.5rem !important;
+      font-weight: 600 !important;
+    }
+
+    .mobile-nav-divider {
+      width: 40px; height: 1px;
+      background: rgba(217,93,57,0.3);
+      margin: 0.5rem 0;
+    }
+
+    @keyframes mobileNavIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      .hamburger { display: flex; }
+    }
+
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.3rem 4rem;
+      background: rgba(34,34,59,0.97);
+      backdrop-filter: blur(12px);
+    }
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.45rem; font-weight: 300;
+      letter-spacing: 0.18em; color: var(--linen);
+      text-transform: uppercase; text-decoration: none;
+    }
+    .nav-logo span { color: var(--ember); font-style: italic; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
+    .nav-links > li { position: relative; }
+    .nav-links a {
+      text-decoration: none; color: var(--linen);
+      font-size: 0.72rem; letter-spacing: 0.18em;
+      text-transform: uppercase; font-weight: 500;
+      transition: color 0.25s; opacity: 0.75;
+      white-space: nowrap; cursor: pointer; display: block;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--ember); opacity: 1; }
+    .nav-cta {
+      background: var(--ember) !important; color: #fff !important;
+      padding: 0.5rem 1.3rem !important; opacity: 1 !important;
+      display: block;
+    }
+    .nav-cta:hover { opacity: 0.88 !important; }
+    /* Dropdown */
+    .nav-dropdown-toggle {
+      display: flex; align-items: center; gap: 0.35rem;
+    }
+    .nav-dropdown-toggle::after {
+      content: '';
+      display: inline-block; width: 5px; height: 5px;
+      border-right: 1.5px solid currentColor;
+      border-bottom: 1.5px solid currentColor;
+      transform: rotate(45deg) translateY(-2px);
+      transition: transform 0.2s;
+      flex-shrink: 0;
+    }
+    .nav-dropdown:hover .nav-dropdown-toggle::after {
+      transform: rotate(225deg) translateY(1px);
+    }
+    .nav-dropdown-menu {
+      display: none; position: absolute;
+      top: 100%; left: 50%;
+      transform: translateX(-50%);
+      padding-top: 12px; /* pushes menu down visually without creating a gap */
+      background: transparent;
+      z-index: 400;
+      min-width: 210px;
+    }
+    /* The actual visible menu box sits inside an inner div */
+    .nav-dropdown-menu-inner {
+      background: rgba(34,34,59,0.99);
+      backdrop-filter: blur(12px);
+      padding: 0.5rem 0;
+      border-top: 2px solid var(--ember);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.35);
+    }
+    /* Invisible bridge covers the 12px gap so mouse stays "inside" the element */
+    .nav-dropdown-menu::before {
+      content: '';
+      display: block;
+      height: 12px;
+      width: 100%;
+    }
+    .nav-dropdown:hover .nav-dropdown-menu,
+    .nav-dropdown.open .nav-dropdown-menu { display: block; }
+    .nav-dropdown-menu a {
+      display: block; padding: 0.65rem 1.4rem;
+      font-size: 0.68rem; letter-spacing: 0.16em;
+      text-transform: uppercase; color: var(--linen);
+      text-decoration: none; font-weight: 500;
+      opacity: 0.65; transition: all 0.18s;
+      border-left: 2px solid transparent;
+    }
+    .nav-dropdown-menu a:hover,
+    .nav-dropdown-menu a.active {
+      color: var(--ember); opacity: 1;
+      background: rgba(217,93,57,0.06);
+      border-left-color: var(--ember);
+    }
+    .nav-dropdown-menu a {
+      display: block; padding: 0.65rem 1.4rem;
+      font-size: 0.68rem; letter-spacing: 0.16em;
+      text-transform: uppercase; color: var(--linen);
+      text-decoration: none; font-weight: 500;
+      opacity: 0.65; transition: all 0.18s;
+      border-left: 2px solid transparent;
+    }
+    .nav-dropdown-menu a:hover,
+    .nav-dropdown-menu a.active {
+      color: var(--ember); opacity: 1;
+      background: rgba(217,93,57,0.06);
+      border-left-color: var(--ember);
+    }
+    /* Hamburger */
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      cursor: pointer; padding: 4px; background: none; border: none;
+    }
+    .hamburger span {
+      display: block; width: 24px; height: 2px;
+      background: var(--linen); transition: all 0.3s;
+    }
+    /* Mobile overlay menu */
+    .mobile-menu {
+      display: none; position: fixed; inset: 0;
+      background: var(--ink); z-index: 500;
+      flex-direction: column; align-items: center;
+      justify-content: center; gap: 0;
+      overflow-y: auto; padding: 5rem 2rem 3rem;
+    }
+    .mobile-menu.open { display: flex; }
+    .mob-main {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem; font-style: italic;
+      color: var(--linen); text-decoration: none;
+      letter-spacing: 0.06em; padding: 0.45rem 0;
+      display: block;
+    }
+    .mob-main:hover, .mob-main.active { color: var(--ember); }
+    .mob-sub-group {
+      width: 100%; text-align: center;
+      margin: 0.4rem 0 0.9rem;
+      border-top: 1px solid rgba(195,186,170,0.1);
+      border-bottom: 1px solid rgba(195,186,170,0.1);
+      padding: 0.8rem 0;
+    }
+    .mob-sub-label {
+      font-size: 0.58rem; letter-spacing: 0.24em;
+      text-transform: uppercase; color: var(--ember);
+      font-weight: 600; margin-bottom: 0.6rem;
+    }
+    .mob-sub {
+      display: block; font-size: 0.78rem;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--linen); text-decoration: none;
+      padding: 0.3rem 0; opacity: 0.6;
+    }
+    .mob-sub:hover, .mob-sub.active { opacity: 1; color: var(--ember); }
+    .mobile-close {
+      position: absolute; top: 2rem; right: 2rem;
+      background: none; border: none;
+      color: var(--linen); font-size: 1.8rem; cursor: pointer;
+    }
+    @media (max-width: 900px) {
+      nav { padding: 1.1rem 1.5rem; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--ink);
+      padding: 3rem 4rem;
+      display: flex; align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap; gap: 1.2rem;
+      border-top: 1px solid rgba(195,186,170,0.08);
+    }
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem; letter-spacing: 0.2em;
+      color: var(--linen); text-transform: uppercase; text-decoration: none;
+    }
+    .footer-logo span { color: var(--ember); font-style: italic; }
+    .footer-links { display: flex; gap: 1.2rem; flex-wrap: wrap; justify-content: center; }
+    .footer-links a {
+      color: var(--linen); text-decoration: none;
+      font-size: 0.66rem; letter-spacing: 0.16em;
+      text-transform: uppercase; opacity: 0.45; transition: opacity 0.2s;
+    }
+    .footer-links a:hover { opacity: 1; }
+    .footer-ig {
+      font-size: 0.66rem; letter-spacing: 0.16em;
+      text-transform: uppercase; color: var(--linen);
+      text-decoration: none; opacity: 0.45; transition: opacity 0.2s;
+    }
+    .footer-ig:hover { opacity: 1; }
+    .footer-copy {
+      width: 100%; text-align: center;
+      font-size: 0.63rem; color: var(--linen); opacity: 0.2;
+    }
+    @media (max-width: 768px) {
+      footer { padding: 2rem 1.5rem; flex-direction: column; text-align: center; }
+      .footer-links { justify-content: center; }
+    }
+
+    /* Mobile nav In the City button matches main items exactly */
+    .mob-city-btn {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem;
+      font-style: italic;
+      color: var(--linen);
+      background: none;
+      border: none;
+      cursor: pointer;
+      letter-spacing: 0.06em;
+      padding: 0.45rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      width: auto;
+      text-align: center;
+    }
+    .mob-city-btn:hover,
+    .mob-city-btn.active { color: var(--ember); }
+    .mob-city-arrow {
+      font-style: normal;
+      font-size: 1.4rem;
+      line-height: 1;
+      transition: transform 0.2s;
+      display: inline-block;
+    }
+    .mob-city-sub {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.2rem;
+      padding: 0.6rem 0 0.8rem;
+      width: 100%;
+    }
+    .mob-city-sub.open { display: flex; }
+    /* Sub-links slightly smaller than main items */
+    .mob-sub {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--linen);
+      text-decoration: none;
+      padding: 0.35rem 0;
+      opacity: 0.6;
+      display: block;
+    }
+    .mob-sub:hover,
+    .mob-sub.active { opacity: 1; color: var(--ember); }
+    /* Hide old mob-sub-group if present */
+    .mob-sub-group { display: none !important; }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/index.html" class="nav-logo">The Modern <span>Muse</span></a>
+            <ul class="nav-links">
+      <li><a href="/index.html" class="active">Home</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/muse-events.html">Muse Events</a></li>
+      <li class="nav-dropdown">
+        <a class="nav-dropdown-toggle">In the City</a>
+        <div class="nav-dropdown-menu">
+          <div class="nav-dropdown-menu-inner">
+            <a href="/in-the-city.html">Local Events</a>
+            <a href="/social-clubs.html">Social Club Directory</a>
+            <a href="/social-hours.html">Social Hours</a>
+          </div>
+        </div>
+      </li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+        <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-close" id="mobileClose">✕</button>
+    <a href="/index.html" class="mob-main active">Home</a>
+    <a href="/about.html" class="mob-main">About</a>
+    <a href="/muse-events.html" class="mob-main">Muse Events</a>
+    <button id="mobCityBtn" class="mob-city-btn">
+      In the City <span id="mobCityArrow" class="mob-city-arrow">›</span>
+    </button>
+    <div id="mobCitySub" class="mob-city-sub">
+      <a href="/in-the-city.html" class="mob-sub">Local Events</a>
+      <a href="/social-clubs.html" class="mob-sub">Social Club Directory</a>
+      <a href="/social-hours.html" class="mob-sub">Social Hours</a>
+    </div>
+    <a href="/contact.html" class="mob-main">Contact</a>
+  </div>
+
+<!-- ══ HERO ══ -->
+  <section class="hero">
+    <div class="hero-bg-word">SPARK</div>
+    <div class="hero-inner">
+      <div class="hero-overline">What's On This Week</div>
+      <h1 class="hero-headline">
+        Your City Doesn't Sleep<br>on <em>Tuesdays.</em><br>So Why Should You?
+      </h1>
+      <p class="hero-manifesto">
+        Every day holds the potential for something remarkable if you know where to look. The Modern Muse curates the most inspiring moments happening around you so you never have to wait for the weekend to start living.
+      </p>
+      <div class="hero-ctas">
+        <a href="/in-the-city.html" class="btn-primary">This Week's Top Picks →</a>
+        <a href="/in-the-city.html" class="btn-ghost">View Full Calendar</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <div class="scroll-line"></div>
+      <span class="scroll-label">Scroll to explore</span>
+    </div>
+  </section>
+
+  <!-- ══ 7-DAY PULSE ══ -->
+  <section class="pulse-section">
+    <div class="pulse-header reveal">
+      <div>
+        <div class="section-label">This Week's Edit</div>
+        <h2 class="section-title">The <em>7-Day Pulse</em></h2>
+      </div>
+      <a href="/in-the-city.html" style="font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--ember);text-decoration:none;border-bottom:1px solid var(--ember);padding-bottom:2px;font-weight:600;">Full Calendar →</a>
+    </div>
+
+    <div class="pulse-scroll-wrap" id="pulseScroll">
+      <div class="pulse-track">
+
+        <div class="pulse-card" style="border-color:#D95D3920;">
+          <img class="pulse-card-img" src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=500&q=75" alt="Monday" />
+          <div class="pulse-card-body">
+            <div class="pulse-day">Monday</div>
+            <div class="pulse-event-name">Solara White Party</div>
+            <div class="pulse-meta"><span>🕐 6:00 PM</span><span>📍 Bel-Aire Backyard</span></div>
+            <a href="https://ritualcollective.com" target="_blank" class="pulse-cta">Learn more</a>
+          </div>
+        </div>
+        <div class="pulse-card" style="border-color:#2E7D5E20;">
+          <img class="pulse-card-img" src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=500&q=75" alt="Tuesday" />
+          <div class="pulse-card-body">
+            <div class="pulse-day">Tuesday</div>
+            <div class="pulse-event-name">Rooftop Candlelit Pilates</div>
+            <div class="pulse-meta"><span>🕐 5:00 PM</span><span>📍 Keller Cactus Hills</span></div>
+            <a href="https://pi-lattes.com" target="_blank" class="pulse-cta">Learn more</a>
+          </div>
+        </div>
+        <div class="pulse-card" style="border-color:#2E7D5E20;">
+          <img class="pulse-card-img" src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500&q=75" alt="Wednesday" />
+          <div class="pulse-card-body">
+            <div class="pulse-day">Wednesday</div>
+            <div class="pulse-event-name">Mat Mondays: Pilates</div>
+            <div class="pulse-meta"><span>🕐 6:00 PM</span><span>📍 Sheree Michelle Fitness</span></div>
+            <a href="/in-the-city.html" class="pulse-cta">Learn more</a>
+          </div>
+        </div>
+        <div class="pulse-card" style="border-color:#2E7D5E20;">
+          <img class="pulse-card-img" src="https://images.unsplash.com/photo-1554344728-77cf90d9ed26?w=500&q=75" alt="Thursday" />
+          <div class="pulse-card-body">
+            <div class="pulse-day">Thursday</div>
+            <div class="pulse-event-name">Archery at Clark County</div>
+            <div class="pulse-meta"><span>🕐 6:30 PM</span><span>📍 Clark County Shooting Complex</span></div>
+            <a href="/in-the-city.html" class="pulse-cta">Learn more</a>
+          </div>
+        </div>
+        <div class="pulse-card" style="border-color:#2E7D5E20;">
+          <img class="pulse-card-img" src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=500&q=75" alt="Friday" />
+          <div class="pulse-card-body">
+            <div class="pulse-day">Friday</div>
+            <div class="pulse-event-name">Yoga with the Lions</div>
+            <div class="pulse-meta"><span>🕐 9:00 AM</span><span>📍 Lion Habitat Ranch</span></div>
+            <a href="https://lionhabitatranch.org" target="_blank" class="pulse-cta">Learn more</a>
+          </div>
+        </div>
+        <div class="pulse-card" style="border-color:#4A4E6920;">
+          <img class="pulse-card-img" src="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=500&q=75" alt="Saturday" />
+          <div class="pulse-card-body">
+            <div class="pulse-day">Saturday</div>
+            <div class="pulse-event-name">Girls Paint at the Park</div>
+            <div class="pulse-meta"><span>🕐 1:00 PM</span><span>📍 NW Las Vegas</span></div>
+            <a href="https://girlsnightinpaintandsip.com" target="_blank" class="pulse-cta">Learn more</a>
+          </div>
+        </div>
+        <div class="pulse-card" style="border-color:#2E7D5E20;">
+          <img class="pulse-card-img" src="https://images.unsplash.com/photo-1588286840104-8957b019727f?w=500&q=75" alt="Sunday" />
+          <div class="pulse-card-body">
+            <div class="pulse-day">Sunday</div>
+            <div class="pulse-event-name">Spring Yoga with Ranunculus</div>
+            <div class="pulse-meta"><span>🕐 6:15 AM</span><span>📍 Gilcrease Orchard</span></div>
+            <a href="https://thegilcreaseorchard.org" target="_blank" class="pulse-cta">Learn more</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ PILLARS ══ -->
+  <section class="pillars-section">
+    <div class="pillars-header reveal">
+      <div>
+        <div class="section-label" style="color:var(--ember);">The Modern Muse Is</div>
+        <h2 class="section-title" style="color:var(--off-white);">Multi-Faceted <em style="color:var(--linen);">By Design</em></h2>
+      </div>
+      <p style="color:var(--linen);opacity:0.5;font-size:0.85rem;font-weight:300;max-width:280px;text-align:right;line-height:1.6;">
+        Why choose one passion when you can have ten?
+      </p>
+    </div>
+
+    <div class="pillars-grid reveal">
+
+      <!-- CREATOR -->
+      <div class="pillar-card">
+        <div class="pillar-num">01</div>
+        <span class="pillar-icon">🎨</span>
+        <div class="pillar-type">The Creator</div>
+        <div class="pillar-name">Make Something<br>Beautiful</div>
+        <p class="pillar-desc">You don't have to be an artist to need a creative outlet. Whether you're throwing clay or decorating a cake, the act of making is its own kind of medicine.</p>
+        <div class="pillar-tags">
+          <span class="pillar-tag">Pottery</span>
+          <span class="pillar-tag">Cake Decorating</span>
+          <span class="pillar-tag">Workshops</span>
+          <span class="pillar-tag">Painting</span>
+        </div>
+        <div class="pillar-accent" style="background: var(--ember);"></div>
+      </div>
+
+      <!-- ATHLETE -->
+      <div class="pillar-card">
+        <div class="pillar-num">02</div>
+        <span class="pillar-icon">🌅</span>
+        <div class="pillar-type">The Athlete</div>
+        <div class="pillar-name">Move With<br>Purpose</div>
+        <p class="pillar-desc">Fitness doesn't have to mean a fluorescent gym. Your surroundings are your playing field from rooftop yoga at sunrise to trail hikes that end at a hidden waterfall.</p>
+        <div class="pillar-tags">
+          <span class="pillar-tag">Rooftop Yoga</span>
+          <span class="pillar-tag">Sunrise Hikes</span>
+          <span class="pillar-tag">Outdoor Fitness</span>
+          <span class="pillar-tag">Wellness</span>
+        </div>
+        <div class="pillar-accent" style="background: var(--linen);"></div>
+      </div>
+
+      <!-- SOCIALITE -->
+      <div class="pillar-card">
+        <div class="pillar-num">03</div>
+        <span class="pillar-icon">🥂</span>
+        <div class="pillar-type">The Socialite</div>
+        <div class="pillar-name">Connect With<br>Your Scene</div>
+        <p class="pillar-desc">The best conversations happen in unexpected places. Gallery openings, hidden lounge pop-ups, rooftop mixers these are the moments that become stories.</p>
+        <div class="pillar-tags">
+          <span class="pillar-tag">Gallery Openings</span>
+          <span class="pillar-tag">Hidden Pop-ups</span>
+          <span class="pillar-tag">Cocktail Hours</span>
+          <span class="pillar-tag">Networking</span>
+        </div>
+        <div class="pillar-accent" style="background: var(--slate);"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══ COMMUNITY FEED ══ -->
+  <section class="feed-section">
+    <div class="feed-header reveal">
+      <div>
+        <div class="section-label">Muse in Motion</div>
+        <h2 class="section-title">The Community <em>Feed</em></h2>
+      </div>
+      <a href="#" style="font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--ember);text-decoration:none;border-bottom:1px solid var(--ember);padding-bottom:2px;font-weight:600;">Follow Along →</a>
+    </div>
+
+    <div class="feed-grid reveal">
+
+      <div class="feed-item">
+        <div class="feed-tag">✦ Featured</div>
+        <img class="feed-img" src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=800&q=75" alt="Community event" />
+        <div class="feed-overlay">
+          <div class="feed-caption">
+            <strong>Saturday Rooftop Social</strong>
+            200 Muses, one unforgettable night above the skyline.
+          </div>
+        </div>
+      </div>
+
+      <div class="feed-item">
+        <img class="feed-img" src="https://images.unsplash.com/photo-1588286840104-8957b019727f?w=500&q=75" alt="Yoga event" />
+        <div class="feed-overlay">
+          <div class="feed-caption"><strong>Sunrise Rooftop Yoga</strong>Best way to start a Wednesday.</div>
+        </div>
+      </div>
+
+      <div class="feed-item">
+        <img class="feed-img" src="https://images.unsplash.com/photo-1531058020387-3be344556be6?w=500&q=75" alt="Gallery" />
+        <div class="feed-overlay">
+          <div class="feed-caption"><strong>Gallery Opening Night</strong>New Voices exhibition launch.</div>
+        </div>
+      </div>
+
+      <div class="feed-item">
+        <img class="feed-img" src="https://images.unsplash.com/photo-1603190287605-e6ade32fa852?w=500&q=75" alt="Pottery" />
+        <div class="feed-overlay">
+          <div class="feed-caption"><strong>Monday Pottery Night</strong>Creating calm in the middle of the week.</div>
+        </div>
+      </div>
+
+      <div class="feed-item">
+        <img class="feed-img" src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=500&q=75" alt="Wine" />
+        <div class="feed-overlay">
+          <div class="feed-caption"><strong>Natural Wine Afternoon</strong>Sunday done right.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="feed-cta-row reveal">
+      <a href="#" class="btn-outline">Join The Community</a>
+    </div>
+  </section>
+
+  <!-- ══ NEWSLETTER ══ -->
+  <section class="nl-section">
+    <div class="nl-left">
+      <div class="nl-eyebrow">The Weekly Edit</div>
+      <h2 class="nl-title">Never miss a spark.</h2>
+      <p class="nl-sub">The week's best events, social hours, and hidden gems near you.</p>
+    </div>
+    <div class="nl-form">
+      <input class="nl-input" type="email" placeholder="your@email.com" />
+      <button class="nl-btn">Subscribe</button>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+
+  <script>
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+
+    // Drag-to-scroll pulse track
+    const scroller = document.getElementById('pulseScroll');
+    let isDown = false, startX, scrollLeft;
+    scroller.addEventListener('mousedown', e => { isDown = true; startX = e.pageX - scroller.offsetLeft; scrollLeft = scroller.scrollLeft; });
+    scroller.addEventListener('mouseleave', () => isDown = false);
+    scroller.addEventListener('mouseup', () => isDown = false);
+    scroller.addEventListener('mousemove', e => {
+      if (!isDown) return; e.preventDefault();
+      scroller.scrollLeft = scrollLeft - (e.pageX - scroller.offsetLeft - startX);
+    });
+  </script>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileNav.classList.toggle('open');
+      document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
+    });
+    mobileNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        mobileNav.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+  </script>
+
+
+  <footer>
+    <a href="/index.html" class="footer-logo">The Modern <span>Muse</span></a>
+        <div class="footer-links">
+      <a href="/index.html">Home</a>
+      <a href="/about.html">About</a>
+      <a href="/muse-events.html">Muse Events</a>
+      <a href="/social-hours.html">Social Hours</a>
+      <a href="/in-the-city.html">Local Events</a>
+      <a href="/social-clubs.html">Social Club Directory</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+    <a href="https://instagram.com/themodernmuse.lv" target="_blank" class="footer-ig">@themodernmuse.lv</a>
+        <div style="width:100%;border-top:1px solid rgba(195,186,170,0.08);padding-top:1.8rem;margin-top:0.5rem;display:flex;flex-direction:column;align-items:center;gap:0.4rem;">
+      <p style="font-size:0.78rem;color:var(--linen);opacity:0.55;font-weight:300;text-align:center;max-width:480px;line-height:1.7;">
+        Curated by <strong style="font-weight:500;opacity:0.85;">The Modern Muse</strong> a guide to events, social hours, and experiences worth your time. Curated with care.
+      </p>
+    </div>
+    <p class="footer-copy">© 2026 The Modern Muse. All rights reserved.</p>
+  </footer>
+
+      <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Mobile hamburger open/close
+      var ham  = document.getElementById('hamburger');
+      var menu = document.getElementById('mobileMenu');
+      var cls  = document.getElementById('mobileClose');
+
+      function openMenu()  {
+        if (menu) { menu.classList.add('open'); document.body.style.overflow = 'hidden'; }
+      }
+      function closeMenu() {
+        if (menu) { menu.classList.remove('open'); document.body.style.overflow = ''; }
+      }
+
+      if (ham) ham.addEventListener('click', openMenu);
+      if (cls) cls.addEventListener('click', closeMenu);
+
+      // Close when any nav link is tapped
+      if (menu) {
+        menu.querySelectorAll('a').forEach(function(a) {
+          a.addEventListener('click', closeMenu);
+        });
+      }
+
+      // "In the City" expander in mobile menu
+      var cityBtn   = document.getElementById('mobCityBtn');
+      var citySub   = document.getElementById('mobCitySub');
+      var cityArrow = document.getElementById('mobCityArrow');
+      if (cityBtn && citySub) {
+        cityBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          var isOpen = citySub.classList.contains('open');
+          citySub.classList.toggle('open', !isOpen);
+          if (cityArrow) cityArrow.style.transform = isOpen ? '' : 'rotate(90deg)';
+        });
+      }
+
+      // Desktop dropdown click toggles, click outside closes
+      var ddWrap   = document.querySelector('.nav-dropdown');
+      var ddToggle = document.querySelector('.nav-dropdown-toggle');
+      if (ddWrap && ddToggle) {
+        ddToggle.addEventListener('click', function(e) {
+          e.preventDefault();
+          ddWrap.classList.toggle('open');
+        });
+        document.addEventListener('click', function(e) {
+          if (ddWrap && !ddWrap.contains(e.target)) {
+            ddWrap.classList.remove('open');
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>
