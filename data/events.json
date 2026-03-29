@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-29T16:14:08.779Z",
+  "lastUpdated": "2026-03-29T16:14:09.971Z",
   "events": [
     {
       "date": "2026-03-18",
@@ -36,6 +36,18 @@
       "color": "#D95D39",
       "bookingUrl": "thegilcreaseorchard.org",
       "contact": ""
+    },
+    {
+      "date": "2026-04-04",
+      "time": "13:00",
+      "ampm": "PM",
+      "title": "Girls Paint at the Park",
+      "location": "NW Las Vegas",
+      "description": "Elevated outdoor paint experience with mocktails and a floral bar.",
+      "category": "Arts & Culture",
+      "color": "#4A4E69",
+      "bookingUrl": "girlsnightinpaintandsip.com",
+      "contact": "@girlsnightinpaintandsip"
     },
     {
       "date": "2026-04-18",
