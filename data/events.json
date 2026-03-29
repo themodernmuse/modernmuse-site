@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-29T16:14:48.093Z",
+  "lastUpdated": "2026-03-29T16:14:59.742Z",
   "events": [
     {
       "date": "2026-03-18",
@@ -8,6 +8,18 @@
       "title": "Spring Yoga with Ranunculus",
       "location": "Gilcrease Orchard",
       "description": "Start your morning with a refreshing yoga flow surrounded by blooming ranunculus fields.",
+      "category": "Fitness & wellness",
+      "color": "#D95D39",
+      "bookingUrl": "thegilcreaseorchard.org",
+      "contact": "@gilcreaseorchard"
+    },
+    {
+      "date": "2026-03-20",
+      "time": "17:15",
+      "ampm": "PM",
+      "title": "Sunset Spring Yoga",
+      "location": "Gilcrease Orchard",
+      "description": "An evening yoga session at the orchard designed to help you unwind during the golden hour.",
       "category": "Fitness & wellness",
       "color": "#D95D39",
       "bookingUrl": "thegilcreaseorchard.org",
