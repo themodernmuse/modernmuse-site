@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-29T16:16:06.390Z",
+  "lastUpdated": "2026-03-29T16:16:20.948Z",
   "events": [
     {
       "date": "2026-03-18",
@@ -84,6 +84,18 @@
       "color": "#4A4E69",
       "bookingUrl": "https://partiful.com/e/K7ES9hxeTAMbGI0gTzO4",
       "contact": "@cozycollectivelv"
+    },
+    {
+      "date": "2026-03-29",
+      "time": "8:00",
+      "ampm": "AM",
+      "title": "Mindset x Movement: Run Into The New Season",
+      "location": "Better Days Coffee - Flamingo",
+      "description": "Join a curated running collective for an invigorating morning that perfectly balances mindful movement with the fresh energy of a new season. This isn't just another group run—it's your invitation to connect with like-minded souls while setting intentions that will carry you beautifully into what's next.",
+      "category": "Wellness & Fitness",
+      "color": "#D95D39",
+      "bookingUrl": "https://dailydopamine.co/products/mindset-x-movement-run-into-the-new-season?variant=53976529535260",
+      "contact": "@gracerunclub"
     },
     {
       "date": "2026-04-04",
