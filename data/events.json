@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-29T19:26:24.207Z",
+  "lastUpdated": "2026-03-29T19:26:32.975Z",
   "events": [
     {
       "date": "2026-03-18",
@@ -204,6 +204,18 @@
       "color": "#D95D39",
       "bookingUrl": "",
       "contact": "@breathewithraven"
+    },
+    {
+      "date": "2026-04-08",
+      "time": "18:30",
+      "ampm": "PM",
+      "title": "Clay & Chisme",
+      "location": "The Pottery Shop",
+      "description": "Join us for the perfect blend of creativity and conversation at The Pottery Shop, where you'll get your hands dirty crafting beautiful ceramics while sharing stories and secrets with fellow creatives. It's the kind of evening where meaningful connections are made over messy clay and flowing chisme — exactly what your soul needs right now.",
+      "category": "Creative Workshop",
+      "color": "#4A4E69",
+      "bookingUrl": "https://posh.vip/e/clay-chisme-?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAdGRleAQpsGFleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAaefpRW1-c9FjEGLoeqdC4Ge2MU5VDhEqDj4vmLOaWZ9_aPBvwBTErg1h5sULQ_aem_1z3DCpLSiAq6wFzIj8ff-w",
+      "contact": "@amigamovement"
     },
     {
       "date": "2026-04-10",
