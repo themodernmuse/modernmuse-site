@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-29T16:17:19.426Z",
+  "lastUpdated": "2026-03-29T16:17:26.404Z",
   "events": [
     {
       "date": "2026-03-18",
@@ -204,6 +204,18 @@
       "color": "#D95D39",
       "bookingUrl": "",
       "contact": ""
+    },
+    {
+      "date": "2026-04-19",
+      "time": "16:00",
+      "ampm": "PM",
+      "title": "Yoga In the Park",
+      "location": "Flamingo Park",
+      "description": "Join Solely Committed Co. for a evening session of yoga in the park. Each session is community offerings and donations are accepted. Please reach out to @breathewithraven for any additional information.",
+      "category": "Wellness & Fitness",
+      "color": "#D95D39",
+      "bookingUrl": "",
+      "contact": "@breathewithraven"
     },
     {
       "date": "2026-05-02",
