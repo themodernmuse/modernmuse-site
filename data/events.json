@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-29T16:16:04.596Z",
+  "lastUpdated": "2026-03-29T16:16:06.390Z",
   "events": [
     {
       "date": "2026-03-18",
@@ -96,6 +96,18 @@
       "color": "#4A4E69",
       "bookingUrl": "girlsnightinpaintandsip.com",
       "contact": "@girlsnightinpaintandsip"
+    },
+    {
+      "date": "2026-04-10",
+      "time": "19:00",
+      "ampm": "PM",
+      "title": "Plant Bingo",
+      "location": "Spilled Milk Store",
+      "description": "Get ready for the most delightfully unexpected evening where your love for greenery meets the thrill of bingo in Vegas' coziest plant haven. This isn't your grandmother's bingo night – it's where plant parents and curious souls gather for an evening of friendly competition, botanical prizes, and the kind of authentic connections that make this city feel like home.",
+      "category": "Social",
+      "color": "#D95D39",
+      "bookingUrl": "https://www.spilledmilkstore.com/product/plant-bingo-april-2026/ZYTCDCZTESKOT5IAWZCKHDTB?cp=true&sa=true&sbp=false&q=false&utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAdGRleAQprldleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAaf2CaLSSW5eqUwhkgfsG_5L-cvmZGGBzmQN3ZQ89i_zvkYNCWSd9eRzhja2vA_aem_T_TDo6kWHNKypj2ympYkTQ",
+      "contact": ""
     },
     {
       "date": "2026-04-11",
