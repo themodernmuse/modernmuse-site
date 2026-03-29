@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-29T16:15:42.274Z",
+  "lastUpdated": "2026-03-29T16:16:04.596Z",
   "events": [
     {
       "date": "2026-03-18",
@@ -120,6 +120,18 @@
       "color": "#D95D39",
       "bookingUrl": "girlspaintinsipandpaint.com",
       "contact": "@girlsnightinpaintandsip"
+    },
+    {
+      "date": "2026-04-18",
+      "time": "7:30",
+      "ampm": "AM",
+      "title": "Skye Canyon Pickleball Social",
+      "location": "Skye Canyon Park",
+      "description": "Whether you're curious about the fastest-growing sport in America or ready to compete, this community gathering offers the perfect introduction to pickleball with free clinics, novice and intermediate tournaments, plus food trucks to fuel the fun. It's that rare event where you can learn something new, break a sweat, and connect with fellow Las Vegans all in one beautiful morning at the park.",
+      "category": "Wellness & Fitness",
+      "color": "#D95D39",
+      "bookingUrl": "",
+      "contact": ""
     },
     {
       "date": "2026-05-02",
