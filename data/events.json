@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-29T16:15:37.054Z",
+  "lastUpdated": "2026-03-29T16:15:42.274Z",
   "events": [
     {
       "date": "2026-03-18",
@@ -96,6 +96,18 @@
       "color": "#4A4E69",
       "bookingUrl": "girlsnightinpaintandsip.com",
       "contact": "@girlsnightinpaintandsip"
+    },
+    {
+      "date": "2026-04-11",
+      "time": "11:30",
+      "ampm": "AM",
+      "title": "Black Girl Mixer: Camera Confidence",
+      "location": "",
+      "description": "",
+      "category": "Social",
+      "color": "#D95D39",
+      "bookingUrl": "https://www.blackgirlmixer.com/",
+      "contact": "@blackgirlmixer"
     },
     {
       "date": "2026-04-18",
