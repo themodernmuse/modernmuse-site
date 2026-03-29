@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-29T16:17:35.372Z",
+  "lastUpdated": "2026-03-29T16:17:55.622Z",
   "events": [
     {
       "date": "2026-03-18",
@@ -84,6 +84,18 @@
       "color": "#4A4E69",
       "bookingUrl": "https://partiful.com/e/K7ES9hxeTAMbGI0gTzO4",
       "contact": "@cozycollectivelv"
+    },
+    {
+      "date": "2026-03-29",
+      "time": "12:00",
+      "ampm": "PM",
+      "title": "Pilates Pool Party",
+      "location": "Ariva",
+      "description": "Get Fit event with cardio splash, pool deck Pilates, and food.",
+      "category": "Fitness & Social",
+      "color": "#4A4E69",
+      "bookingUrl": "sweatpals.com",
+      "contact": "@getfitlasvegas"
     },
     {
       "date": "2026-03-29",
