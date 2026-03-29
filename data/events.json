@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-29T19:23:33.408Z",
+  "lastUpdated": "2026-03-29T19:24:03.179Z",
   "events": [
     {
       "date": "2026-03-18",
@@ -156,6 +156,18 @@
       "color": "#4A4E69",
       "bookingUrl": "girlsnightinpaintandsip.com",
       "contact": "@girlsnightinpaintandsip"
+    },
+    {
+      "date": "2026-04-04",
+      "time": "10:15",
+      "ampm": "AM",
+      "title": "Black People Hike LV: State of the Trail Civic Unity Hike",
+      "location": "Lone Mountain",
+      "description": "Join this meaningful community gathering that combines the healing power of nature with important civic dialogue as you explore the scenic trails of Lone Mountain. It's a beautiful opportunity to connect with like-minded hikers while engaging in thoughtful conversations about our community's future in one of Vegas's most stunning outdoor settings.",
+      "category": "Wellness & Fitness",
+      "color": "#D95D39",
+      "bookingUrl": "https://allevents.in/las-vegas/80007248079795?ref=sharer",
+      "contact": "@blackpeoplehikelv"
     },
     {
       "date": "2026-04-05",
