@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-29T16:17:26.404Z",
+  "lastUpdated": "2026-03-29T16:17:28.023Z",
   "events": [
     {
       "date": "2026-03-18",
@@ -168,6 +168,18 @@
       "color": "#D95D39",
       "bookingUrl": "https://posh.vip/e/saturno-pilates-1?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAdGRleAQtaT5leHRuA2FlbQIxMQBzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAaeD_DxIx1UsbGKhcelwM4uFNIJAfAERlgwKIizawCVuYHpgl97tXoFk_2gzpA_aem_Y0ss98NfEMZ0MJzDexFNdA",
       "contact": "@masquepilates"
+    },
+    {
+      "date": "2026-04-12",
+      "time": "18:00",
+      "ampm": "PM",
+      "title": "Yoga In the Park",
+      "location": "Lone Mountain Park",
+      "description": "Join Solely Committed Co. for a evening session of yoga in the park. Each session is community offerings and donations are accepted. Please reach out to @breathewithraven for any additional information.",
+      "category": "Wellness & Fitness",
+      "color": "#D95D39",
+      "bookingUrl": "",
+      "contact": "@breathewithraven"
     },
     {
       "date": "2026-04-12",
