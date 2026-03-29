@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-29T16:15:28.327Z",
+  "lastUpdated": "2026-03-29T16:15:37.054Z",
   "events": [
     {
       "date": "2026-03-18",
@@ -24,6 +24,18 @@
       "color": "#D95D39",
       "bookingUrl": "thegilcreaseorchard.org",
       "contact": "@gilcreaseorchard"
+    },
+    {
+      "date": "2026-03-21",
+      "time": "11:00",
+      "ampm": "AM",
+      "title": "Dear Brwn Mama",
+      "location": "",
+      "description": "",
+      "category": "Family Friendly",
+      "color": "#4A4E69",
+      "bookingUrl": "https://www.dearbrwnmama.com/event-details/bunny-bash",
+      "contact": "@Dearbrwnmama"
     },
     {
       "date": "2026-03-25",
