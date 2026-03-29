@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-29T16:14:36.973Z",
+  "lastUpdated": "2026-03-29T16:14:42.097Z",
   "events": [
     {
       "date": "2026-03-18",
@@ -20,18 +20,6 @@
       "title": "Sunrise Spring Yoga",
       "location": "Gilcrease Orchard",
       "description": "A sunrise yoga practice located in the heart of the historic orchard's flower fields.",
-      "category": "Fitness & wellness",
-      "color": "#D95D39",
-      "bookingUrl": "thegilcreaseorchard.org",
-      "contact": ""
-    },
-    {
-      "date": "2026-03-27",
-      "time": "8:15",
-      "ampm": "AM",
-      "title": "Sunrise Spring Yoga",
-      "location": "Gilcrease Orchard",
-      "description": "An early morning yoga flow surrounded by blooming ranunculus flowers in the historic orchard.",
       "category": "Fitness & wellness",
       "color": "#D95D39",
       "bookingUrl": "thegilcreaseorchard.org",
