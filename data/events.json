@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-29T19:26:53.918Z",
+  "lastUpdated": "2026-03-29T19:26:58.833Z",
   "events": [
     {
       "date": "2026-03-18",
@@ -36,6 +36,18 @@
       "color": "#4A4E69",
       "bookingUrl": "https://www.dearbrwnmama.com/event-details/bunny-bash",
       "contact": "@Dearbrwnmama"
+    },
+    {
+      "date": "2026-03-24",
+      "time": "17:00",
+      "ampm": "PM",
+      "title": "Rooftop Candlelit Pilates",
+      "location": "Keller Cactus Hills",
+      "description": "A serene evening session of candlelit Pilates and meditation followed by wellness shots and juices.",
+      "category": "Fitness & wellness",
+      "color": "#D95D39",
+      "bookingUrl": "pi-lattes.com",
+      "contact": "@pilatteslv"
     },
     {
       "date": "2026-03-24",
