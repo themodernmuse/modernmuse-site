@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-29T16:08:04.224Z",
+  "lastUpdated": "2026-03-29T16:13:00.205Z",
   "events": [
     {
       "date": "2026-03-18",
@@ -35,6 +35,18 @@
       "category": "Fitness & wellness",
       "color": "#D95D39",
       "bookingUrl": "thegilcreaseorchard.org",
+      "contact": ""
+    },
+    {
+      "date": "2026-05-02",
+      "time": "11:00",
+      "ampm": "AM",
+      "title": "Yoga with the Lions",
+      "location": "Lion Habitat Ranch",
+      "description": "Morning yoga session with the lions including ranch admission.",
+      "category": "Fitness & Wellness",
+      "color": "#D95D39",
+      "bookingUrl": "lionhabitatranch.org",
       "contact": ""
     },
     {
