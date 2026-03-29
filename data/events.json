@@ -1,6 +1,18 @@
 {
-  "lastUpdated": "2026-03-29T01:24:28.583Z",
+  "lastUpdated": "2026-03-29T16:08:04.224Z",
   "events": [
+    {
+      "date": "2026-03-18",
+      "time": "6:15",
+      "ampm": "AM",
+      "title": "Spring Yoga with Ranunculus",
+      "location": "Gilcrease Orchard",
+      "description": "Start your morning with a refreshing yoga flow surrounded by blooming ranunculus fields.",
+      "category": "Fitness & wellness",
+      "color": "#D95D39",
+      "bookingUrl": "thegilcreaseorchard.org",
+      "contact": "@gilcreaseorchard"
+    },
     {
       "date": "2026-03-25",
       "time": "8:15",
@@ -10,7 +22,8 @@
       "description": "A sunrise yoga practice located in the heart of the historic orchard's flower fields.",
       "category": "Fitness & wellness",
       "color": "#D95D39",
-      "bookingUrl": "thegilcreaseorchard.org"
+      "bookingUrl": "thegilcreaseorchard.org",
+      "contact": ""
     },
     {
       "date": "2026-03-27",
@@ -21,7 +34,8 @@
       "description": "An early morning yoga flow surrounded by blooming ranunculus flowers in the historic orchard.",
       "category": "Fitness & wellness",
       "color": "#D95D39",
-      "bookingUrl": "thegilcreaseorchard.org"
+      "bookingUrl": "thegilcreaseorchard.org",
+      "contact": ""
     },
     {
       "date": "2026-05-02",
@@ -32,7 +46,8 @@
       "description": "Elevated morning combining horses and Pilates movement.",
       "category": "Fitness & Wellness",
       "color": "#D95D39",
-      "bookingUrl": "lwactive.com"
+      "bookingUrl": "lwactive.com",
+      "contact": ""
     },
     {
       "date": "2026-10-09",
@@ -43,7 +58,8 @@
       "description": "The Hottest Shows on Dirt featuring the 2026 Black Rodeo USA season.",
       "category": "Social & Culture",
       "color": "#4A4E69",
-      "bookingUrl": "blackrodeousa.com"
+      "bookingUrl": "blackrodeousa.com",
+      "contact": ""
     }
   ],
   "recurring": [
