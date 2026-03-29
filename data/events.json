@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-29T16:15:20.742Z",
+  "lastUpdated": "2026-03-29T16:15:28.327Z",
   "events": [
     {
       "date": "2026-03-18",
@@ -60,6 +60,18 @@
       "color": "#D95D39",
       "bookingUrl": "thegilcreaseorchard.org",
       "contact": "@gilcreaseorchard"
+    },
+    {
+      "date": "2026-03-28",
+      "time": "11:00",
+      "ampm": "AM",
+      "title": "Make & Mingle: DIY Coaster Workshop",
+      "location": "",
+      "description": "",
+      "category": "Creative Workshop",
+      "color": "#4A4E69",
+      "bookingUrl": "https://partiful.com/e/K7ES9hxeTAMbGI0gTzO4",
+      "contact": "@cozycollectivelv"
     },
     {
       "date": "2026-04-04",
