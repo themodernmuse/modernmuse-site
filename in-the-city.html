@@ -843,7 +843,7 @@
     Array.from(col.children).forEach(c => { if (c.id !== 'noEvents') c.remove(); });
 
     if (!events || events.length === 0) {
-      if (noMsg) { noMsg.style.display = 'block'; noMsg.textContent = 'No upcoming events match your filter.'; }
+      if (noMsg) { noMsg.style.display = 'none'; noMsg.textContent = 'No upcoming events match your filter.'; }
       else { col.innerHTML = '<div class="no-events-msg">No upcoming events match your filter.</div>'; }
       return;
     }
