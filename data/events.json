@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-30T15:19:06.200Z",
+  "lastUpdated": "2026-03-30T15:19:15.271Z",
   "events": [
     {
       "date": "2026-03-18",
@@ -416,6 +416,19 @@
       "bookingUrl": "",
       "contact": "",
       "price": "$0-10"
+    },
+    {
+      "date": "2026-04-18",
+      "time": "7:00",
+      "ampm": "AM",
+      "title": "Beginner Yoga in the Park with Hustle & Yoga Flow",
+      "location": "Hollywood Park",
+      "description": "There's something magical about flowing through gentle poses under the open sky, and this beginner-friendly session with Hustle & Yoga Flow is the perfect way to ease into your wellness journey while soaking up Hollywood Park's serene atmosphere. Trust me, you'll leave feeling both grounded and energized, plus you'll discover that yoga outdoors hits completely differently than any studio class ever could.",
+      "category": "Wellness & Fitness",
+      "color": "#D95D39",
+      "bookingUrl": "https://checkout.square.site/merchant/MLTJAW1BP1J1M/checkout/VP2QFSDZWFLTZARHJJAPDUOB?fbclid=IwdGRjcAQ3cYZleHRuA2FlbQIxMQBzcnRjBmFwcF9pZAo2NjI4NTY4Mzc5AAEeETeYDdpBLoxLtKYIOvmAwzf-2Gwt9feGq450NJvU-5FB0IRRGhYT52VZVBY_aem_qWRHOml1jxb31nysybyfRA",
+      "contact": "@hustleyogaflow",
+      "price": 10
     },
     {
       "date": "2026-04-19",
