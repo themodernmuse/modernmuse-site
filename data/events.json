@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-30T15:19:16.069Z",
+  "lastUpdated": "2026-03-30T15:19:26.478Z",
   "events": [
     {
       "date": "2026-03-18",
@@ -468,6 +468,19 @@
       "bookingUrl": "",
       "contact": "@breathewithraven",
       "price": "Free"
+    },
+    {
+      "date": "2026-04-25",
+      "time": "16:00",
+      "ampm": "PM",
+      "title": "Aprende Conmigo: The Matcha Experience",
+      "location": "Take It Easy Roasters",
+      "description": "Dive deep into the ancient art of matcha with this immersive experience that'll have you whisking like a true tea ceremony master in no time. This is your chance to discover the meditative ritual behind every perfect cup while connecting with fellow wellness enthusiasts who appreciate life's most refined pleasures.",
+      "category": "Food & Drink",
+      "color": "#7B3E19",
+      "bookingUrl": "https://posh.vip/e/aprende-conmigothe-matcha-experience",
+      "contact": "@amigamovement",
+      "price": 50
     },
     {
       "date": "2026-05-02",
