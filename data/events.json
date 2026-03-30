@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-30T18:33:40.439Z",
+  "lastUpdated": "2026-03-30T21:21:45.485Z",
   "events": [
     {
       "date": "2026-03-18",
@@ -552,6 +552,16 @@
       "location": "Clark County Shooting Complex",
       "description": "",
       "price": "15",
+      "category": "Fitness & Wellness",
+      "bookingUrl": ""
+    },
+    {
+      "days": "Wednesdays",
+      "time": "6-7pm",
+      "title": "Uncommons Unwind: Free Rooftop Pilates hosted by The Good Place",
+      "location": "Uncommons (Parking Structure 3 Rooftop)",
+      "description": "",
+      "price": "Free",
       "category": "Fitness & Wellness",
       "bookingUrl": ""
     }
