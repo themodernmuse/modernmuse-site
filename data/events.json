@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-30T15:19:26.478Z",
+  "lastUpdated": "2026-03-30T15:19:34.653Z",
   "events": [
     {
       "date": "2026-03-18",
@@ -429,6 +429,19 @@
       "bookingUrl": "",
       "contact": "",
       "price": "$0-10"
+    },
+    {
+      "date": "2026-04-18",
+      "time": "9:00",
+      "ampm": "AM",
+      "title": "Pool-Lates: Pilates at Hideout Pool",
+      "location": "Golden Nugget Pool",
+      "description": "Picture this: you're flowing through your favorite Pilates moves while floating on water, surrounded by the luxe vibes of Golden Nugget's stunning pool deck. It's the kind of workout that makes you feel like you've discovered the ultimate wellness secret – equal parts challenging and utterly rejuvenating.",
+      "category": "Wellness & Fitness",
+      "color": "#D95D39",
+      "bookingUrl": "https://na.spatime.com/gnlv9101/4799809/activity/activity-view/59575211?fbclid=PAVERFWAQ2dCZleHRuA2FlbQIxMABzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAadFnScYfGFPMfEuZdVZuJLKsfxrC9f95Mvs-jy8TV7h6R3EM_s5AvEonGyVJw_aem_ZtTNM6Qc0CcptbLRDRuJVQ",
+      "contact": "@yogaforlifelv",
+      "price": 35
     },
     {
       "date": "2026-04-18",
