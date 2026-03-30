@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-30T18:21:53.292Z",
+  "lastUpdated": "2026-03-30T18:26:30.111Z",
   "events": [
     {
       "date": "2026-03-18",
@@ -390,6 +390,19 @@
       "bookingUrl": "https://checkout.square.site/merchant/ML2Q9RFG8F6VS/checkout/3MBICCJOFUAQPIVB2FNI5B5G?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAdGRleAQtauJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAadKgpwPaH7HPqf3nfbN7tMAXLrZAdp5bz4Bok9yKrPPFI-4nki6AoZRiR7uLw_aem_r9iq8uBxqYyMNdwMSPKrjQ",
       "contact": "@rootednflo",
       "price": 35
+    },
+    {
+      "date": "2026-04-12",
+      "time": "17:00",
+      "ampm": "PM",
+      "title": "Spring Fling Bachata Class & Social",
+      "location": "Audio Bar",
+      "description": "Have you been interested in learning a few moves to spice up your bachata? This event is perfect balace of instruction and application. No registration or cover needed. Drink specials are available from 5-6pm.",
+      "category": "Social",
+      "color": "#D95D39",
+      "bookingUrl": "",
+      "contact": "@bachataloungelv",
+      "price": "Free"
     },
     {
       "date": "2026-04-18",
