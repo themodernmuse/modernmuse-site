@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-30T15:18:44.332Z",
+  "lastUpdated": "2026-03-30T15:18:49.615Z",
   "events": [
     {
       "date": "2026-03-18",
@@ -403,6 +403,19 @@
       "bookingUrl": "",
       "contact": "",
       "price": "$0-10"
+    },
+    {
+      "date": "2026-04-19",
+      "time": "13:00",
+      "ampm": "PM",
+      "title": "Chair Fitness with The Overcoming Warriors Club",
+      "location": "Sheree Michelle Fitness Studio",
+      "description": "Join The Overcoming Warriors Club for an empowering chair fitness session that proves movement is for every body, regardless of mobility or fitness level. This inclusive workout at Sheree Michelle Fitness Studio creates a supportive community where strength meets accessibility, and you'll leave feeling accomplished and energized.",
+      "category": "Wellness & Fitness",
+      "color": "#D95D39",
+      "bookingUrl": "https://files.bizlyapp.com/widget/form/RTAgRyr9nrBEbaFjydD2?notrack=true&utm_source=linktree_profile_share&utm_medium=social&utm_content=link_in_bio&fbclid=PAdGRleAQprcNleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAaeSLMtl6X56vfj5YfDS4wTOXAEGiVWVOApLoZuskcQOHSH7yyXhAgLnmC7hQA_aem_Xy1aqBQNkAqYWMHxAtGPvA",
+      "contact": "@theovercomingwarriorsclub",
+      "price": 18
     },
     {
       "date": "2026-04-19",
