@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-30T15:18:49.615Z",
+  "lastUpdated": "2026-03-30T15:19:06.200Z",
   "events": [
     {
       "date": "2026-03-18",
@@ -338,6 +338,19 @@
       "bookingUrl": "https://bodybutterbybrianna.com/shop/p/body-butter-workshop-better-days?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAdGRleAQyFiRleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAacY9HwkVuzXMP9XObIk-l3r_t11YLUNkKWeGt_uwm_-RlvttsIfW04Xnq5bRQ_aem_sJDatxGKWFnf-ZHuQM3dOQ",
       "contact": "@bodybutterbybrianna",
       "price": 50
+    },
+    {
+      "date": "2026-04-11",
+      "time": "9:00",
+      "ampm": "AM",
+      "title": "Romanticize Your Pilates",
+      "location": "Keller Cactus Hills",
+      "description": "This dreamy Pilates experience transforms your usual workout into something utterly enchanting, blending mindful movement with an atmosphere that feels like pure self-care luxury. Trust me, this is the kind of session that leaves you feeling both beautifully stretched and completely renewed – exactly what your spring wellness routine has been missing.",
+      "category": "Wellness & Fitness",
+      "color": "#D95D39",
+      "bookingUrl": "https://www.pilateswithfatou.com/event-details/romanticize-your-pilates?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAdGRleAQ2bmFleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAaftTnlBVhsL_ho85uRAyp2VGP2UdEYiutVuub9M884SBobkIng_X8QEmwEZXg_aem_rfofjjudiFBlZt97wxnr9Q",
+      "contact": "@cafecitoychisme",
+      "price": "$40-50"
     },
     {
       "date": "2026-04-12",
