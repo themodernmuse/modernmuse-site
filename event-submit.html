@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Add Event – The Modern Muse</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #221714; --slate: #221714; --linen: #C4A882;
+      --ember: #B85C38; --walnut: #8C3D22; --off-white: #F9F4EE;
+      --light-bg: #F2EAE0; --cream: #E8DDD0; --sky: #C4A882;}
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Jost', sans-serif; background: var(--ink);
+      color: var(--off-white); min-height: 100vh;
+      padding: 1.5rem 1.2rem 5rem;
+    }
+    .top-bar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.8rem; }
+    .logo { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 300; letter-spacing: 0.15em; text-transform: uppercase; color: var(--linen); }
+    .logo span { color: var(--ember); font-style: italic; }
+    .page-badge { font-size: 0.6rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--ember); font-weight: 600; background: rgba(217,93,57,0.12); padding: 0.3rem 0.8rem; border: 1px solid rgba(217,93,57,0.2); }
+    h1 { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 300; line-height: 1.1; margin-bottom: 0.3rem; }
+    h1 em { font-style: italic; color: var(--linen); }
+    .subtitle { font-size: 0.8rem; color: var(--linen); opacity: 0.55; font-weight: 300; margin-bottom: 1.8rem; line-height: 1.6; }
+
+    /* MODE TABS */
+    .mode-tabs { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid rgba(195,186,170,0.15); margin-bottom: 1.2rem; overflow: hidden; }
+    .mode-tab { padding: 0.9rem; text-align: center; font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 600; cursor: pointer; background: transparent; border: none; color: var(--linen); opacity: 0.45; font-family: 'Jost', sans-serif; transition: all 0.2s; }
+    .mode-tab.active { background: var(--ember); color: #fff; opacity: 1; }
+
+    /* STORAGE STATUS */
+    .storage-bar { background: rgba(74,78,105,0.2); border: 1px solid rgba(74,78,105,0.3); padding: 0.7rem 1rem; margin-bottom: 1.2rem; font-size: 0.75rem; color: var(--linen); opacity: 0.8; line-height: 1.5; }
+    .storage-bar .mode { color: var(--ember); font-weight: 600; }
+
+    /* FORM CARDS */
+    .form-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(195,186,170,0.1); padding: 1.4rem; margin-bottom: 1rem; }
+    .card-title { font-size: 0.6rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--ember); font-weight: 600; margin-bottom: 1.1rem; display: flex; align-items: center; gap: 0.8rem; }
+    .card-title::after { content:''; flex:1; height:1px; background: rgba(217,93,57,0.15); }
+    label { display: block; font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--linen); opacity: 0.65; margin-bottom: 0.4rem; font-weight: 500; }
+    .req { color: var(--ember); }
+    input, select, textarea { width: 100%; background: rgba(255,255,255,0.05); border: 1px solid rgba(195,186,170,0.15); padding: 0.8rem 1rem; color: var(--off-white); font-family: 'Jost', sans-serif; font-size: 0.88rem; font-weight: 300; outline: none; transition: border-color 0.2s; border-radius: 1px; -webkit-appearance: none; }
+    input:focus, select:focus, textarea:focus { border-color: var(--ember); background: rgba(217,93,57,0.04); }
+    input::placeholder, textarea::placeholder { color: rgba(195,186,170,0.28); }
+    select option { background: #2a2b42; }
+    textarea { resize: vertical; min-height: 75px; line-height: 1.55; }
+    .form-group { margin-bottom: 1.1rem; }
+    .form-group:last-child { margin-bottom: 0; }
+    .row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
+
+    /* URL FIELD */
+    .url-wrap { position: relative; }
+    .url-wrap input { padding-right: 5rem; }
+    .paste-btn { position: absolute; right: 0; top: 0; bottom: 0; background: rgba(217,93,57,0.18); border: none; border-left: 1px solid rgba(217,93,57,0.2); color: var(--ember); padding: 0 1rem; font-family: 'Jost', sans-serif; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; cursor: pointer; transition: background 0.2s; }
+    .paste-btn:hover { background: var(--ember); color: #fff; }
+
+    /* SCREENSHOT UPLOAD */
+    .upload-zone { border: 1.5px dashed rgba(195,186,170,0.22); padding: 2rem 1rem; text-align: center; cursor: pointer; transition: all 0.2s; position: relative; overflow: hidden; }
+    .upload-zone:hover { border-color: var(--ember); background: rgba(217,93,57,0.04); }
+    .upload-zone.has-file { border-color: var(--ember); border-style: solid; }
+    .upload-zone input[type="file"] { position: absolute; inset: 0; opacity: 0; cursor: pointer; width: 100%; height: 100%; padding: 0; border: none; }
+    .upload-icon { font-size: 2rem; margin-bottom: 0.5rem; opacity: 0.35; }
+    .upload-label { font-size: 0.78rem; color: var(--linen); opacity: 0.6; font-weight: 300; line-height: 1.6; }
+    .upload-label strong { color: var(--ember); font-weight: 600; }
+    .preview-img { max-width: 100%; max-height: 200px; object-fit: contain; display: none; margin: 0.5rem auto 0; border: 1px solid rgba(195,186,170,0.15); }
+
+    /* AI BAR */
+    .ai-bar { display: flex; gap: 0.6rem; align-items: flex-start; margin-top: 0.6rem; }
+    .ai-btn { flex-shrink: 0; background: rgba(74,78,105,0.3); border: 1px solid rgba(74,78,105,0.4); color: var(--linen); padding: 0.6rem 1rem; font-family: 'Jost', sans-serif; font-size: 0.65rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; cursor: pointer; transition: all 0.2s; white-space: nowrap; }
+    .ai-btn:hover { background: var(--slate); color: #fff; }
+    .ai-btn.loading { opacity: 0.55; cursor: wait; }
+    .ai-hint { font-size: 0.68rem; color: var(--linen); opacity: 0.4; font-weight: 300; line-height: 1.5; margin-top: 0.2rem; }
+    .ai-status { display: none; padding: 0.65rem 1rem; font-size: 0.76rem; line-height: 1.5; border-left: 3px solid var(--ember); background: rgba(217,93,57,0.07); color: var(--linen); margin-top: 0.6rem; }
+    .ai-status.show { display: block; }
+
+    /* SUBMIT */
+    .submit-btn { width: 100%; background: var(--ember); border: none; color: #fff; padding: 1.1rem; font-family: 'Jost', sans-serif; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; cursor: pointer; transition: background 0.3s, transform 0.15s; margin-top: 0.5rem; }
+    .submit-btn:hover { background: var(--walnut); }
+    .submit-btn:active { transform: scale(0.98); }
+
+    /* SUCCESS */
+    .success-banner { display: none; background: rgba(74,78,105,0.2); border: 1px solid rgba(195,186,170,0.12); border-left: 3px solid var(--ember); padding: 1.2rem 1.4rem; margin-bottom: 1.5rem; }
+    .success-banner.show { display: block; }
+    .success-title { color: var(--ember); font-weight: 600; font-size: 0.88rem; margin-bottom: 0.3rem; }
+    .success-detail { font-size: 0.78rem; color: var(--linen); opacity: 0.65; font-weight: 300; line-height: 1.6; }
+
+    /* RECENT */
+    .recent-wrap { margin-top: 2rem; }
+    .recent-label { font-size: 0.6rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--linen); opacity: 0.3; margin-bottom: 0.8rem; }
+    .recent-item { display: flex; gap: 0.8rem; align-items: flex-start; padding: 0.8rem; margin-bottom: 0.5rem; background: rgba(255,255,255,0.03); border: 1px solid rgba(195,186,170,0.07); }
+    .r-dot { width:6px; height:6px; border-radius:50%; background:var(--ember); flex-shrink:0; margin-top:5px; }
+    .r-name { font-size: 0.83rem; font-weight: 500; }
+    .r-meta { font-size: 0.7rem; color: var(--linen); opacity: 0.4; margin-top: 0.15rem; }
+
+    @media (max-width: 400px) { .row-2 { grid-template-columns: 1fr; } }
+
+    /* ── RECURRING EVENTS ── */
+    .section-divider { margin: 2.5rem 0 1.5rem; border: none; border-top: 1px solid rgba(195,186,170,0.1); }
+    .section-title { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 300; color: var(--linen); margin-bottom: 0.3rem; }
+    .section-title em { font-style: italic; color: var(--ember); }
+    .section-sub { font-size: 0.75rem; color: var(--linen); opacity: 0.45; font-weight: 300; margin-bottom: 1.2rem; line-height: 1.5; }
+    .recur-tabs { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid rgba(195,186,170,0.15); margin-bottom: 1.2rem; overflow: hidden; }
+    .recur-tab { padding: 0.75rem; text-align: center; font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; cursor: pointer; background: transparent; border: none; color: var(--linen); opacity: 0.45; font-family: 'Jost', sans-serif; transition: all 0.2s; }
+    .recur-tab.active { background: rgba(184,92,56,0.15); color: var(--ember); opacity: 1; border-bottom: 2px solid var(--ember); }
+    .recur-panel { display: none; }
+    .recur-panel.active { display: block; }
+    .recur-list { margin-bottom: 1rem; }
+    .recur-item { display: flex; gap: 0.8rem; align-items: flex-start; padding: 0.9rem; margin-bottom: 0.5rem; background: rgba(255,255,255,0.03); border: 1px solid rgba(195,186,170,0.08); border-left: 3px solid transparent; transition: border-color 0.2s; }
+    .recur-item:hover { border-left-color: var(--ember); }
+    .recur-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--ember); flex-shrink: 0; margin-top: 6px; }
+    .recur-info { flex: 1; }
+    .recur-name { font-size: 0.85rem; font-weight: 500; margin-bottom: 0.2rem; }
+    .recur-meta { font-size: 0.7rem; color: var(--linen); opacity: 0.45; line-height: 1.5; }
+    .recur-del { background: none; border: none; color: var(--linen); opacity: 0.2; cursor: pointer; font-size: 1rem; padding: 0 0.2rem; transition: opacity 0.2s; flex-shrink: 0; }
+    .recur-del:hover { opacity: 0.7; color: #e05; }
+    .recur-empty { font-size: 0.75rem; color: var(--linen); opacity: 0.22; font-weight: 300; padding: 0.5rem 0; }
+    .recur-form { background: rgba(255,255,255,0.03); border: 1px solid rgba(195,186,170,0.1); padding: 1.2rem; }
+    .recur-form-title { font-size: 0.6rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--ember); font-weight: 600; margin-bottom: 1rem; }
+    .day-pills { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.4rem; }
+    .day-pill { padding: 0.3rem 0.7rem; font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600; border: 1px solid rgba(195,186,170,0.2); background: transparent; color: var(--linen); opacity: 0.5; cursor: pointer; transition: all 0.15s; font-family: 'Jost', sans-serif; }
+    .day-pill.selected { background: var(--ember); border-color: var(--ember); color: #fff; opacity: 1; }
+    .add-recur-btn { width: 100%; background: rgba(184,92,56,0.15); border: 1px solid rgba(184,92,56,0.25); color: var(--ember); padding: 0.75rem; font-family: 'Jost', sans-serif; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; cursor: pointer; transition: all 0.2s; margin-top: 0.8rem; }
+    .add-recur-btn:hover { background: var(--ember); color: #fff; }
+
+    /* ── AI ANGLE INDICATOR ── */
+    .ai-angle-badge { display: inline-block; font-size: 0.58rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ember); background: rgba(184,92,56,0.12); border: 1px solid rgba(184,92,56,0.2); padding: 0.2rem 0.6rem; margin-left: 0.5rem; vertical-align: middle; }
+  </style>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="logo">The Modern <span>Muse</span></div>
+  <div class="page-badge">Event Capture</div>
+</div>
+
+<h1>New <em>Event</em></h1>
+<p class="subtitle">Works for links AND screenshots. AI auto-writes the description for you.</p>
+
+<div class="success-banner" id="successBanner">
+  <div class="success-title">✦ Event added!</div>
+  <div class="success-detail" id="successDetail"></div>
+</div>
+
+<div class="storage-bar" id="storageBar">Checking connection...</div>
+
+<div class="mode-tabs">
+  <button class="mode-tab active" onclick="switchMode('link')">🔗 Paste a Link</button>
+  <button class="mode-tab" onclick="switchMode('photo')">📸 Upload Screenshot</button>
+</div>
+
+<form id="eventForm">
+
+  <!-- LINK MODE -->
+  <div id="linkSection">
+    <div class="form-card">
+      <div class="card-title">Event URL</div>
+      <div class="form-group">
+        <label>Link <span class="req">*</span></label>
+        <div class="url-wrap">
+          <input type="url" id="eventUrl" placeholder="https://eventbrite.com/e/..." autocomplete="off" />
+          <div id="urlReadingIndicator" style="display:none;position:absolute;left:0;bottom:-22px;font-size:0.65rem;color:var(--ember);letter-spacing:0.1em;">⏳ Reading link...</div>
+          <button type="button" class="paste-btn" id="pasteBtn">Paste</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PHOTO MODE -->
+  <div id="photoSection" style="display:none;">
+    <div class="form-card">
+      <div class="card-title">Flyer / Screenshot</div>
+      <div class="form-group">
+        <div class="upload-zone" id="uploadZone">
+          <input type="file" id="screenshotFile" accept="image/*" />
+          <div id="uploadPrompt">
+            <div class="upload-icon">🖼</div>
+            <div class="upload-label"><strong>Tap to choose</strong> a screenshot or photo<br>from your camera roll</div>
+          </div>
+          <img id="previewImg" class="preview-img" alt="Preview" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DETAILS -->
+  <div class="form-card">
+    <div class="card-title">Event Details</div>
+
+    <div class="form-group">
+      <label>Event Name <span class="req">*</span></label>
+      <input type="text" id="eventName" placeholder="e.g. Rooftop Sunrise Yoga" required />
+    </div>
+
+    <div class="form-group row-2">
+      <div>
+        <label>Date</label>
+        <input type="date" id="eventDate" />
+      </div>
+      <div>
+        <label>Time</label>
+        <input type="time" id="eventTime" />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Location</label>
+      <input type="text" id="eventLocation" placeholder="e.g. Dusk Rooftop, Las Vegas" />
+    </div>
+
+    <div class="form-group">
+      <label>Price / Cost</label>
+      <input type="text" id="eventPrice" placeholder="e.g. Free, $25, $10–$20" />
+    </div>
+
+    <div class="form-group">
+      <label>Category</label>
+      <select id="eventCategory">
+        <option value="">Select...</option>
+        <option>Social</option>
+        <option>Arts & Culture</option>
+        <option>Food & Drink</option>
+        <option>Networking</option>
+        <option>Wellness & Fitness</option>
+        <option>Creative Workshop</option>
+        <option>Music & Entertainment</option>
+        <option>Family Friendly</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Description</label>
+      <textarea id="eventDesc" placeholder="A sentence or two or let AI write it for you ↓"></textarea>
+      <div class="ai-bar">
+        <button type="button" class="ai-btn" id="aiBtn" onclick="generateDescription()">✦ Generate with AI</button>
+        <span class="ai-angle-badge" id="angleBadge" style="display:none;"></span>
+        <div class="ai-hint">Writes a Muse-style description — regenerate to get a different angle.</div>
+      </div>
+      <div class="ai-status" id="aiStatus"></div>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="form-card">
+    <div class="card-title">Event Contact</div>
+    <div class="form-group row-2">
+      <div>
+        <label>Contact Name</label>
+        <input type="text" id="contactName" placeholder="e.g. Jane Smith" />
+      </div>
+      <div>
+        <label>Contact Email or Phone</label>
+        <input type="text" id="contactInfo" placeholder="e.g. jane@venue.com or 702-555-0100" />
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Instagram / Social Handle</label>
+      <input type="text" id="contactSocial" placeholder="e.g. @venuehandle" />
+    </div>
+  </div>
+
+  <!-- NOTES -->
+  <div class="form-card">
+    <div class="card-title">Private Notes</div>
+    <div class="form-group">
+      <label>Why it caught your eye</label>
+      <textarea id="eventNotes" style="min-height:55px;" placeholder="e.g. Great for Creator pillar, spotted on IG..."></textarea>
+    </div>
+  </div>
+
+  <button type="submit" class="submit-btn">✦ Add to Event Inbox</button>
+</form>
+
+<div class="recent-wrap">
+  <div class="recent-label">Added This Session</div>
+  <div id="recentList"></div>
+  <div id="recentEmpty" style="font-size:0.75rem;color:var(--linen);opacity:0.25;font-weight:300;">Nothing yet.</div>
+</div>
+
+<hr class="section-divider" />
+
+<h2 class="section-title">Recurring <em>Events</em></h2>
+<p class="section-sub">Weekly or monthly events that repeat on a schedule. Add them once and they live here automatically.</p>
+
+<div class="recur-tabs">
+  <button class="recur-tab active" onclick="switchRecurTab('weekly')">📅 Weekly</button>
+  <button class="recur-tab" onclick="switchRecurTab('monthly')">🗓 Monthly</button>
+</div>
+
+<!-- WEEKLY PANEL -->
+<div class="recur-panel active" id="recurPanel-weekly">
+  <div class="recur-list" id="recurList-weekly">
+    <div class="recur-empty" id="recurEmpty-weekly">No weekly events yet.</div>
+  </div>
+  <div class="recur-form">
+    <div class="recur-form-title">✦ Add Weekly Event</div>
+    <div class="form-group">
+      <label>Event Name</label>
+      <input type="text" id="rw-name" placeholder="e.g. Sunday Yoga at Dusk" />
+    </div>
+    <div class="form-group row-2">
+      <div>
+        <label>Time</label>
+        <input type="time" id="rw-time" />
+      </div>
+      <div>
+        <label>Location</label>
+        <input type="text" id="rw-location" placeholder="e.g. Dusk Rooftop" />
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Category</label>
+      <select id="rw-category">
+        <option value="">Select...</option>
+        <option>Social</option>
+        <option>Arts & Culture</option>
+        <option>Food & Drink</option>
+        <option>Networking</option>
+        <option>Wellness & Fitness</option>
+        <option>Creative Workshop</option>
+        <option>Music & Entertainment</option>
+        <option>Family Friendly</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Repeats on</label>
+      <div class="day-pills" id="rw-days">
+        <button type="button" class="day-pill" data-day="Mon">Mon</button>
+        <button type="button" class="day-pill" data-day="Tue">Tue</button>
+        <button type="button" class="day-pill" data-day="Wed">Wed</button>
+        <button type="button" class="day-pill" data-day="Thu">Thu</button>
+        <button type="button" class="day-pill" data-day="Fri">Fri</button>
+        <button type="button" class="day-pill" data-day="Sat">Sat</button>
+        <button type="button" class="day-pill" data-day="Sun">Sun</button>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Price</label>
+      <input type="text" id="rw-price" placeholder="e.g. Free, $15" />
+    </div>
+    <div class="form-group">
+      <label>Description</label>
+      <textarea id="rw-desc" style="min-height:55px;" placeholder="Short description for the listing..."></textarea>
+    </div>
+    <div class="form-group">
+      <label>Event URL (optional)</label>
+      <input type="url" id="rw-url" placeholder="https://..." />
+    </div>
+    <button type="button" class="add-recur-btn" onclick="addRecurring('weekly')">✦ Save Weekly Event</button>
+  </div>
+</div>
+
+<!-- MONTHLY PANEL -->
+<div class="recur-panel" id="recurPanel-monthly">
+  <div class="recur-list" id="recurList-monthly">
+    <div class="recur-empty" id="recurEmpty-monthly">No monthly events yet.</div>
+  </div>
+  <div class="recur-form">
+    <div class="recur-form-title">✦ Add Monthly Event</div>
+    <div class="form-group">
+      <label>Event Name</label>
+      <input type="text" id="rm-name" placeholder="e.g. First Friday Art Walk" />
+    </div>
+    <div class="form-group row-2">
+      <div>
+        <label>Time</label>
+        <input type="time" id="rm-time" />
+      </div>
+      <div>
+        <label>Location</label>
+        <input type="text" id="rm-location" placeholder="e.g. Arts District" />
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Category</label>
+      <select id="rm-category">
+        <option value="">Select...</option>
+        <option>Social</option>
+        <option>Arts & Culture</option>
+        <option>Food & Drink</option>
+        <option>Networking</option>
+        <option>Wellness & Fitness</option>
+        <option>Creative Workshop</option>
+        <option>Music & Entertainment</option>
+        <option>Family Friendly</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Recurrence (e.g. "First Friday", "Last Saturday", "2nd Sunday")</label>
+      <input type="text" id="rm-recur" placeholder="e.g. First Friday of every month" />
+    </div>
+    <div class="form-group">
+      <label>Price</label>
+      <input type="text" id="rm-price" placeholder="e.g. Free, $20" />
+    </div>
+    <div class="form-group">
+      <label>Description</label>
+      <textarea id="rm-desc" style="min-height:55px;" placeholder="Short description for the listing..."></textarea>
+    </div>
+    <div class="form-group">
+      <label>Event URL (optional)</label>
+      <input type="url" id="rm-url" placeholder="https://..." />
+    </div>
+    <button type="button" class="add-recur-btn" onclick="addRecurring('monthly')">✦ Save Monthly Event</button>
+  </div>
+</div>
+
+<script>
+// ── The Modern Muse Event Submit ──
+const CONFIG = {
+  WEBAPP_URL:     "https://script.google.com/macros/s/AKfycbwKumgk4HbN7fSZFAsOxMqZYAWrAY0EoWEzeqLenu_1KFL8GaIqhrMzpC1kyfdCtzbLiQ/exec",
+  EMAIL_FALLBACK: "info@themdrnmuse.com",
+  // Paste your Cloudflare Worker URL here after completing the Worker setup:
+  WORKER_URL:     "https://modern-muse-ai.info-themdrnmuse.workers.dev"
+};
+
+let currentMode = 'link';
+let screenshotBase64 = null;
+let screenshotMime = 'image/jpeg';
+let recent = JSON.parse(sessionStorage.getItem('muse_recent') || '[]');
+
+// Storage status
+(function() {
+  const bar = document.getElementById('storageBar');
+  if (CONFIG.WEBAPP_URL !== "YOUR_WEBAPP_URL_HERE") {
+    bar.innerHTML = '<span class="mode">✓ Google Sheets connected</span> events sync to your spreadsheet automatically.';
+  } else if (CONFIG.EMAIL_FALLBACK !== 'YOUR_EMAIL_HERE') {
+    bar.innerHTML = '<span class="mode">✉ Email fallback active</span> events emailed to ' + CONFIG.EMAIL_FALLBACK + '.';
+  } else {
+    bar.innerHTML = '<span class="mode">⚠ Local mode</span> events saved to this device only. See setup guide to connect Sheets.';
+  }
+})();
+
+// Mode switch
+function switchMode(mode) {
+  currentMode = mode;
+  document.querySelectorAll('.mode-tab').forEach((t,i) => t.classList.toggle('active', (mode==='link'&&i===0)||(mode==='photo'&&i===1)));
+  document.getElementById('linkSection').style.display = mode === 'link' ? 'block' : 'none';
+  document.getElementById('photoSection').style.display = mode === 'photo' ? 'block' : 'none';
+}
+
+// ── AUTO-FILL ON PASTE ──
+async function handleUrlPaste(url) {
+  if (!url || !url.startsWith('http')) return;
+  document.getElementById('eventUrl').value = url;
+
+  const nameField = document.getElementById('eventName');
+  const alreadyFilled = nameField.value.trim();
+  if (alreadyFilled) return;
+
+  const status = document.getElementById('aiStatus');
+  const btn    = document.getElementById('aiBtn');
+  status.textContent = '⏳ Reading link and filling in details...';
+  status.className = 'ai-status show';
+  btn.classList.add('loading');
+  btn.textContent = '⏳ Reading link...';
+
+  const workerReady = CONFIG.WORKER_URL !== "YOUR_WORKER_URL_HERE";
+  if (!workerReady) {
+    status.textContent = '💡 Link pasted! Set up your Cloudflare Worker to enable auto-fill. For now, fill in the event name and tap Generate with AI.';
+    btn.classList.remove('loading');
+    btn.textContent = '✦ Generate with AI';
+    return;
+  }
+
+  const todayStr  = new Date().toISOString().split('T')[0];
+  const todayYear = new Date().getFullYear();
+
+  try {
+    // Step 1: Fetch the page HTML through the Worker's /fetch endpoint
+    let pageText = '';
+    try {
+      const fetchRes = await fetch(CONFIG.WORKER_URL + '/fetch', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ url })
+      });
+      if (fetchRes.ok) {
+        const fetchData = await fetchRes.json();
+        pageText = fetchData.text || fetchData.html || '';
+        // Trim to first 6000 chars to avoid token overload while keeping key details
+        pageText = pageText.slice(0, 6000);
+      }
+    } catch(fetchErr) {
+      // Worker may not have /fetch — fall back to AI browsing attempt
+      pageText = '';
+    }
+
+    // Step 2: Send to Claude with either the fetched page content or just the URL
+    const contentInstruction = pageText
+      ? `Here is the page content from ${url}:\n\n${pageText}\n\nExtract the event details from this content.`
+      : `Please extract event details from this URL: ${url}. If you cannot access it, return empty strings for all fields except description.`;
+
+    const messages = [{
+      role: 'user',
+      content: `You are filling in event details for The Modern Muse, a curated lifestyle community in Las Vegas.
+
+Today's date is ${todayStr}. Current year: ${todayYear}.
+
+${contentInstruction}
+
+Then write a 2-sentence description in the brand voice: aspirational, warm, insider-feeling like a knowledgeable Las Vegas local recommending it to a friend.
+
+RULES:
+- Date must be ${todayYear} or later. If unclear or in the past, return "".
+- Date format: YYYY-MM-DD only. Time format: HH:MM only (24hr).
+- If a field is unclear or missing, return "".
+- Category must be one of: Social, Arts & Culture, Food & Drink, Networking, Wellness & Fitness, Creative Workshop, Music & Entertainment, Family Friendly
+
+Reply ONLY in this exact JSON — no markdown, no extra text:
+{"name":"...","date":"...","time":"...","location":"...","category":"...","price":"...","description":"..."}`
+    }];
+
+    const endpoint = CONFIG.WORKER_URL + '/ai';
+    const res  = await fetch(endpoint, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ messages, model: 'claude-sonnet-4-20250514', max_tokens: 600 })
+    });
+
+    const data = await res.json();
+    const raw  = (data.content?.[0]?.text || '').trim().replace(/```json[\s\S]*?```|```/g, '').trim();
+
+    // Find the JSON object even if there's surrounding text
+    const jsonMatch = raw.match(/\{[\s\S]*\}/);
+    if (!jsonMatch) {
+      status.textContent = '⚠ Could not read this link automatically. Fill in the details and tap Generate with AI.';
+      btn.classList.remove('loading');
+      btn.textContent = '✦ Generate with AI';
+      return;
+    }
+
+    const parsed = JSON.parse(jsonMatch[0]);
+    let filled = 0;
+    if (parsed.name)     { nameField.value = parsed.name; filled++; }
+    if (parsed.date)     { document.getElementById('eventDate').value = parsed.date; filled++; }
+    if (parsed.time)     { const t = toHHMM(parsed.time); if(t) { document.getElementById('eventTime').value = t; filled++; } }
+    if (parsed.location) { document.getElementById('eventLocation').value = parsed.location; filled++; }
+    if (parsed.price)    { document.getElementById('eventPrice').value = parsed.price; filled++; }
+    if (parsed.description) { document.getElementById('eventDesc').value = parsed.description; filled++; }
+    if (parsed.category) {
+      const sel = document.getElementById('eventCategory');
+      for (let opt of sel.options) {
+        if (opt.value.toLowerCase() === parsed.category.toLowerCase()) { sel.value = opt.value; break; }
+      }
+    }
+
+    status.textContent = filled > 2
+      ? '✦ Fields auto-filled from the link! Review and edit as needed.'
+      : '✦ Got some details. Fill in anything missing and tap Generate with AI for a description.';
+
+  } catch(err) {
+    status.textContent = '⚠ Could not auto-fill this link. Fill in the event name and tap Generate with AI.';
+  }
+
+  btn.classList.remove('loading');
+  btn.textContent = '✦ Generate with AI';
+}
+
+// Paste button click
+document.getElementById('pasteBtn').addEventListener('click', async () => {
+  try {
+    const t = await navigator.clipboard.readText();
+    if (t.startsWith('http')) await handleUrlPaste(t);
+    else document.getElementById('eventUrl').focus();
+  } catch { document.getElementById('eventUrl').focus(); }
+});
+
+// Also trigger auto-fill when user types/pastes directly into the URL field
+let urlPasteTimer;
+document.getElementById('eventUrl').addEventListener('input', function() {
+  clearTimeout(urlPasteTimer);
+  const val = this.value.trim();
+  if (val.startsWith('http') && val.length > 15) {
+    urlPasteTimer = setTimeout(() => handleUrlPaste(val), 600);
+  }
+});
+
+// Screenshot preview
+document.getElementById('screenshotFile').addEventListener('change', function() {
+  const file = this.files[0];
+  if (!file) return;
+  screenshotMime = file.type || 'image/jpeg';
+  const reader = new FileReader();
+  reader.onload = (e) => {
+    screenshotBase64 = e.target.result.split(',')[1];
+    const img = document.getElementById('previewImg');
+    img.src = e.target.result;
+    img.style.display = 'block';
+    document.getElementById('uploadPrompt').style.display = 'none';
+    document.getElementById('uploadZone').classList.add('has-file');
+  };
+  reader.readAsDataURL(file);
+});
+
+// ── ROTATING DESCRIPTION ANGLES ──
+// Each regenerate cycles to the next angle so you get 3 noticeably different versions.
+let currentAngleIndex = 0;
+const DESCRIPTION_ANGLES = [
+  {
+    label: 'Vibe & Atmosphere',
+    instruction: `Write 2 sentences focused on the ATMOSPHERE and sensory experience — what it feels like to be there, the energy in the room, the mood. Paint a picture. Write as a well-connected Las Vegas local who genuinely loves this city and its scene. Be specific and evocative, not generic. Do not start with the event name. No em dashes.`
+  },
+  {
+    label: 'Who Should Come',
+    instruction: `Write 2 sentences speaking directly to the kind of woman who should be there — her taste, her lifestyle, what she's looking for. Make her feel like this event was made for her. Write as a sharp, in-the-know Las Vegas insider. Be personal and a little persuasive, like you're texting a friend. Do not start with the event name. No em dashes.`
+  },
+  {
+    label: 'What Makes It Unique',
+    instruction: `Write 2 sentences zeroing in on what makes this event stand out — the detail, the offering, the reason it's worth clearing your schedule. Lead with the most interesting or surprising thing about it. Write as someone with high standards who doesn't recommend things lightly. Be specific and direct. Do not start with the event name. No em dashes.`
+  }
+];
+
+// AI Description Generator
+async function generateDescription() {
+  const btn    = document.getElementById('aiBtn');
+  const status = document.getElementById('aiStatus');
+  const desc   = document.getElementById('eventDesc');
+  const badge  = document.getElementById('angleBadge');
+
+  const name     = document.getElementById('eventName').value.trim();
+  const location = document.getElementById('eventLocation').value.trim();
+  const date     = document.getElementById('eventDate').value;
+  const category = document.getElementById('eventCategory').value;
+  const price    = document.getElementById('eventPrice').value.trim();
+  const url      = document.getElementById('eventUrl').value.trim();
+
+  const hasScreenshot = currentMode === 'photo' && screenshotBase64;
+  const contextParts  = [
+    name     && `Event name: ${name}`,
+    location && `Location: ${location}`,
+    date     && `Date: ${date}`,
+    category && `Category: ${category}`,
+    price    && `Price: ${price}`,
+    url      && `URL: ${url}`,
+  ].filter(Boolean);
+
+  if (!hasScreenshot && contextParts.length === 0) {
+    status.textContent = 'Please enter the event name or upload a screenshot first.';
+    status.className = 'ai-status show';
+    return;
+  }
+
+  // Cycle to next angle on each click
+  const angle = DESCRIPTION_ANGLES[currentAngleIndex % DESCRIPTION_ANGLES.length];
+  currentAngleIndex++;
+
+  badge.textContent = angle.label;
+  badge.style.display = 'inline-block';
+
+  btn.classList.add('loading');
+  btn.textContent = '⏳ Writing...';
+  status.textContent = `Angle: ${angle.label} — writing now...`;
+  status.className = 'ai-status show';
+
+  const brandContext = `The Modern Muse is an experience collective for the multifaceted Las Vegas woman — curated, aspirational, and community-driven. The tone is warm but not fluffy, editorial but not stiff, insider but not exclusive. Think: a well-traveled, culturally curious woman who has high standards and loves her city.`;
+
+  try {
+    let messages;
+
+    if (hasScreenshot) {
+      messages = [{
+        role: 'user',
+        content: [
+          { type: 'image', source: { type: 'base64', media_type: screenshotMime, data: screenshotBase64 } },
+          { type: 'text', text: `You are writing event listings for The Modern Muse. Brand context: ${brandContext}
+
+Look at this event flyer and do two things:
+1. Extract: event name, date (YYYY-MM-DD), time (HH:MM), and location if visible.
+2. Write a 2-sentence description using this specific angle: ${angle.instruction}
+
+${contextParts.length ? 'Details already entered by user:\n' + contextParts.join('\n') : ''}
+
+Reply ONLY in this exact JSON — no markdown, no extra text:
+{"name":"...","date":"YYYY-MM-DD or empty","time":"HH:MM or empty","location":"...","description":"..."}` }
+        ]
+      }];
+    } else {
+      messages = [{
+        role: 'user',
+        content: `You are writing event listings for The Modern Muse. Brand context: ${brandContext}
+
+Write a 2-sentence description for the event below using this specific angle: ${angle.instruction}
+
+Event details:
+${contextParts.join('\n')}
+
+Reply with only the description text — no quotes, no formatting, no preamble.`
+      }];
+    }
+
+    const aiEndpoint = CONFIG.WORKER_URL !== "YOUR_WORKER_URL_HERE"
+      ? CONFIG.WORKER_URL + '/ai'
+      : 'https://api.anthropic.com/v1/messages';
+
+    const res  = await fetch(aiEndpoint, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ model: 'claude-sonnet-4-20250514', max_tokens: 400, messages })
+    });
+    const data = await res.json();
+    const raw  = (data.content?.[0]?.text || '').trim();
+
+    if (hasScreenshot) {
+      try {
+        const clean  = raw.replace(/```json|```/g,'').trim();
+        const parsed = JSON.parse(clean);
+        if (parsed.description) desc.value = parsed.description;
+        if (parsed.name && !name) document.getElementById('eventName').value = parsed.name;
+        if (parsed.location && !location) document.getElementById('eventLocation').value = parsed.location;
+        if (parsed.date && !date) document.getElementById('eventDate').value = parsed.date;
+        if (parsed.time) {
+          const converted = toHHMM(parsed.time);
+          if (converted && !document.getElementById('eventTime').value) document.getElementById('eventTime').value = converted;
+        }
+        status.textContent = `✦ Done — "${angle.label}" angle. Tap Regenerate for a different one.`;
+      } catch {
+        desc.value = raw;
+        status.textContent = `✦ Description written (${angle.label} angle). Tap Regenerate for a different take.`;
+      }
+    } else {
+      desc.value = raw;
+      status.textContent = `✦ "${angle.label}" angle written. Tap Regenerate for a completely different version.`;
+    }
+  } catch (err) {
+    status.textContent = '⚠ AI unavailable. Fill in the description manually.';
+    badge.style.display = 'none';
+  }
+
+  btn.classList.remove('loading');
+  btn.textContent = '↺ Regenerate (different angle)';
+}
+
+function toHHMM(str) {
+  if (!str) return '';
+  const m = str.match(/(\d{1,2}):?(\d{2})?\s*(am|pm)?/i);
+  if (!m) return '';
+  let h = parseInt(m[1]), min = m[2] ? parseInt(m[2]) : 0;
+  const p = (m[3]||'').toLowerCase();
+  if (p==='pm' && h<12) h+=12;
+  if (p==='am' && h===12) h=0;
+  return `${String(h).padStart(2,'0')}:${String(min).padStart(2,'0')}`;
+}
+
+// Form submit
+document.getElementById('eventForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+
+  const payload = {
+    submitted: new Date().toLocaleString(),
+    name:      document.getElementById('eventName').value.trim(),
+    date:      document.getElementById('eventDate').value,
+    time:      document.getElementById('eventTime').value,
+    location:  document.getElementById('eventLocation').value.trim(),
+    category:  document.getElementById('eventCategory').value,
+    desc:      document.getElementById('eventDesc').value.trim(),
+    url:       document.getElementById('eventUrl').value.trim(),
+    price:     document.getElementById('eventPrice').value.trim(),
+    notes:     document.getElementById('eventNotes').value.trim(),
+    contactName:  document.getElementById('contactName').value.trim(),
+    contactInfo:  document.getElementById('contactInfo').value.trim(),
+    contactSocial: document.getElementById('contactSocial').value.trim(),
+    source:    currentMode === 'photo' ? 'Screenshot/Flyer' : 'Link',
+    status:    'Pending'
+  };
+
+  if (!payload.name) { alert('Please enter an event name.'); return; }
+
+  let saveMethod = 'local';
+
+  // Try Google Sheets
+  if (CONFIG.WEBAPP_URL !== "YOUR_WEBAPP_URL_HERE") {
+    try {
+      await fetch(CONFIG.WEBAPP_URL, {
+        method: 'POST', mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      saveMethod = 'sheets';
+    } catch { /* fall through */ }
+  }
+
+  // Email fallback
+  if (saveMethod === "local" && CONFIG.EMAIL_FALLBACK !== "YOUR_EMAIL_HERE") {
+    const sub  = encodeURIComponent(`[Muse Event] ${payload.name}`);
+    const body = encodeURIComponent([
+      `Event: ${payload.name}`, `Date: ${payload.date}`, `Time: ${payload.time}`,
+      `Location: ${payload.location}`, `Category: ${payload.category}`,
+      `URL: ${payload.url}`, `Price: ${payload.price}`, `Source: ${payload.source}`,
+      `Description: ${payload.desc}`, `Notes: ${payload.notes}`,
+      `Submitted: ${payload.submitted}`
+    ].join('\n'));
+    window.open(`mailto:${CONFIG.EMAIL_FALLBACK}?subject=${sub}&body=${body}`);
+    saveMethod = 'email';
+  }
+
+  // Always persist locally
+  recent.unshift(payload);
+  sessionStorage.setItem('muse_recent', JSON.stringify(recent));
+  const stored = JSON.parse(localStorage.getItem('muse_events') || '[]');
+  stored.unshift({ ...payload, id: Date.now() });
+  localStorage.setItem('muse_events', JSON.stringify(stored.slice(0, 200)));
+
+  // Show success
+  const msgs = {
+    sheets: 'Sent to your Google Sheet. Open the dashboard to approve and publish.',
+    email:  'Email draft opened send it to log this event. Copy details into your sheet.',
+    local:  'Saved to this device. Connect Google Sheets in the setup guide to sync everywhere.'
+  };
+  document.getElementById('successDetail').textContent = msgs[saveMethod];
+  document.getElementById('successBanner').classList.add('show');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+
+  // Reset
+  this.reset();
+  screenshotBase64 = null;
+  document.getElementById('previewImg').style.display = 'none';
+  document.getElementById('uploadPrompt').style.display = 'block';
+  document.getElementById('uploadZone').classList.remove('has-file');
+  document.getElementById('aiStatus').className = 'ai-status';
+  document.getElementById('aiBtn').textContent = '✦ Generate with AI';
+  document.getElementById('angleBadge').style.display = 'none';
+  currentAngleIndex = 0;
+  renderRecent();
+});
+
+function renderRecent() {
+  const list  = document.getElementById('recentList');
+  const empty = document.getElementById('recentEmpty');
+  if (!recent.length) { empty.style.display='block'; list.innerHTML=''; return; }
+  empty.style.display = 'none';
+  list.innerHTML = recent.slice(0,6).map(ev => `
+    <div class="recent-item">
+      <div class="r-dot"></div>
+      <div>
+        <div class="r-name">${ev.name||'Untitled'}</div>
+        <div class="r-meta">${ev.date||' '} · ${ev.category||'Uncategorized'} · ${ev.source||'Link'}</div>
+      </div>
+    </div>`).join('');
+}
+renderRecent();
+
+// ── RECURRING EVENTS ──
+// Session-only list so you can see what you added this session.
+// The source of truth lives in your Google Sheet.
+let sessionRecurring = [];
+
+function switchRecurTab(type) {
+  document.querySelectorAll('.recur-tab').forEach((t,i) => t.classList.toggle('active', (type==='weekly'&&i===0)||(type==='monthly'&&i===1)));
+  document.getElementById('recurPanel-weekly').classList.toggle('active', type==='weekly');
+  document.getElementById('recurPanel-monthly').classList.toggle('active', type==='monthly');
+}
+
+function renderRecurring() {
+  ['weekly','monthly'].forEach(type => {
+    const list   = document.getElementById(`recurList-${type}`);
+    const events = sessionRecurring.filter(e => e._type === type);
+    if (!events.length) {
+      list.innerHTML = `<div class="recur-empty">Nothing added this session. Your recurring events live in the dashboard.</div>`;
+      return;
+    }
+    list.innerHTML = events.map((ev, idx) => `
+      <div class="recur-item">
+        <div class="recur-dot"></div>
+        <div class="recur-info">
+          <div class="recur-name">${ev.name||'Untitled'} <span style="font-size:0.6rem;color:var(--ember);letter-spacing:0.1em;text-transform:uppercase;margin-left:0.4rem;">${ev._saved ? '✓ Sent to sheet' : '⏳ Saving...'}</span></div>
+          <div class="recur-meta">
+            ${ev.days || ev.recur || 'Schedule TBD'}
+            ${ev.time ? ' · ' + formatTime(ev.time) : ''}
+            ${ev.location ? ' · ' + ev.location : ''}
+            ${ev.category ? ' · ' + ev.category : ''}
+            ${ev.price ? ' · ' + ev.price : ''}
+          </div>
+          ${ev.desc ? `<div class="recur-meta" style="margin-top:0.3rem;opacity:0.55;font-style:italic;">${ev.desc}</div>` : ''}
+        </div>
+      </div>`).join('');
+  });
+}
+
+function formatTime(t) {
+  if (!t) return '';
+  const [h, m] = t.split(':').map(Number);
+  const ampm = h >= 12 ? 'PM' : 'AM';
+  const h12  = h % 12 || 12;
+  return `${h12}:${String(m).padStart(2,'0')} ${ampm}`;
+}
+
+async function addRecurring(type) {
+  const prefix = type === 'weekly' ? 'rw' : 'rm';
+  const name   = document.getElementById(`${prefix}-name`).value.trim();
+  if (!name) { alert('Please enter an event name.'); return; }
+
+  const btn = document.querySelector(`#recurPanel-${type} .add-recur-btn`);
+  btn.textContent = '⏳ Saving...';
+  btn.disabled = true;
+
+  // Build days string: weekly uses pill selections, monthly uses the recur text field
+  let daysStr = '';
+  if (type === 'weekly') {
+    const selected = Array.from(document.querySelectorAll('#rw-days .day-pill.selected')).map(p => p.dataset.day);
+    daysStr = selected.join(', ');
+  } else {
+    daysStr = document.getElementById('rm-recur').value.trim();
+  }
+
+  const payload = {
+    type:     'recurring',   // tells doPost to route to Recurring Events tab
+    name,
+    days:     daysStr,
+    time:     document.getElementById(`${prefix}-time`).value,
+    location: document.getElementById(`${prefix}-location`).value.trim(),
+    category: document.getElementById(`${prefix}-category`).value,
+    price:    document.getElementById(`${prefix}-price`).value.trim(),
+    desc:     document.getElementById(`${prefix}-desc`).value.trim(),
+    url:      document.getElementById(`${prefix}-url`).value.trim(),
+    notes:    ''
+  };
+
+  // Add to session list immediately so you see feedback
+  const sessionEntry = { ...payload, _type: type, _saved: false };
+  sessionRecurring.unshift(sessionEntry);
+  renderRecurring();
+
+  let saved = false;
+  try {
+    await fetch(CONFIG.WEBAPP_URL, {
+      method: 'POST',
+      mode:   'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body:    JSON.stringify(payload)
+    });
+    // no-cors means we can't read the response, but if no error was thrown it went through
+    saved = true;
+  } catch(err) {
+    console.error('Could not send to sheet:', err);
+  }
+
+  sessionEntry._saved = saved;
+  renderRecurring();
+
+  btn.textContent = saved ? '✦ Saved! Add Another' : '⚠ Could not save — try again';
+  btn.disabled = false;
+  setTimeout(() => {
+    btn.textContent = type === 'weekly' ? '✦ Save Weekly Event' : '✦ Save Monthly Event';
+  }, 3000);
+
+  if (saved) {
+    // Clear form fields
+    ['name','time','location','category','price','desc','url'].forEach(f => {
+      const el = document.getElementById(`${prefix}-${f}`);
+      if (el) el.value = '';
+    });
+    if (type === 'weekly') {
+      document.getElementById('rm-recur') && (document.getElementById('rm-recur').value = '');
+      document.querySelectorAll('#rw-days .day-pill').forEach(p => p.classList.remove('selected'));
+    }
+  }
+
+  document.getElementById(`recurList-${type}`).scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+// Day pill toggle
+document.querySelectorAll('#rw-days .day-pill').forEach(pill => {
+  pill.addEventListener('click', () => pill.classList.toggle('selected'));
+});
+
+renderRecurring();
+</script>
+</body>
+</html>
