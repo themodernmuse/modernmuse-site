@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-03T20:03:52.290Z",
+  "lastUpdated": "2026-04-03T20:03:56.322Z",
   "events": [
     {
       "date": "2026-03-18",
@@ -650,6 +650,19 @@
       "bookingUrl": "https://www.eventbrite.com/e/the-catalina-wine-mixer-tickets-1985926767421?utm-medium=discovery&utm-campaign=social&utm-content=attendeeshare&utm-source=up&utm-term=user-profile&aff=ebdsshcopyurl",
       "contact": "@vegasvalleywinery",
       "price": 40
+    },
+    {
+      "date": "2026-04-25",
+      "time": "14:00",
+      "ampm": "PM",
+      "title": "Pilatesland with Core & Pour Social Club",
+      "location": "Pilatesland",
+      "description": "If you're the type who treats your body like the temple it is but knows that breaking a sweat should come with good company and even better energy, this is your Saturday morning salvation. You'll get that deep burn that makes you feel alive, then stick around to connect with women who understand that wellness isn't just about the workout — it's about building a life that feels as strong as you are.",
+      "category": "Wellness & Fitness",
+      "color": "#D95D39",
+      "bookingUrl": "https://app.glofox.com/portal/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAdGRleAQ7uxxleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAafRuDa9tq6EjBpDJF7NvngEqfNjixNxIqN7yjdS8vggjH7RCRQhk7BGReitsA_aem_UXNed8KG5M6ZfNMHHQ97Fw#/branch/68642e2c54d502c0cd03d1e1/courses",
+      "contact": "@coreandpoursocialclub",
+      "price": "Free"
     },
     {
       "date": "2026-04-26",
