@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-03T20:04:20.985Z",
+  "lastUpdated": "2026-04-03T20:04:27.594Z",
   "events": [
     {
       "date": "2026-03-18",
@@ -624,6 +624,19 @@
       "bookingUrl": "https://www.eventbrite.com/e/formation-haus-soft-opening-tickets-1985778267253?utm-medium=discovery&utm-campaign=social&utm-content=attendeeshare&utm-source=up&utm-term=user-profile&aff=ebdsshcopyurl",
       "contact": "@formationhaus",
       "price": 50
+    },
+    {
+      "date": "2026-04-18",
+      "time": "16:00",
+      "ampm": "PM",
+      "title": "Project P4: Pickleball, Pilates, and Pool",
+      "location": "Plaza Hotel",
+      "description": "The Plaza's rooftop transforms into a sun-soaked wellness playground where the satisfying pop of pickleball paddles mingles with the splash of poolside workouts and the focused breathing of mat-based flows. There's an infectious energy here that feels distinctly Vegas – part resort luxury, part community sweat session – where you'll find yourself genuinely surprised by how much fun fitness can be when it's wrapped in good music, city views, and the kind of day party vibe that makes you forget you're technically exercising.",
+      "category": "Wellness & Fitness",
+      "color": "#D95D39",
+      "bookingUrl": "https://sweatpals.com/event/project-p4-pickleball-pilates-pool/2026-04-18?sourceCollectionPosition=3&sourceCollection=new-events&sourcePosition=1&sourceType=web_catalogue&impressionId=bce0649f-44a2-4061-88c6-6b47e9886e03&utm_source=sweatpals_web&utm_medium=web_catalogue&utm_campaign=web_catalogue",
+      "contact": "@projectpevents",
+      "price": "$25-35"
     },
     {
       "date": "2026-04-18",
