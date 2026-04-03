@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-03T19:59:56.032Z",
+  "lastUpdated": "2026-04-03T20:03:52.290Z",
   "events": [
     {
       "date": "2026-03-18",
@@ -416,6 +416,19 @@
       "bookingUrl": "https://www.eventbrite.com/e/popstroke-las-vegas-x-move-with-madi-tickets-1985867121017?aff=eprofsaved",
       "contact": "@girlswalkvegas",
       "price": 30
+    },
+    {
+      "date": "2026-04-11",
+      "time": "11:00",
+      "ampm": "AM",
+      "title": "WISE Las Vegas Headshot & Professional Development Workshop",
+      "location": "Ariva Luxury Residences",
+      "description": "At this event, you'll walk away with professional headshots that actually capture your personality alongside career development strategies from women who've built real influence in this city. The intimate setting at Ariva means you're networking with intention rather than working a room full of business cards you'll never remember.",
+      "category": "Networking",
+      "color": "#22223B",
+      "bookingUrl": "https://tr.ee/jBgVam0T5q",
+      "contact": "@wiselv",
+      "price": "$15-40"
     },
     {
       "date": "2026-04-12",
