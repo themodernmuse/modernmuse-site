@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-03T20:04:41.145Z",
+  "lastUpdated": "2026-04-03T20:09:06.576Z",
   "events": [
     {
       "date": "2026-03-18",
@@ -837,6 +837,16 @@
       "price": "Free",
       "category": "Fitness & Wellness",
       "bookingUrl": ""
+    },
+    {
+      "days": "Tuesdays",
+      "time": "1899-12-31T01:00:00.000Z",
+      "title": "Fitness on The Lawn",
+      "location": "Downtown Summerlin",
+      "description": "",
+      "price": "Free",
+      "category": "Fitness & Wellness",
+      "bookingUrl": "https://summerlin.com/event/fitness-on-the-lawn-4/"
     }
   ],
   "happyHours": [],
