@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-03T19:41:25.755Z",
+  "lastUpdated": "2026-04-03T19:41:28.798Z",
   "events": [
     {
       "date": "2026-03-18",
@@ -364,6 +364,19 @@
       "bookingUrl": "https://uncommons.com/event/the-art-of-cake/",
       "contact": "@uncommonslv",
       "price": "Free"
+    },
+    {
+      "date": "2026-04-11",
+      "time": "7:30",
+      "ampm": "AM",
+      "title": "PopStroke Las Vegas X Move With Madi",
+      "location": "PopStroke",
+      "description": "Picture this: a perfect Vegas morning where you'll flow through an energizing workout with the incredible Madi, then unwind with mini golf and mimosas at the most Instagram-worthy spot in town. This is that rare combination of wellness and play that leaves you feeling both accomplished and completely refreshed – trust me, you'll want to clear your Saturday for this one.",
+      "category": "Wellness & Fitness",
+      "color": "#D95D39",
+      "bookingUrl": "https://www.eventbrite.com/e/popstroke-las-vegas-x-move-with-madi-tickets-1985867121017?aff=eprofsaved",
+      "contact": "@girlswalkvegas",
+      "price": 30
     },
     {
       "date": "2026-04-12",
