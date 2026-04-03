@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-30T21:22:22.569Z",
+  "lastUpdated": "2026-04-03T19:41:25.755Z",
   "events": [
     {
       "date": "2026-03-18",
@@ -405,6 +405,19 @@
       "price": "Free"
     },
     {
+      "date": "2026-04-16",
+      "time": "19:00",
+      "ampm": "PM",
+      "title": "Strings By the Sunset",
+      "location": "Ferguson's Downtown",
+      "description": "Picture this: an intimate evening where classical strings meet golden hour magic at Ferguson's Downtown, creating the kind of atmospheric moment that feels both sophisticated and soul-stirring. This is exactly the type of curated musical experience where you'll find yourself completely transported, surrounded by fellow culture enthusiasts who appreciate the finer moments in life.",
+      "category": "Music & Entertainment",
+      "color": "#7B3E19",
+      "bookingUrl": "https://www.eventbrite.com/e/strings-by-the-sunset-tickets-1986048952881?utm-medium=discovery&utm-campaign=social&utm-content=attendeeshare&utm-source=up&utm-term=user-profile&aff=ebdsshcopyurl",
+      "contact": "@fergusonsdowntown",
+      "price": 25
+    },
+    {
       "date": "2026-04-18",
       "time": "",
       "ampm": "PM",
@@ -496,6 +509,19 @@
       "price": "Free"
     },
     {
+      "date": "2026-04-19",
+      "time": "14:15",
+      "ampm": "PM",
+      "title": "Pilates and Praise",
+      "location": "Sunset Park",
+      "description": "There's something absolutely magical about combining mindful movement with uplifting music as the sun sets over the park, and this unique fusion class delivers exactly that soul-nourishing experience you've been craving. Trust me when I say this isn't your typical workout. It's a beautiful blend of Pilates flow and faith based vibes that will leave you feeling both physically strengthened and spiritually renewed.",
+      "category": "Wellness & Fitness",
+      "color": "#D95D39",
+      "bookingUrl": "https://www.eventbrite.com/e/pilates-and-praise-tickets-1985013444648?aff=eprofsaved",
+      "contact": "@inthevinelv",
+      "price": 12
+    },
+    {
       "date": "2026-04-25",
       "time": "16:00",
       "ampm": "PM",
@@ -543,7 +569,7 @@
       "description": "",
       "price": "24",
       "category": "Fitness & Wellness",
-      "bookingUrl": ""
+      "bookingUrl": "https://sweatpals.com/event/mat-mondays-rhythm-roots-fb11f3/2026-04-06"
     },
     {
       "days": "Thursdays & Saturdays",
