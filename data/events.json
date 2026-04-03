@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-03T20:03:56.322Z",
+  "lastUpdated": "2026-04-03T20:04:02.217Z",
   "events": [
     {
       "date": "2026-03-18",
@@ -676,6 +676,19 @@
       "bookingUrl": "https://www.eventbrite.com/e/driven-defined-a-land-rover-x-trufusion-pilates-experience-tickets-1985462764576?aff=eprofsaved",
       "contact": "@vegasgirlevents",
       "price": "$50-60"
+    },
+    {
+      "date": "2026-04-26",
+      "time": "17:30",
+      "ampm": "PM",
+      "title": "Houseplant Bingo",
+      "location": "Fergusons's Downtown",
+      "description": "This delightfully quirky plant-themed bingo experience is exactly the kind of unexpected Vegas gem that locals love to discover - where your green thumb meets good vibes in the most entertaining way possible. It's the perfect blend of community connection and botanical knowledge that'll have you seeing the city's creative side beyond the Strip.",
+      "category": "Social",
+      "color": "#D95D39",
+      "bookingUrl": "https://lvplantcollective.com/products/houseplant-bingo",
+      "contact": "@lvplantcollective",
+      "price": 45
     },
     {
       "date": "2026-05-02",
