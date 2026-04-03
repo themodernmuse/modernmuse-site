@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-03T19:59:41.952Z",
+  "lastUpdated": "2026-04-03T19:59:48.492Z",
   "events": [
     {
       "date": "2026-03-18",
@@ -273,6 +273,19 @@
       "bookingUrl": "",
       "contact": "@breathewithraven",
       "price": "Free"
+    },
+    {
+      "date": "2026-04-05",
+      "time": "10:00",
+      "ampm": "AM",
+      "title": "Spring Fling Pilates Social",
+      "location": "Ferguson's Downtown",
+      "description": "Spring is calling for a fresh fitness moment, and this Pilates social is exactly the kind of elevated wellness experience that discerning Las Vegas locals know makes all the difference. Picture yourself flowing through intentional movement with like-minded souls who understand that the best connections happen when you're investing in yourself.",
+      "category": "Wellness & Fitness",
+      "color": "#D95D39",
+      "bookingUrl": "https://www.eventbrite.com/e/spring-fling-pilates-social-tickets-1985591029219?utm-medium=discovery&utm-campaign=social&utm-content=attendeeshare&utm-source=up&utm-term=user-profile&aff=ebdsshcopyurl",
+      "contact": "@nabcurated",
+      "price": 35
     },
     {
       "date": "2026-04-08",
