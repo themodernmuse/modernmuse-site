@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-03T20:09:10.237Z",
+  "lastUpdated": "2026-04-03T20:09:15.784Z",
   "events": [
     {
       "date": "2026-03-18",
@@ -836,6 +836,16 @@
       "description": "",
       "price": "Free",
       "category": "Fitness & Wellness",
+      "bookingUrl": ""
+    },
+    {
+      "days": "Tuesday-Saturday",
+      "time": "7:30pm & 8:30pm",
+      "title": "Line Dance Lessons",
+      "location": "Stoney's North Fourty(Santa Fe)",
+      "description": "",
+      "price": "Free",
+      "category": "Social",
       "bookingUrl": ""
     },
     {
