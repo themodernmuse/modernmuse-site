@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-03T20:04:34.589Z",
+  "lastUpdated": "2026-04-03T20:04:41.145Z",
   "events": [
     {
       "date": "2026-03-18",
@@ -689,6 +689,19 @@
       "bookingUrl": "https://www.eventbrite.com/e/pilates-and-praise-tickets-1985013444648?aff=eprofsaved",
       "contact": "@inthevinelv",
       "price": 12
+    },
+    {
+      "date": "2026-04-19",
+      "time": "23:00",
+      "ampm": "PM",
+      "title": "Paws & Pause: Puppy Yoga",
+      "location": "Luxe Linx Permanent Jewlery",
+      "description": "The fact that this puppy yoga session happens inside a permanent jewelry studio means you're practicing downward dog while surrounded by delicate gold chains and sparkling ear cuffs, creating an unexpectedly luxe backdrop for your wellness hour. At $20, it's the kind of perfectly weird Las Vegas experience that somehow makes complete sense once you're there, stretching alongside adorable puppies in between display cases of dainty body jewelry.",
+      "category": "Wellness & Fitness",
+      "color": "#D95D39",
+      "bookingUrl": "https://sweatpals.com/event/paws-pause/2026-04-19?sourceCollectionPosition=2&sourceCollection=trending&sourcePosition=2&sourceType=web_catalogue&impressionId=bce0649f-44a2-4061-88c6-6b47e9886e03&utm_source=sweatpals_web&utm_medium=web_catalogue&utm_campaign=web_catalogue",
+      "contact": "@luxeera.co",
+      "price": 20
     },
     {
       "date": "2026-04-25",
