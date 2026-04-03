@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-03T19:42:07.603Z",
+  "lastUpdated": "2026-04-03T19:59:27.472Z",
   "events": [
     {
       "date": "2026-03-18",
@@ -416,6 +416,19 @@
       "bookingUrl": "",
       "contact": "@bachataloungelv",
       "price": "Free"
+    },
+    {
+      "date": "2026-04-12",
+      "time": "18:00",
+      "ampm": "PM",
+      "title": "Rooftop: Soundbath & Yoga",
+      "location": "3850 W Nevso Dr, Las Vegas",
+      "description": "Escape the Vegas hustle with this perfectly curated rooftop experience that combines rejuvenating soundbath healing with sunset yoga flows - it's the kind of elevated wellness moment that makes you feel like you've discovered the city's best-kept secret. Trust me, this is where the mindful Vegas crowd gathers to reset and recharge while taking in those stunning desert views that remind you why this city is pure magic.",
+      "category": "Wellness & Fitness",
+      "color": "#D95D39",
+      "bookingUrl": "https://www.eventbrite.com/e/rooftop-soundbath-and-yoga-event-tickets-1985674580122?utm-medium=discovery&utm-campaign=social&utm-content=attendeeshare&utm-source=up&utm-term=user-profile&aff=ebdsshcopyurl",
+      "contact": "@rootednflo",
+      "price": 40
     },
     {
       "date": "2026-04-16",
