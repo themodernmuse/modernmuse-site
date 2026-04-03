@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-03T20:04:27.594Z",
+  "lastUpdated": "2026-04-03T20:04:34.589Z",
   "events": [
     {
       "date": "2026-03-18",
@@ -767,6 +767,19 @@
       "bookingUrl": "lwactive.com",
       "contact": "@lwactive",
       "price": 85
+    },
+    {
+      "date": "2026-05-02",
+      "time": "19:00",
+      "ampm": "PM",
+      "title": "New Vista Wine Walk at Downtown Summerlin",
+      "location": "Downtown Summerlin, 1825 Festival Plaza Drive, Las Vegas, NV 89135",
+      "description": "This beloved Las Vegas tradition since 2004 offers the perfect sophisticated evening out with 18+ wine tasting stations while supporting an incredible local cause that's been empowering people with intellectual and developmental disabilities for 40 years. With souvenir glassware, premium VIP tastings, and even dog-friendly vibes, it's the kind of meaningful social experience that lets you sip, stroll, and make a real difference in your community.",
+      "category": "Food & Drink",
+      "color": "#7B3E19",
+      "bookingUrl": "https://www.eventbrite.com/e/new-vista-wine-walk-at-downtown-summerlin-tickets-1981259288867?aff=ebdssbcategorybrowse",
+      "contact": "@newvistanv",
+      "price": "$50 -110"
     },
     {
       "date": "2026-10-09",
