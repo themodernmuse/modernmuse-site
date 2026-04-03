@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-03T20:09:26.275Z",
+  "lastUpdated": "2026-04-03T20:09:32.666Z",
   "events": [
     {
       "date": "2026-03-18",
@@ -847,6 +847,16 @@
       "price": "",
       "category": "Fitness & Wellness",
       "bookingUrl": "https://shopthedistrictgvr.com/events/the-district-at-green-valley-ranch-fit4mom-stroller-strides-82073805-a59f-4ca0-ad44-3976df74792f"
+    },
+    {
+      "days": "Sundays",
+      "time": "10-11am",
+      "title": "Fitness on the Green at GVR",
+      "location": "The District at Green Valley Ranch",
+      "description": "",
+      "price": "Free",
+      "category": "Fitness & Wellness",
+      "bookingUrl": "https://shopthedistrictgvr.com/events"
     },
     {
       "days": "Various Dates",
