@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-03T19:41:56.788Z",
+  "lastUpdated": "2026-04-03T19:42:05.263Z",
   "events": [
     {
       "date": "2026-03-18",
@@ -546,6 +546,19 @@
       "bookingUrl": "https://posh.vip/e/aprende-conmigothe-matcha-experience",
       "contact": "@amigamovement",
       "price": 50
+    },
+    {
+      "date": "2026-04-26",
+      "time": "9:30",
+      "ampm": "AM",
+      "title": "Driven & Defined: A Land Rover x TruFusion Pilates Experience",
+      "location": "Land Rover Las Vegas",
+      "description": "This is an exclusive Pilates session that perfectly marries luxury automotive elegance with mindful movement, hosted in the sleek showroom of Land Rover Las Vegas where you'll flow alongside their stunning vehicles. This isn't just any wellness class—it's a curated experience where TruFusion's expert instructors guide you through a rejuvenating practice that embodies the same precision and strength as the iconic cars surrounding you.",
+      "category": "Wellness & Fitness",
+      "color": "#D95D39",
+      "bookingUrl": "https://www.eventbrite.com/e/driven-defined-a-land-rover-x-trufusion-pilates-experience-tickets-1985462764576?aff=eprofsaved",
+      "contact": "@vegasgirlevents",
+      "price": "$50-60"
     },
     {
       "date": "2026-05-02",
