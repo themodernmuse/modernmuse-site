@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-03T19:59:27.472Z",
+  "lastUpdated": "2026-04-03T19:59:28.839Z",
   "events": [
     {
       "date": "2026-03-18",
@@ -247,6 +247,19 @@
       "bookingUrl": "https://allevents.in/las-vegas/80007248079795?ref=sharer",
       "contact": "@blackpeoplehikelv",
       "price": "Free"
+    },
+    {
+      "date": "2026-04-04",
+      "time": "18:00",
+      "ampm": "PM",
+      "title": "The Cozmic Lounge: Y2K Night",
+      "location": "Bad Beat Brewing",
+      "description": "Step back into the iconic Y2K era with Cozmic Mocktail Club, where metallic fits and nostalgic beats create the perfect throwback vibe that only Vegas can deliver. This is your chance to experience the electric energy of millennium nostalgia in one of the city's most stylish underground venues.",
+      "category": "Food & Drink",
+      "color": "#7B3E19",
+      "bookingUrl": "https://www.eventbrite.com/e/the-cozmic-lounge-y2k-night-tickets-1985645351699?utm-medium=discovery&utm-campaign=social&utm-content=attendeeshare&utm-source=up&utm-term=user-profile&aff=ebdsshcopyurl",
+      "contact": "@cozmicmocktailclub",
+      "price": 28
     },
     {
       "date": "2026-04-05",
@@ -585,6 +598,19 @@
       "bookingUrl": "https://posh.vip/e/aprende-conmigothe-matcha-experience",
       "contact": "@amigamovement",
       "price": 50
+    },
+    {
+      "date": "2026-04-25",
+      "time": "18:00",
+      "ampm": "PM",
+      "title": "The Calatina Wine Mixer",
+      "location": "Vegas Valley Winery",
+      "description": "This exclusive wine experience brings together Vegas's most discerning palates for an evening of exceptional vintages and elevated company. It's the kind of intimate gathering where meaningful connections are made over perfectly curated selections - exactly what our sophisticated community craves.",
+      "category": "Food & Drink",
+      "color": "#7B3E19",
+      "bookingUrl": "https://www.eventbrite.com/e/the-catalina-wine-mixer-tickets-1985926767421?utm-medium=discovery&utm-campaign=social&utm-content=attendeeshare&utm-source=up&utm-term=user-profile&aff=ebdsshcopyurl",
+      "contact": "@vegasvalleywinery",
+      "price": 40
     },
     {
       "date": "2026-04-26",
