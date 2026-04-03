@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-03T20:09:15.784Z",
+  "lastUpdated": "2026-04-03T20:09:20.446Z",
   "events": [
     {
       "date": "2026-03-18",
@@ -837,6 +837,16 @@
       "price": "Free",
       "category": "Fitness & Wellness",
       "bookingUrl": ""
+    },
+    {
+      "days": "Various Dates",
+      "time": "6:30-9:30pm",
+      "title": "Movies on the Green at GVR",
+      "location": "The District at Green Valley Ranch",
+      "description": "",
+      "price": "Free",
+      "category": "Family Friendly",
+      "bookingUrl": "https://shopthedistrictgvr.com/events"
     },
     {
       "days": "Tuesday-Saturday",
