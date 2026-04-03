@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-03T19:42:05.263Z",
+  "lastUpdated": "2026-04-03T19:42:05.911Z",
   "events": [
     {
       "date": "2026-03-18",
@@ -493,6 +493,19 @@
       "color": "#D95D39",
       "bookingUrl": "https://checkout.square.site/merchant/MLTJAW1BP1J1M/checkout/VP2QFSDZWFLTZARHJJAPDUOB?fbclid=IwdGRjcAQ3cYZleHRuA2FlbQIxMQBzcnRjBmFwcF9pZAo2NjI4NTY4Mzc5AAEeETeYDdpBLoxLtKYIOvmAwzf-2Gwt9feGq450NJvU-5FB0IRRGhYT52VZVBY_aem_qWRHOml1jxb31nysybyfRA",
       "contact": "@hustleyogaflow",
+      "price": 10
+    },
+    {
+      "date": "2026-04-18",
+      "time": "10:00",
+      "ampm": "AM",
+      "title": "Breath & Beats: Yoga With a DJ",
+      "location": "Ferguson's Downtown",
+      "description": "Most yoga classes stick to predictable playlists, but this one features a live DJ reading the room and mixing beats that actually sync with your flow transitions. At just $10, it's the kind of accessible luxury that makes you wonder why more studios don't elevate the experience this thoughtfully.",
+      "category": "Wellness & Fitness",
+      "color": "#D95D39",
+      "bookingUrl": "https://www.eventbrite.com/e/breath-beats-yoga-with-live-dj-at-fergusons-downtown-tickets-1985315120970?aff=eprofsaved",
+      "contact": "@beksandrew",
       "price": 10
     },
     {
