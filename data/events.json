@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-09T19:25:52.704Z",
+  "lastUpdated": "2026-04-09T19:25:54.510Z",
   "events": [
     {
       "date": "2026-03-18",
@@ -702,6 +702,19 @@
       "bookingUrl": "https://sweatpals.com/event/paws-pause/2026-04-19?sourceCollectionPosition=2&sourceCollection=trending&sourcePosition=2&sourceType=web_catalogue&impressionId=bce0649f-44a2-4061-88c6-6b47e9886e03&utm_source=sweatpals_web&utm_medium=web_catalogue&utm_campaign=web_catalogue",
       "contact": "@luxeera.co",
       "price": 20
+    },
+    {
+      "date": "2026-04-19",
+      "time": "16:30",
+      "ampm": "PM",
+      "title": "Vegas Latinas: Makeup y Mas",
+      "location": "St. Felix Sin City",
+      "description": "You know that feeling when you discover a hidden gem that perfectly blends beauty, culture, and community? This intimate workshop celebrates Latina beauty traditions while teaching you insider makeup techniques that will have everyone asking who did your look.",
+      "category": "Creative Workshop",
+      "color": "#4A4E69",
+      "bookingUrl": "https://www.tixtree.com/e/makeup-y-mas-acd48fea5556?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZnRzaAREsjhleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAadttaOhJKtsxahRHyTv8Z-tQICQ0H6MnprLg4-RhLaq4goA6gGTtroS6t970g_aem_UHF7FdIX24IhC_hmU2XBeg",
+      "contact": "@vegaslatinas",
+      "price": 15
     },
     {
       "date": "2026-04-23",
