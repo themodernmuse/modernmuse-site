@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-09T19:26:28.945Z",
+  "lastUpdated": "2026-04-09T19:26:38.268Z",
   "events": [
     {
       "date": "2026-03-18",
@@ -754,6 +754,19 @@
       "bookingUrl": "https://posh.vip/e/spring-coloring-chisme-?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZnRzaAREsdlleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAafOYSKNOhKgN9IRor0Q9h7YFKx-_Y_F88fr6z_tt3j0n4N-xC7vwEOdH8Cfrw_aem_O2vPtMLUOUH-T6pOkAyrtQ",
       "contact": "@cafecitoychisme",
       "price": 15
+    },
+    {
+      "date": "2026-04-24",
+      "time": "18:30",
+      "ampm": "PM",
+      "title": "Courtyard Cinema - Devil Wears Prada",
+      "location": "1230 S Casino Center Blvd",
+      "description": "Step into an enchanting evening of cinema magic with this intimate outdoor screening of The Devil Wears Prada, complete with cozy pajama party vibes, games, and all the movie night essentials under the stars. This is your chance to live out your main character dreams in a curated, female-focused experience that perfectly blends comfort with style in Vegas's Arts District.",
+      "category": "Music & Entertainment",
+      "color": "#7B3E19",
+      "bookingUrl": "https://www.vegas4her.com/bougie-bingo-2?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZnRzaAREtadleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAaeN6vIK3rJb4OicLN1m_TBvDFgGPaBj7OYB5xkjnb-bhQGVIj-mzCqBwlKcrQ_aem_GvmGhtCVao2iIjO-m8Q8Kg",
+      "contact": "@vegas4her",
+      "price": 25
     },
     {
       "date": "2026-04-25",
