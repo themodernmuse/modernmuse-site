@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-03T20:09:32.666Z",
+  "lastUpdated": "2026-04-09T19:25:50.098Z",
   "events": [
     {
       "date": "2026-03-18",
@@ -741,6 +741,19 @@
       "bookingUrl": "https://app.glofox.com/portal/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAdGRleAQ7uxxleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAafRuDa9tq6EjBpDJF7NvngEqfNjixNxIqN7yjdS8vggjH7RCRQhk7BGReitsA_aem_UXNed8KG5M6ZfNMHHQ97Fw#/branch/68642e2c54d502c0cd03d1e1/courses",
       "contact": "@coreandpoursocialclub",
       "price": "Free"
+    },
+    {
+      "date": "2026-04-25",
+      "time": "11:00",
+      "ampm": "AM",
+      "title": "The Overcoming Warriors Club: Create Bubble Bars",
+      "location": "Honey Vintage and Bath, 231 W Charleston Blvd suite 140, Las Vegas, NV, USA",
+      "description": "Join the Overcoming Warriors Club at Honey Vintage and Bath for an empowering afternoon where you'll craft luxurious bubble bars while connecting with an incredible community of resilient women. This isn't just about creating beautiful bath products, it's about celebrating your strength, sharing stories, and leaving with both handmade treasures and newfound friendships that'll remind you how powerful you truly are.",
+      "category": "Creative Workshop",
+      "color": "#4A4E69",
+      "bookingUrl": "https://honeyvintageandbath.com/ola/services/the-overcoming-warriors-club-create-bubble-bars-april-25-2026?utm_source=linktree_profile_share&utm_medium=social&utm_content=link_in_bio&fbclid=PAZnRzaAREsRBleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAadpqCjjtUFyb32pmYbgD0Ytj0uBLWBX4wtf4EtMNopvp3mmWFhTmecRVKEaPw_aem_275owTG4Ree3gtN2uV2bXg",
+      "contact": "@theovercomingwarriorsclub",
+      "price": 27
     },
     {
       "date": "2026-04-26",
