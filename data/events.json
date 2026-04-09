@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-09T19:26:20.371Z",
+  "lastUpdated": "2026-04-09T19:26:28.945Z",
   "events": [
     {
       "date": "2026-03-18",
@@ -728,6 +728,19 @@
       "bookingUrl": "https://www.tixtree.com/e/makeup-y-mas-acd48fea5556?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZnRzaAREsjhleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAadttaOhJKtsxahRHyTv8Z-tQICQ0H6MnprLg4-RhLaq4goA6gGTtroS6t970g_aem_UHF7FdIX24IhC_hmU2XBeg",
       "contact": "@vegaslatinas",
       "price": 15
+    },
+    {
+      "date": "2026-04-19",
+      "time": "11:00",
+      "ampm": "AM",
+      "title": "Mami Pilates Club: Pilates & Perro/Dalee",
+      "location": "Rhythms Dance Studio",
+      "description": "This is the fusion class you didn't know you needed—combining the core-strengthening power of Pilates with the rhythmic energy of perreo and dalee for a workout that's equal parts sculpting and celebration. Trust me, you'll leave class feeling stronger, more confident, and with moves that'll have everyone asking where you learned to flow like that.",
+      "category": "Wellness & Fitness",
+      "color": "#D95D39",
+      "bookingUrl": "https://www.tixtree.com/e/pilates-perreo-dalee-3d0242ae3d6b?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZnRzaAREtAhleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAadw-vD2yIlvbXkg-1FLrg9LuEBXiZg9rhDL6WKdbEZnkHs2wbFO4K7knXIcmw_aem_NzT5RS9WmVij6X63GpCNUg",
+      "contact": "@mamipilatesclub",
+      "price": 32
     },
     {
       "date": "2026-04-23",
