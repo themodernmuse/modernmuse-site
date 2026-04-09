@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-09T19:26:11.658Z",
+  "lastUpdated": "2026-04-09T19:26:20.371Z",
   "events": [
     {
       "date": "2026-03-18",
@@ -819,6 +819,19 @@
       "bookingUrl": "https://lvplantcollective.com/products/houseplant-bingo",
       "contact": "@lvplantcollective",
       "price": 45
+    },
+    {
+      "date": "2026-04-26",
+      "time": "14:00",
+      "ampm": "PM",
+      "title": "The Lip Lab : MAC Cosmetics X Spa Girl In the City Experience",
+      "location": "MAC Cosmetics @ Dillard's Downtown Summerlin, 1980 Festival Plaza Drive Las Vegas, NV 89135",
+      "description": "Discover your signature lip shade at this intimate MAC Cosmetics experience where you'll test personalized shades, work with professional artists, and sip champagne while learning what truly complements your skin tone. With only 30 spots available, this curated beauty lab includes professional application, a photobooth moment, charcuterie, and an exclusive gift bag—plus the chance to get $25 back when you purchase $100 in products.",
+      "category": "Creative Workshop",
+      "color": "#4A4E69",
+      "bookingUrl": "https://www.eventbrite.com/e/the-lip-lab-mac-cosmetics-x-spa-girl-in-the-city-experience-tickets-1986514929630?aff=oddtdtcreator&utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZnRzaAREs0xleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAacfy8ev5oBUEcb1JpK-MRoJxhJVDTAMnTtUA5UnU1kX_7JqrYRmudp3AhYVjg_aem_7KyOf6YvvZoYD9pXCdBH5A",
+      "contact": "@spagirlinthecity",
+      "price": 35
     },
     {
       "date": "2026-05-02",
