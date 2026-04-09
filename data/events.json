@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-09T19:25:54.510Z",
+  "lastUpdated": "2026-04-09T19:26:09.127Z",
   "events": [
     {
       "date": "2026-03-18",
@@ -832,6 +832,19 @@
       "bookingUrl": "https://www.eventbrite.com/e/new-vista-wine-walk-at-downtown-summerlin-tickets-1981259288867?aff=ebdssbcategorybrowse",
       "contact": "@newvistanv",
       "price": "$50 -110"
+    },
+    {
+      "date": "2026-05-10",
+      "time": "14:00",
+      "ampm": "PM",
+      "title": "Perfume & Pastries Event",
+      "location": "Bottega Exchange | 6675 S Tenaya Way #200 Las Vegas, NV 89113",
+      "description": "This enchanting experience combines the best of both worlds - indulgent pastry tastings and the artistry of crafting your own signature 30mL fragrance inspired by gourmet delights. Guided by expert perfumers in an intimate setting, you'll create a custom scent and take home a luxurious premium fragrance bottle with personalized souvenir label as the perfect keepsake from this celebration of creativity and motherhood.",
+      "category": "Creative Workshop",
+      "color": "#4A4E69",
+      "bookingUrl": "https://www.thediyfragrancebar.com/shop/p/4o40qsy0h6hx64biqvzy8arvrk0my0?fbclid=PARlRTSAREtSlleHRuA2FlbQIxMABzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAadrSdxSbMs1SXNi52Vy8_KOMe7o5IZoekX73HzO0k-JLm5nkCrIejSWqBE-zg_aem_gHQHczvc3vJgdvfeo6APqA",
+      "contact": "@thediyfragrancebar_",
+      "price": "from $150.00"
     },
     {
       "date": "2026-10-09",
