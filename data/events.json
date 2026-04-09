@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-09T19:26:48.720Z",
+  "lastUpdated": "2026-04-09T19:26:54.981Z",
   "events": [
     {
       "date": "2026-03-18",
@@ -897,6 +897,19 @@
       "bookingUrl": "https://www.eventbrite.com/e/new-vista-wine-walk-at-downtown-summerlin-tickets-1981259288867?aff=ebdssbcategorybrowse",
       "contact": "@newvistanv",
       "price": "$50 -110"
+    },
+    {
+      "date": "2026-05-03",
+      "time": "13:00",
+      "ampm": "PM",
+      "title": "Vlasic Vinyasa",
+      "location": "NuWu Courtyard, 1235 Paiute Cir",
+      "description": "The page content appears to require JavaScript to load properly, so I cannot extract any event details from the information provided. Unfortunately, I'm unable to create a meaningful description without access to the actual event details.",
+      "category": "Wellness & Fitness",
+      "color": "#D95D39",
+      "bookingUrl": "https://eventhi.io/events/vlasic-vinyasa-with-dejha-mae-14138?fbclid=PARlRTSAREtp9leHRuA2FlbQIxMABzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAae04BHEFDNv-jJzW5-tttgtfEulRgOydqoxaRKh1pdfUM_Yt-V7aQhsSwyi7A_aem_HY4BtLynoWVc4b9kNSXmRA",
+      "contact": "@vlasiclabs",
+      "price": 15
     },
     {
       "date": "2026-05-10",
