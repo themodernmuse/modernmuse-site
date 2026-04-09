@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-09T19:26:38.268Z",
+  "lastUpdated": "2026-04-09T19:26:48.720Z",
   "events": [
     {
       "date": "2026-03-18",
@@ -741,6 +741,19 @@
       "bookingUrl": "https://www.tixtree.com/e/pilates-perreo-dalee-3d0242ae3d6b?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZnRzaAREtAhleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAadw-vD2yIlvbXkg-1FLrg9LuEBXiZg9rhDL6WKdbEZnkHs2wbFO4K7knXIcmw_aem_NzT5RS9WmVij6X63GpCNUg",
       "contact": "@mamipilatesclub",
       "price": 32
+    },
+    {
+      "date": "2026-04-19",
+      "time": "8:00",
+      "ampm": "AM",
+      "title": "Poses For Paws",
+      "location": "UnCommons PS3 Rooftop, 6880 Helen Toland Street Las Vegas, NV 89113",
+      "description": "Join this heartwarming morning of yoga, music, and community where every stretch makes a difference - 100% of proceeds support local animal rescue while you flow with purpose on a stunning Vegas rooftop. This is where wellness meets compassion, complete with adoptable pups, raffles, and the kind of meaningful connections that make Sunday mornings unforgettable.",
+      "category": "Wellness & Fitness",
+      "color": "#D95D39",
+      "bookingUrl": "https://www.eventbrite.com/e/poses-for-paws-tickets-1984913939024?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZnRzaAREthFleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAaceG1d-hbB9daRTof2ce8mseOB69CcA7HzDD09KUsd5U5oiIBN-vMTWrQW3wg_aem_VGm6RI2Fhe3BsuN8kB1zeA",
+      "contact": "@yogaforlifelv",
+      "price": 12.5
     },
     {
       "date": "2026-04-23",
