@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-09T19:25:50.098Z",
+  "lastUpdated": "2026-04-09T19:25:52.704Z",
   "events": [
     {
       "date": "2026-03-18",
@@ -702,6 +702,19 @@
       "bookingUrl": "https://sweatpals.com/event/paws-pause/2026-04-19?sourceCollectionPosition=2&sourceCollection=trending&sourcePosition=2&sourceType=web_catalogue&impressionId=bce0649f-44a2-4061-88c6-6b47e9886e03&utm_source=sweatpals_web&utm_medium=web_catalogue&utm_campaign=web_catalogue",
       "contact": "@luxeera.co",
       "price": 20
+    },
+    {
+      "date": "2026-04-23",
+      "time": "18:00",
+      "ampm": "PM",
+      "title": "Spring, Coloring, Chisme",
+      "location": "Velvet Vine Wine",
+      "description": "Embrace the season's creative energy at this perfectly curated blend of artistic expression and delightful conversation over cafecito. This intimate gathering at Velvet Vine Wine offers the ideal excuse to slow down, color outside the lines, and connect with like-minded souls who appreciate life's beautiful, simple pleasures.",
+      "category": "Creative Workshop",
+      "color": "#4A4E69",
+      "bookingUrl": "https://posh.vip/e/spring-coloring-chisme-?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZnRzaAREsdlleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAafOYSKNOhKgN9IRor0Q9h7YFKx-_Y_F88fr6z_tt3j0n4N-xC7vwEOdH8Cfrw_aem_O2vPtMLUOUH-T6pOkAyrtQ",
+      "contact": "@cafecitoychisme",
+      "price": 15
     },
     {
       "date": "2026-04-25",
