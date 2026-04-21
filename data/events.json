@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-21T06:03:25.035Z",
+  "lastUpdated": "2026-04-21T06:04:47.113Z",
   "events": [
     {
       "date": "2026-03-18",
@@ -1079,6 +1079,19 @@
       "bookingUrl": "https://www.thediyfragrancebar.com/shop/p/4o40qsy0h6hx64biqvzy8arvrk0my0?fbclid=PARlRTSAREtSlleHRuA2FlbQIxMABzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAadrSdxSbMs1SXNi52Vy8_KOMe7o5IZoekX73HzO0k-JLm5nkCrIejSWqBE-zg_aem_gHQHczvc3vJgdvfeo6APqA",
       "contact": "@thediyfragrancebar_",
       "price": "from $150.00"
+    },
+    {
+      "date": "2026-05-13",
+      "time": "18:30",
+      "ampm": "PM",
+      "title": "EDM Pilates & Pregame",
+      "location": "BLVD",
+      "description": "Get ready to move your body to the beat before you hit the town with this electrifying fusion class that combines core-strengthening Pilates with pulsing EDM tracks. It's the perfect way to energize your evening while connecting with other music lovers who know how to turn their workout into the ultimate pre-party ritual.",
+      "category": "Wellness & Fitness",
+      "color": "#D95D39",
+      "bookingUrl": "https://sweatpals.com/event/edc-pilates-pregame-fa64b?utm_source=user_share_554f3d0d-0ee5-4110-956a-0f112f725a28&utm_medium=shared_link&utm_campaign=event_share&utm_content=link_in_bio&fbclid=PAZnRzaART7TdleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAafvqNbTaN93KchFxKZlyiwHZqczk3c8IuZJni5qeYTaHZmKeirgrWuR0gHu0g_aem_4y3b-uy7qO4Gp-ubiRx7ng",
+      "contact": "@discoflowofficial",
+      "price": 8
     },
     {
       "date": "2026-05-16",
