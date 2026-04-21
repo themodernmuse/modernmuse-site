@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-21T06:03:17.162Z",
+  "lastUpdated": "2026-04-21T06:03:25.035Z",
   "events": [
     {
       "date": "2026-03-18",
@@ -1092,6 +1092,19 @@
       "bookingUrl": "https://www.eventbrite.com/e/model-x-runway-class-with-miss-arizona-tickets-1987687846857?aff=oddtdtcreator&utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZnRzaART7upleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAaee4TEF7SmSut9VCosM58vco2W1rH74uSSri2bwhvACyozxwFEOeFb1HGD2ng_aem_WYACk7nsn2ZfteWmgqhPiA",
       "contact": "@_puzzledsociety_",
       "price": 55
+    },
+    {
+      "date": "2026-05-23",
+      "time": "8:30",
+      "ampm": "AM",
+      "title": "Music Box Movement x Fabletics: Pilates Experience",
+      "location": "Fabletics, 2115 Festival Plaza Drive #Suite N110 Las Vegas, NV 89135",
+      "description": "Trust me when I say this collaboration between Music Box Movement and Fabletics is about to become your new obsession—imagine flowing through Pilates sequences while surrounded by the most elevated activewear energy in a space that feels like your most stylish friend's private studio. You'll leave feeling stronger, more centered, and with that insider glow that comes from discovering something truly special before everyone else catches on.",
+      "category": "Wellness & Fitness",
+      "color": "#D95D39",
+      "bookingUrl": "https://www.eventbrite.com/e/music-box-movement-x-fabletics-pilates-experience-tickets-1987359743491?utm_experiment=test_share_listing&aff=ebdsshios&sg=70ac42804ec1ac40cb035e79a7f07ee791f88f6e685a665eb7fa649531ed61222c9571b79f094a1da2f68fa1525ae49f147c8be2da0dbe26555eea83e3a25aa63b34a1e5d0cd91e97e08f3bc5e",
+      "contact": "@musicboxmovement",
+      "price": "Free"
     },
     {
       "date": "2026-10-09",
