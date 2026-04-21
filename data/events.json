@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-21T06:02:00.828Z",
+  "lastUpdated": "2026-04-21T06:02:05.885Z",
   "events": [
     {
       "date": "2026-03-18",
@@ -871,6 +871,19 @@
       "bookingUrl": "https://www.eventbrite.com/e/the-lip-lab-mac-cosmetics-x-spa-girl-in-the-city-experience-tickets-1986514929630?aff=oddtdtcreator&utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZnRzaAREs0xleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAacfy8ev5oBUEcb1JpK-MRoJxhJVDTAMnTtUA5UnU1kX_7JqrYRmudp3AhYVjg_aem_7KyOf6YvvZoYD9pXCdBH5A",
       "contact": "@spagirlinthecity",
       "price": 35
+    },
+    {
+      "date": "2026-04-26",
+      "time": "9:00",
+      "ampm": "AM",
+      "title": "Slow Sundays Club LV — Gentle Yoga + JoJo Cafe",
+      "location": "To be announced",
+      "description": "This intimate Sunday morning ritual combines gentle yoga flows with exclusive JoJo Cafe tastings, creating the perfect antidote to Vegas's high-energy scene. It's the kind of hidden gem where you'll find yourself surrounded by like-minded souls seeking a softer, more intentional start to their week.",
+      "category": "Wellness & Fitness",
+      "color": "#D95D39",
+      "bookingUrl": "https://www.eventbrite.com/e/slow-sundays-club-lv-gentle-yoga-jojo-cafe-tickets-1986915005267?utm_experiment=test_share_listing&aff=ebdsshios&sg=02b6656d3a799a0b8c5fdc118777b504982f3b047c2380a2bbae43509eb0d63c6083fd38ede43ec4f5d943862f59dcd11d8e9ee1124d2c5ab53aff01214aecc0ecd1dab9f13d6ae6cda83ffd4b",
+      "contact": "@slowsundayslv",
+      "price": 27
     },
     {
       "date": "2026-05-02",
