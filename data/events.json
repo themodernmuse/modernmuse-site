@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-21T06:02:43.755Z",
+  "lastUpdated": "2026-04-21T06:02:50.896Z",
   "events": [
     {
       "date": "2026-03-18",
@@ -858,6 +858,19 @@
       "bookingUrl": "https://www.shopmamasage.com/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZnRzaARP9EpleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAafhHN8JDEUepTgN2W_kflTC3evPg3lj8Xxcru7rQApJHv31HKDEamR8qmyWPg_aem_q6OWV_GuUL-eU4VtEndEkQ",
       "contact": "@junkjournalclublasvegas",
       "price": 30
+    },
+    {
+      "date": "2026-04-25",
+      "time": "8:00",
+      "ampm": "AM",
+      "title": "Pilates at the ranch",
+      "location": "TBD",
+      "description": "There's something absolutely magical about taking your Pilates practice outdoors, especially when it's set against the stunning backdrop of a working ranch where fresh air and natural beauty become part of your workout. This is the kind of experience that will have you feeling both grounded and elevated.",
+      "category": "Wellness & Fitness",
+      "color": "#D95D39",
+      "bookingUrl": "https://www.eventbrite.com/e/pilates-at-the-ranch-tickets-1987831566727?aff=oddtdtcreator&keep_tld=true&utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZnRzaART8MFleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAacwymAxXlraUIrradbdhRYuXT3qt6S7knoO58GoXuxES1x126BcsJGK1L7Kag_aem_Rga-I6HuoqgzUjHL1t9n0Q",
+      "contact": "@pilatesattheranch",
+      "price": 23
     },
     {
       "date": "2026-04-26",
