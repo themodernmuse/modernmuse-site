@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-21T06:02:14.689Z",
+  "lastUpdated": "2026-04-21T06:02:20.962Z",
   "events": [
     {
       "date": "2026-03-18",
@@ -897,6 +897,19 @@
       "bookingUrl": "https://www.eventbrite.com/e/slow-sundays-club-lv-gentle-yoga-jojo-cafe-tickets-1986915005267?utm_experiment=test_share_listing&aff=ebdsshios&sg=02b6656d3a799a0b8c5fdc118777b504982f3b047c2380a2bbae43509eb0d63c6083fd38ede43ec4f5d943862f59dcd11d8e9ee1124d2c5ab53aff01214aecc0ecd1dab9f13d6ae6cda83ffd4b",
       "contact": "@slowsundayslv",
       "price": 27
+    },
+    {
+      "date": "2026-04-26",
+      "time": "10:00",
+      "ampm": "AM",
+      "title": "Flowers & Friends: Pot Painting",
+      "location": "Springs Cafe at the Springs Preserve, 333 S Valley View Blvd, Las Vegas, NV",
+      "description": "This adorable spring DIY experience lets you paint your own terracotta flower pot while connecting with like-minded women in an air-conditioned oasis before Vegas summer hits. You'll leave with your custom creation plus soil and seeds to start your own plant baby – it's the perfect blend of creativity, community, and springtime magic that the coolest girls are already talking about.",
+      "category": "Creative Workshop",
+      "color": "#4A4E69",
+      "bookingUrl": "https://partiful.com/e/Y8Qr60i6tQppfh0Ubvju?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZnRzaARP9VpleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAaf3A-kcdwPUMNQITzrULsgDvQ31aMHMFSOk68Xyt_bmlR3eyn7m6HEMiVowBA_aem_hS7JgVi5UOZaAUFJNLzdDw",
+      "contact": "@cozycollectivelv",
+      "price": "$15 per person"
     },
     {
       "date": "2026-05-02",
