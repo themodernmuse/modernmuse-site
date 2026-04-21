@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-21T06:02:20.962Z",
+  "lastUpdated": "2026-04-21T06:02:30.243Z",
   "events": [
     {
       "date": "2026-03-18",
@@ -780,6 +780,19 @@
       "bookingUrl": "https://www.vegas4her.com/bougie-bingo-2?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZnRzaAREtadleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAaeN6vIK3rJb4OicLN1m_TBvDFgGPaBj7OYB5xkjnb-bhQGVIj-mzCqBwlKcrQ_aem_GvmGhtCVao2iIjO-m8Q8Kg",
       "contact": "@vegas4her",
       "price": 25
+    },
+    {
+      "date": "2026-04-24",
+      "time": "19:00",
+      "ampm": "PM",
+      "title": "Wine & Wicks at Velvet Vine Wine",
+      "location": "511 S Las Vegas Blvd Las Vegas, NV 89101 United States",
+      "description": "You'll want to clear your calendar for this divine pairing of premium wines and hands-on candle crafting at one of Vegas's most intimate wine destinations. Picture yourself sipping carefully curated vintages while learning the art of creating custom scented candles—it's the perfect blend of relaxation and creativity that'll leave you with both a beautiful handmade piece and memories worth savoring.",
+      "category": "Creative Workshop",
+      "color": "#4A4E69",
+      "bookingUrl": "https://handmadepiecesofluv.com/products/candle-making-experience-velvet-vine?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZnRzaARP9NRleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAadKX3w0_eH0jVy9kOJ0UEuNPTGSM5fJNiZ83INT2yU9PYcAOfluEteI4fOj8Q_aem_2rBOdjZ0AK7egwbtsj-_hQ",
+      "contact": "@piecesofluvcandles",
+      "price": 45
     },
     {
       "date": "2026-04-25",
