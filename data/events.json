@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-21T06:02:36.785Z",
+  "lastUpdated": "2026-04-21T06:02:43.755Z",
   "events": [
     {
       "date": "2026-03-18",
@@ -923,6 +923,19 @@
       "bookingUrl": "https://partiful.com/e/Y8Qr60i6tQppfh0Ubvju?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZnRzaARP9VpleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAaf3A-kcdwPUMNQITzrULsgDvQ31aMHMFSOk68Xyt_bmlR3eyn7m6HEMiVowBA_aem_hS7JgVi5UOZaAUFJNLzdDw",
       "contact": "@cozycollectivelv",
       "price": "$15 per person"
+    },
+    {
+      "date": "2026-04-27",
+      "time": "18:00",
+      "ampm": "PM",
+      "title": "Sunset Yoga in the Park🌱",
+      "location": "9275 S Buffalo Dr, Las Vegas, NV 89178, USA",
+      "description": "There's something absolutely magical about practicing yoga as the desert sky transforms into a canvas of amber and rose, and this outdoor session captures that perfect Vegas golden hour energy we're always chasing. You'll leave feeling both grounded and glowing, with that serene post-flow radiance that only comes from moving your body in nature's most photogenic lighting.",
+      "category": "Wellness & Fitness",
+      "color": "#D95D39",
+      "bookingUrl": "https://sweatpals.com/event/sunset-yoga-in-the-park-99fd?utm_source=user_share_5e649ed6-5bf9-4e15-9251-25f076a61ade&utm_medium=shared_link&utm_campaign=event_share&utm_content=link_in_bio&fbclid=PAZnRzaARE_FlleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAae90GpfepHb8l9T2yYD4BXJgtXQBEE7Tb0rVus96d-asoNPhlHquCMtH5eNJg_aem_r236VlUXgHyhgyANoVxusg",
+      "contact": "@yinstantblissyoga",
+      "price": 15
     },
     {
       "date": "2026-04-27",
