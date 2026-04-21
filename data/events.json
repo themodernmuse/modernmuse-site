@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-21T06:03:02.746Z",
+  "lastUpdated": "2026-04-21T06:03:09.231Z",
   "events": [
     {
       "date": "2026-03-18",
@@ -1040,6 +1040,19 @@
       "bookingUrl": "https://eventhi.io/events/vlasic-vinyasa-with-dejha-mae-14138?fbclid=PARlRTSAREtp9leHRuA2FlbQIxMABzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAae04BHEFDNv-jJzW5-tttgtfEulRgOydqoxaRKh1pdfUM_Yt-V7aQhsSwyi7A_aem_HY4BtLynoWVc4b9kNSXmRA",
       "contact": "@vlasiclabs",
       "price": 15
+    },
+    {
+      "date": "2026-05-03",
+      "time": "14:00",
+      "ampm": "PM",
+      "title": "Cinco de Mayo Glute Pilates + Perreo",
+      "location": "Ilumina on Raiders Way",
+      "description": "Get ready to spice up your Sunday and celebrate Cinco de Mayo with this brilliant fusion of targeted glute work and reggaeton rhythms that'll have you feeling strong.",
+      "category": "Wellness & Fitness",
+      "color": "#D95D39",
+      "bookingUrl": "https://www.tixtree.com/e/cinco-de-mayo-glute-pilates-perreo-fbb9f857653e?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZnRzaART631leHRuA2FlbQIxMQBzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAaeMwXwSv7FBWgL5C5m84ypPCGNtHFqbLjKU44U0WoTxpaTUrAUjHHoN_C7VEw_aem_sWeiPszONG5dP838rLRlNQ",
+      "contact": "@mamipilattesclub",
+      "price": 32
     },
     {
       "date": "2026-05-09",
