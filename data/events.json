@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-21T06:01:47.765Z",
+  "lastUpdated": "2026-04-21T06:02:00.828Z",
   "events": [
     {
       "date": "2026-03-18",
@@ -897,6 +897,19 @@
       "bookingUrl": "https://www.eventbrite.com/e/new-vista-wine-walk-at-downtown-summerlin-tickets-1981259288867?aff=ebdssbcategorybrowse",
       "contact": "@newvistanv",
       "price": "$50 -110"
+    },
+    {
+      "date": "2026-05-02",
+      "time": "17:00",
+      "ampm": "PM",
+      "title": "Rooftop Ride: Under The Lights",
+      "location": "BLVD Las Vegas",
+      "description": "Get ready to elevate your fitness game with this exclusive rooftop cycling experience that combines stunning city views with an invigorating workout under the evening lights. This is the kind of insider fitness event that will have you feeling like you've discovered the city's best-kept wellness secret.",
+      "category": "Wellness & Fitness",
+      "color": "#D95D39",
+      "bookingUrl": "https://www.ethoclub.com/events/rooftop-ride-under-the-lights?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZnRzaARE_AVleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAacL6gOGi426h0jMNCzZpOrhxscL8Rgrm-_yZWtFxSK4Mp1oN8UVUUhxrpbRjg_aem_SOvMY42l3wG-QeiISP22ww",
+      "contact": "@ethoclub",
+      "price": 49
     },
     {
       "date": "2026-05-03",
