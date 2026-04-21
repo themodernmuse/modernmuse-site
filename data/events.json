@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-21T05:40:06.554Z",
+  "lastUpdated": "2026-04-21T06:01:47.765Z",
   "events": [
     {
       "date": "2026-03-18",
@@ -910,6 +910,19 @@
       "bookingUrl": "https://eventhi.io/events/vlasic-vinyasa-with-dejha-mae-14138?fbclid=PARlRTSAREtp9leHRuA2FlbQIxMABzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAae04BHEFDNv-jJzW5-tttgtfEulRgOydqoxaRKh1pdfUM_Yt-V7aQhsSwyi7A_aem_HY4BtLynoWVc4b9kNSXmRA",
       "contact": "@vlasiclabs",
       "price": 15
+    },
+    {
+      "date": "2026-05-09",
+      "time": "10:00",
+      "ampm": "AM",
+      "title": "Mothers Day at The Ranch",
+      "location": "4975 N Miller Ln Las Vegas, NV 89149, USA",
+      "description": "This heartwarming Mother's Day celebration at a local ranch offers the perfect blend of relaxation and family fun, with complimentary chair massages for the first 25 moms, unlimited animal cuddles, and special craft activities. It's an insider's gem where military families get discounted rates and everyone can experience the therapeutic joy of connecting with horses and farm animals in a beautiful ranch setting.",
+      "category": "Family Friendly",
+      "color": "#4A4E69",
+      "bookingUrl": "https://www.zeffy.com/en-US/ticketing/mothers-day-at-the-ranch?fbclid=PARlRTSARE-iBleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAafT4YWsCsQFOf1T7O-M1qVt1QGtxgo_3AAV44hGmtKWqKPibl5kqKsZP2eqJQ_aem_9McBzsD1pPPx5TnOEYYo9Q",
+      "contact": "@horses4heroeslv",
+      "price": "Free for Mothers and Grandmothers, $10-15 for children"
     },
     {
       "date": "2026-05-10",
