@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-21T06:02:30.243Z",
+  "lastUpdated": "2026-04-21T06:02:36.785Z",
   "events": [
     {
       "date": "2026-03-18",
@@ -923,6 +923,19 @@
       "bookingUrl": "https://partiful.com/e/Y8Qr60i6tQppfh0Ubvju?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZnRzaARP9VpleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAaf3A-kcdwPUMNQITzrULsgDvQ31aMHMFSOk68Xyt_bmlR3eyn7m6HEMiVowBA_aem_hS7JgVi5UOZaAUFJNLzdDw",
       "contact": "@cozycollectivelv",
       "price": "$15 per person"
+    },
+    {
+      "date": "2026-04-27",
+      "time": "18:00",
+      "ampm": "PM",
+      "title": "Neurospicy Pickleball Social",
+      "location": "RSVP for location",
+      "description": "This isn't your typical pickleball game—it's a celebration of neurodivergent minds coming together for some friendly competition and genuine connection on the court. You'll find yourself among a wonderfully diverse group of players who get that sometimes the best conversations happen between serves, and every swing is a chance to be authentically you.",
+      "category": "Wellness & Fitness",
+      "color": "#D95D39",
+      "bookingUrl": "https://partiful.com/e/f0KYnPqlIpHfQrgjaKHL?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZnRzaARP82lleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAaeBZSCXcRxK9meT_XoHhH1CG0BFtojPaJ-0PiFKkfubfL9VLs9qLm1Zn_E6gg_aem_XWjCD7gUnWXRMBOCMK_cgg",
+      "contact": "@thesoulsparklv",
+      "price": "$6-$12"
     },
     {
       "date": "2026-05-02",
