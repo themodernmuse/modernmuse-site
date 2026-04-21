@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-21T06:04:47.113Z",
+  "lastUpdated": "2026-04-21T06:04:54.468Z",
   "events": [
     {
       "date": "2026-03-18",
@@ -1053,6 +1053,19 @@
       "bookingUrl": "https://www.tixtree.com/e/cinco-de-mayo-glute-pilates-perreo-fbb9f857653e?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZnRzaART631leHRuA2FlbQIxMQBzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAaeMwXwSv7FBWgL5C5m84ypPCGNtHFqbLjKU44U0WoTxpaTUrAUjHHoN_C7VEw_aem_sWeiPszONG5dP838rLRlNQ",
       "contact": "@mamipilattesclub",
       "price": 32
+    },
+    {
+      "date": "2026-05-08",
+      "time": "18:30",
+      "ampm": "PM",
+      "title": "F The Bar Mixology Workshop - From Agave to Glass: Feat Producer Mezcal",
+      "location": "F The Bar, 1028 East Fremont Street, Las Vegas, NV 89101",
+      "description": "You'll want to secure your spot for this intimate workshop where you'll learn the art of mezcal cocktail crafting from an actual producer who knows every nuance of the agave-to-glass journey. It's the kind of insider experience that transforms you from someone who orders mezcal to someone who truly understands its smoky, complex soul.",
+      "category": "Food & Drink",
+      "color": "#7B3E19",
+      "bookingUrl": "https://www.eventbrite.com/e/f-the-bar-mixology-workshop-from-agave-to-glass-feat-producer-mezcal-tickets-1986994678572?utm_experiment=test_share_listing&aff=ebdsshios&sg=70ac42804ec1ac40cb035e79a7f07ee791f88f6e685a665eb7fa649531ed61222c9571b79f094a1da2f68fa1525ae49f147c8be2da0dbe26555eea83e3a25aa63b34a1e5d0cd91e97e08f3bc5e",
+      "contact": "",
+      "price": 45
     },
     {
       "date": "2026-05-09",
