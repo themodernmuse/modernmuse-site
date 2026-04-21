@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-21T06:02:55.491Z",
+  "lastUpdated": "2026-04-21T06:03:02.746Z",
   "events": [
     {
       "date": "2026-03-18",
@@ -975,6 +975,19 @@
       "bookingUrl": "https://partiful.com/e/f0KYnPqlIpHfQrgjaKHL?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZnRzaARP82lleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAaeBZSCXcRxK9meT_XoHhH1CG0BFtojPaJ-0PiFKkfubfL9VLs9qLm1Zn_E6gg_aem_XWjCD7gUnWXRMBOCMK_cgg",
       "contact": "@thesoulsparklv",
       "price": "$6-$12"
+    },
+    {
+      "date": "2026-04-30",
+      "time": "18:00",
+      "ampm": "PM",
+      "title": "Manos y Masa: Papusa Making Workshop with Vegas Latinas",
+      "location": "Voodoo Brewery",
+      "description": "Get ready to roll up your sleeves and dive into the art of authentic pupusa making alongside the incredible community at Vegas Latinas, where you'll learn traditional techniques passed down through generations. This hands-on experience at Voodoo Brewery combines the best of cultural connection, delicious homemade comfort food, and the kind of evening that feeds both your soul and your Instagram feed.",
+      "category": "Food & Drink",
+      "color": "#7B3E19",
+      "bookingUrl": "https://www.tixtree.com/e/manos-y-masa-for-everyone-a4e6202b4deb?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZnRzaART7g1leHRuA2FlbQIxMQBzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAafCUrnR90wSjL4fSW16RMpEyQrY9PO2-HJ17VT5k1Zj_2IWbYKV2wVl7AmnBQ_aem_W4oV16bwGIReqjSvcCtjRg",
+      "contact": "@vegaslatinas",
+      "price": 39
     },
     {
       "date": "2026-05-02",
